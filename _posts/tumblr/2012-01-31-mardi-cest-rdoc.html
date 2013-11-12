@@ -1,0 +1,35 @@
+---
+layout: post
+title: Mardi c'est RDoc
+date: '2012-01-31T10:35:00+01:00'
+tags:
+- Outil pour la documentation
+tumblr_url: http://www.bonjourgem.com/post/16812836684/mardi-cest-rdoc
+permalink: post/16812836684/mardi-cest-rdoc
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lynoy9oVPY1r58g99.gif"></p>
+<h2>gem install rdoc</h2>
+<p><strong>Documenter ses projets<br></strong></p>
+<p>RDoc est l’une des solutions possibles pour avoir une jolie documentation qui permettra à vous, vos collègues et votre chat de pouvoir rapidement lire et comprendre votre code.</p>
+<p>Et comment ça marche ? Et bien on écrit le code avec des commentaires, par exemple un model utilisateur :</p>
+<p><strong>Ruby</strong></p>
+<pre class="prettyprint linenums"><code>class User &lt; ActiveRecord::Base
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
+
+  attr_accessible :firstname, :lastname, :email, :password, :password_confirmation, :remember_me, :is_admin
+  
+  after_create { |user| user.send_reset_password_instructions }
+ 
+  # permet de créer un utilisateur sans mot de passe 
+  def password_required?
+    new_record? ? false : super
+  end
+end
+</code></pre>
+<p>Et un petit coup de :</p>
+<h2>rake doc:app</h2>
+<p><strong>Je vous laisse apprécier, et parcourir les liens utiles pour en savoir plus :</strong>
+</p><ul class="link">
+<li><a href="http://rdoc.rubyforge.org/" title="Site officiel" target="_blank">Site officiel</a></li>
+<li><a href="https://github.com/rdoc/rdoc" title="RDoc sur github" target="_blank">RDoc sur github</a></li>
+</ul>

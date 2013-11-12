@@ -1,0 +1,24 @@
+---
+layout: post
+title: Samedi c'est Rails View Annotator
+date: '2012-03-03T11:38:52+01:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/18656538653/samedi-cest-rails-view-annotator
+permalink: post/18656538653/samedi-cest-rails-view-annotator
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m0b1dskdHU1r58g99.jpg"></p>
+<h2>gem install rails_view_annotator</h2>
+<p><strong>Où est le partial ?</strong></p>
+<p>Une question que vous avez déjà pu entendre si vous travaillez avec un graphiste, qui peut avoir du mal à trouver le fichier qui correspond à ce qu’il voit.</p>
+<p>Voici donc une gem bien pratique pour ne plus vous répéter. Celle-ci génèrera des commentaires HTML qui engloberont chaque vue.</p>
+<p>Par exemple : </p>
+<pre class="prettyprint linenums"><code>&lt;!-- begin: app/views/user/_bio.html.haml (from app/views/user/show.html.haml:4) --&gt;
+&lt;div class='bio'&gt;Ed's Bio&lt;/div&gt;
+&lt;!-- end: app/views/user/_bio.html.haml (from app/views/user/show.html.haml:4) --&gt;
+</code></pre>
+<p>Une gem à n’utiliser que pendant la phase de développement d’un projet bien entendu :)</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/duncanbeevers/rails_view_annotator" onclick="window.open(this.href);return false;">Rails View Annotator sur github</a></li>
+</ul>

@@ -1,0 +1,33 @@
+---
+layout: post
+title: Dimanche c'est Sc2sim
+date: '2012-03-11T10:57:50+01:00'
+tags:
+- WTF
+tumblr_url: http://www.bonjourgem.com/post/19111774729/dimanche-cest-sc2sim
+permalink: post/19111774729/dimanche-cest-sc2sim
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m0pr6wD5sU1r58g99.jpg"></p>
+<h2>gem install sc2sim</h2>
+<p><strong>Pour un build order parfait</strong></p>
+<p>Vous êtes totalement taré et passez votre temps à concevoir de meilleures stratégies pour Starcraft 2 ? Alors voici une gem pour occuper votre dimanche.</p>
+<p>Il faut la télécharger et l’installer localement comme ceci : </p>
+<h2>git clone git://github.com/sinisterchipmunk/sc2sim.git</h2>
+<h2>cd sc2sim</h2>
+<h2>gem build sc2sim.gemspec</h2>
+<h2>gem install sc2sim-0.0.0.1.gem</h2>
+<p>Vous voilà prêt à travailler. Un petit exemple : </p>
+<pre class="prettyprint linenums"><code>require 'sc2sim'
+# on commence la partie en tant que zerg
+game = SC2::Simulator.new(:zerg)
+# on envoie nos drones bosser 
+game.drones.gather :minerals
+# on construit un extracteur 
+game.build(:extractor)
+# etc.
+</code></pre>
+<p>Chaque ordre mettra du temps à être accompli et aura un impact sur vos ressources :)</p>
+<p><strong>Le lien pas utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/sinisterchipmunk/sc2sim" onclick="window.open(this.href);return false;">Sc2sim sur github</a></li>
+</ul>

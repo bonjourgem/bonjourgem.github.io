@@ -1,0 +1,32 @@
+---
+layout: post
+title: Dimanche c'est LoL replay
+date: '2012-02-12T14:06:01+01:00'
+tags:
+- WTF
+tumblr_url: http://www.bonjourgem.com/post/17484556020/dimanche-cest-lol-replay
+permalink: post/17484556020/dimanche-cest-lol-replay
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lza6pgJQW31r58g99.jpg"></p>
+<h2>gem install lolreplay</h2>
+<p><strong>Pour Demacia !</strong></p>
+<p>Aujourd’hui c’est dimanche, et comme tous les dimanches, une gem qui n’a rien à voir avec le schmilblick. Laissez-moi vous présenter LoL replay, qui permet de parser les fichiers de replay de League of Legends. On peut ainsi en extraire de multiples informations.</p>
+<p>Par exemple :</p>
+<p><strong>Ruby</strong></p>
+<pre class="prettyprint linenums"><code>require 'lolreplay'
+# on charge le replay
+replay = LolReplay::Game.new '230011.lrf'
+# on sélectionne un joueur 
+player = game.player 'GrassPavilion'
+# on affiche ses kills et son or total
+p player.kills
+p player.gold
+</code></pre>
+<p>Une utilité ? Oui ! Cette gem pourrait — après quelques améliorations — être utile sur le site de votre team (refait en Rails pour l’occasion) :p</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/samwho/lolreplay" onclick="window.open(this.href);return false;">LoL replay sur github</a></li>
+<li><a href="http://www.leaguereplays.com/replays/230011/download/230011.lrf" onclick="window.open(this.href);return false;">Le fichier qui me sert d’exemple</a></li>
+<li><a href="http://boompje.net/forum/index.php?PHPSESSID=a90cc2b46aab2039f447dffbf8a38080&amp;action=downloads" onclick="window.open(this.href);return false;">Jouer à LoL sur Mac</a></li>
+<li><a href="http://signup.leagueoflegends.com/en/signup/redownload" onclick="window.open(this.href);return false;">Jouer à LoL sur PC</a></li>
+</ul>

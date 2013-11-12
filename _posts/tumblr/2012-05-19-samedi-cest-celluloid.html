@@ -1,0 +1,48 @@
+---
+layout: post
+title: Samedi c'est Celluloid
+date: '2012-05-19T16:33:03+02:00'
+tags:
+- Outil de développement
+- Service et interaction
+tumblr_url: http://www.bonjourgem.com/post/23349855003/samedi-cest-celluloid
+permalink: post/23349855003/samedi-cest-celluloid
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m49wz4NlqS1r58g99.gif"></p>
+<h2>gem install celluloid</h2>
+<p><strong>Actor-based concurrent object framework for Ruby</strong></p>
+<p>Pour bien commencer, qu’est-ce qu’un acteur ? C’est une entité de calcul qui échange des messages avec d’autres entités. Ou pour citer Alan Kay, le créateur de <a href="http://fr.wikipedia.org/wiki/Smalltalk" onclick="window.open(this.href);return false;">Smalltalk</a> : </p>
+<p><strong>Je pense à des objets qui seraient comme des cellules ou comme des ordinateurs sur un réseau, seulement capables de communiquer avec des messages.</strong></p>
+<p>En gros voici un bel outil pour faire de la programmation tolérante aux fautes, très concurrentielle. Le tout en Ruby via un framework qui nous permet de faire abstraction de la partie gestion des processus, du multithread, des locks… Tout ce que qu’on aime quoi !</p>
+<p>Un exemple simple, votre première cellule :
+</p><pre class="prettyprint linenums"><code>require 'celluloid'
+class Counter
+  # C'est tout ce que vous avez à faire pour transformer une classe Ruby en un Acteur Celluloid 
+  include Celluloid
+
+  # Maintenant on fait comme d'habitude
+  attr_reader :count
+
+  def initialize
+    @count = 0
+  end
+
+  def increment(n = 1)
+    @count += n
+  end
+end
+
+# On crée un objet simplement sauf qu'il s'agit d'un objet qui parle à une cellule disposant de son propre processus 
+actor = Counter.new
+
+# La suite marche comme d'habitude :)
+p actor.count
+</code></pre>
+<p>Ce petit exemple vous montre juste la simplicité d’intégration de Celluloid à vos boulots. Pour une utilisation plus complète, un peu de lecture.</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/celluloid/celluloid" onclick="window.open(this.href);return false;">Celluloid sur github</a></li>
+<li><a href="http://celluloid.io/" onclick="window.open(this.href);return false;">Site officiel</a></li>
+<li><a href="http://www.unlimitednovelty.com/2012/04/introducing-dcell-actor-based.html" onclick="window.open(this.href);return false;">Un bel et long article</a></li>
+<li><a href="http://boldr.net/current-state-ruby-concurrency" onclick="window.open(this.href);return false;">Un autre pour la route</a></li>
+</ul>

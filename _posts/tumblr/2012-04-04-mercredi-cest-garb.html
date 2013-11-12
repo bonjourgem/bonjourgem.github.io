@@ -1,0 +1,33 @@
+---
+layout: post
+title: 'Mercredi c''est Garb '
+date: '2012-04-04T11:27:07+02:00'
+tags:
+- web app
+tumblr_url: http://www.bonjourgem.com/post/20459783622/mercredi-cest-garb
+permalink: post/20459783622/mercredi-cest-garb
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m1y7e1oCH11r58g99.jpg"></p>
+<h2>gem install garb</h2>
+<p><strong>Ruby wrapper pour l’API Google Analytics</strong></p>
+<p>En train de construire un joli site avec un back-office sexy, qui a besoin d’utiliser quelques fonctions de l’API de Google Analytics ? Ne cherchez plus, voilà Garb.</p>
+<p>Tout commence par l’authentification auprès de l’API :</p>
+<pre class="prettyprint linenums"><code>Garb::Session.login('login@gmail.com', 'o0b0nj0urg3m0o')
+</code></pre>
+<p>Pour le côté pratique il va falloir créer une classe dans ce goût-là : </p>
+<pre class="prettyprint linenums"><code>class Exits
+  extend Garb::Model
+
+  metrics :exits, :pageviews
+  dimensions :page_path
+end
+</code></pre>
+<p>Vous voilà prêt à récupérer des résultats : </p>
+ <pre class="prettyprint linenums"><code>profil = Garb::Management::Account.all.first
+profil.exits(:filters =&gt; {:page_path.eql =&gt; '/'})
+</code></pre>
+<p>C’est tout, la suite dans <strong>les liens utiles</strong> ! </p>
+<ul class="link">
+<li><a href="https://github.com/vigetlabs/garb" onclick="window.open(this.href);return false;">Garb sur github</a></li>
+<li><a href="http://code.google.com/intl/fr-FR/apis/analytics/docs/gdata/v3/gdataGettingStarted.html" onclick="window.open(this.href);return false;">Un peu de documentation</a></li>
+</ul>

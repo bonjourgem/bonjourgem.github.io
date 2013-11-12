@@ -1,0 +1,30 @@
+---
+layout: post
+title: Mercredi c'est ranked-model
+date: '2012-04-18T12:36:50+02:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/21319266563/mercredi-cest-ranked-model
+permalink: post/21319266563/mercredi-cest-ranked-model
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m2o7wug3A81r58g99.jpg"></p>
+<h2>gem install ranked-model</h2>
+<p><strong>Modern row sorting library built for Rails 3</strong></p>
+<p>Aujourd’hui une gem pour ordonner vos entités en base plus simplement. Par exemple, vous avez une colonne “row_order” dans votre model et souhaitez utiliser cette colonne pour ordonner les entités. Alors vous devrez faire quelque chose dans ce goût-là : </p>
+<pre class="prettyprint linenums"><code>class Duck &lt; ActiveRecord::Base
+
+  include RankedModel
+  ranks :row_order
+
+end
+</code></pre>
+<p>Ensuite vous pouvez récupérer le tout, ordonné comme ceci : </p>
+<pre class="prettyprint linenums"><code>Duck.rank(:row_order).all
+</code></pre>
+<p>L’avantage, c’est que si vous mettez à jour le rang d’un canard, et bien seul ce canard sera mis à jour. Cela marche comme ça parce que ranked-model assigne aux entités de grands nombres pour le classement ; ce qui permet de déplacer plus facilement une entité entre deux nombres ou avant ou après.</p>
+<p>Il est aussi possible de faire du classement en utilisant des associations.</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/harvesthq/ranked-model" onclick="window.open(this.href);return false;">ranked-model sur github</a></li>
+<li><a href="http://www.getharvest.com/blog/2011/02/a-new-rails-positioning-library-rankedmodel/" onclick="window.open(this.href);return false;">Article sur le blog de Harvest</a></li>
+</ul>

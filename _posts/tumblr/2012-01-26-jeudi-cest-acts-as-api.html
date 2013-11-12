@@ -1,0 +1,51 @@
+---
+layout: post
+title: Jeudi c'est acts_as_api
+date: '2012-01-26T10:00:00+01:00'
+tags:
+- Service et interaction
+tumblr_url: http://www.bonjourgem.com/post/16514923116/jeudi-cest-acts-as-api
+permalink: post/16514923116/jeudi-cest-acts-as-api
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lye9l7vkHs1r58g99.jpg"></p>
+<h2>gem install acts_as_api</h2>
+<p><strong>Pour des réponses XML/JSON </strong></p>
+<p>Marre de faire des API qui ne sont pas DRY ? Alors dites bonjour à acts_as_api, la gem cool et pratique.</p>
+<p>À l’usage, c’est plutôt simple : après avoir ajouté la gem à votre Gemfile et fais un petit bundle install on peut commencer :</p>
+<p><strong>Model</strong></p>
+<pre class="prettyprint linenums"><code>class User &lt; ActiveRecord::Base
+  #on active acts_as_api pour ce model
+  acts_as_api
+
+  # on détermine les attributs accessible pour ce model
+  api_accessible :name_only do |template|
+    template.add :first_name
+    template.add :last_name
+  end
+end
+</code></pre>
+<p><strong>Controller</strong></p>
+<pre class="prettyprint linenums"><code>class UsersController &lt; ApplicationController
+  def index
+    @users = User.all
+    #on répond avec acts_as_api, tous les utilisateurs
+    respond_to do |format|
+      format.xml  { render_for_api :name_only, :xml =&gt; @users, :root =&gt; :users  }
+      format.json { render_for_api :name_only, :json =&gt; @users, :root =&gt; :users }
+    end
+  end
+  def show
+    @user = User.find(params[:id])
+    #on répond avec acts_as_api, l'utilisateur correspond à l'id donné
+    respond_to do |format|
+      format.xml  { render_for_api :name_only, :xml  =&gt; @user }
+      format.json { render_for_api :name_only, :json =&gt; @user }
+    end
+  end
+end
+</code></pre>
+<p>Et voilà, une belle réponse JSON et XML propre. Envie d’en savoir plus ? Les liens utiles :</p>
+<ul class="link">
+<li><a href="http://fabrik42.github.com/acts_as_api/" title="Site officiel de acts_as_api" target="_blank">Site officiel de acts_as_api</a></li>
+<li><a href="https://github.com/fabrik42/acts_as_api/" title="Github de acts_as_api" target="_blank">Github de acts_as_api</a></li>
+</ul>

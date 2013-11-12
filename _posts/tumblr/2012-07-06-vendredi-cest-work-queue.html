@@ -1,0 +1,37 @@
+---
+layout: post
+title: Vendredi c'est work_queue
+date: '2012-07-06T09:23:29+02:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/26617551512/vendredi-cest-work-queue
+permalink: post/26617551512/vendredi-cest-work-queue
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m6q930v1T31r58g99.jpg"></p>
+<h2>gem install work_queue</h2>
+<p><strong>Et si on faisait du multi-thread ?</strong></p>
+<p>Rien de plus simple avec cette gem ! Ça fonctionne comme ceci : </p>
+<pre class="prettyprint linenums"><code>require 'rubygems'
+require 'work_queue'
+
+# Deux arguments possibles : nombre de thread simultanés, limite de thread en file d'attente 
+# ou nil pour pas de limite :)
+wq = WorkQueue.new 5
+
+(1..666).each do |number|
+  wq.enqueue_b do
+    # on met quelque chose dans la file d'attente
+  end
+end
+
+wq.join
+</code></pre>
+<p>Voilà rapide et testé en production sur un <a href="http://www.sgi.com/products/servers/uv/specs.html" onclick="window.open(this.href);return false;">très très très gros serveur</a> :)</p>
+<p>Ça sera tout pour aujourd’hui !</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/fmmfonseca/work_queue" onclick="window.open(this.href);return false;">work_queue sur github</a></li>
+</ul><p><small>
+Sur une idée de
+<a href="https://twitter.com/#!/ghis33" onclick="window.open(this.href);return false;">@ghis33</a>
+</small></p>

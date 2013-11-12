@@ -1,0 +1,30 @@
+---
+layout: post
+title: Samedi c'est TwitterCldr
+date: '2012-08-04T11:14:59+02:00'
+tags:
+- utilitaire
+tumblr_url: http://www.bonjourgem.com/post/28690627472/samedi-cest-twittercldr
+permalink: post/28690627472/samedi-cest-twittercldr
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m87x1hO0Ue1r58g99.gif"></p>
+<h2>gem install twitter_cldr</h2>
+<p><strong>Internationalization by Twitter</strong></p>
+<p>Aujourd’hui une gem fortement sympathique made in Twitter qui permet de formater dates, temps, monnaies, décimaux, pourcentages et symboles en fonction de la langue.</p>
+<p>Par exemple : </p>
+<pre class="prettyprint linenums"><code>1337.localize(:fr).to_currency.to_s(:currency =&gt; "EUR")
+#=&gt; "1 337,00 €" 
+1337.localize(:us).to_currency.to_s(:currency =&gt; "EUR")
+#=&gt; "€1,337.00" 
+
+DateTime.now.localize(:us).to_full_s 
+#=&gt; "Friday, August 4, 2012 9:27:03 a.m. UTC +0200" 
+DateTime.now.localize(:fr).to_full_s
+#=&gt; "samedi 4 août 2012 18:27:07 UTC +0200" 
+</code></pre>
+<p>Et ce n’est qu’un exemple ! Je vous laisse découvrir le reste par vous-même avec la doc :)</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/twitter/twitter-cldr-rb" onclick="window.open(this.href);return false;">TwitterCldr sur github</a></li>
+<li><a href="http://engineering.twitter.com/2012/08/twittercldr-improving.html" onclick="window.open(this.href);return false;">Un article</a></li>
+</ul>

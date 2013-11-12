@@ -1,0 +1,47 @@
+---
+layout: post
+title: Jeudi c'est Sunspot
+date: '2012-04-26T11:52:01+02:00'
+tags:
+- utilitaire
+tumblr_url: http://www.bonjourgem.com/post/21841622212/jeudi-cest-sunspot
+permalink: post/21841622212/jeudi-cest-sunspot
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m32ze0rm9c1r58g99.jpg"></p>
+<h2>gem install sunspot_rails</h2>
+<p><strong>Aujourd’hui c’est Coolspot… Sunspot :)</strong></p>
+<p>Aujourd’hui je m’excuse pour ce jeu de mot foireux mais le fallait. Sinon plus sérieusement, aujourd’hui je vous présente toute la puissance de Solr avec la beauté de Ruby en utilisant un DSL bien fichu.</p>
+<p><strong>Un petit exemple, on modifie le model comme ceci :</strong></p>
+<pre class="prettyprint linenums"><code>class Post &lt; ActiveRecord::Base
+  searchable do
+    text :title, :body
+    text :comments do
+      comments.map { |comment| comment.body }
+    end
+    integer :blog_id
+    integer :author_id
+    integer :category_ids, :multiple =&gt; true
+    time :published_at
+    string :sort_title do
+      title.downcase.gsub(/^(an?|the)\b/, '')
+    end
+  end
+end
+</code></pre>
+<p>Et on effectue des recherches : </p>
+<pre class="prettyprint linenums"><code>Post.search do
+  fulltext 'best pizza'
+  with :blog_id, 1
+  with(:published_at).less_than Time.now
+  order_by :published_at, :desc
+  paginate :page =&gt; 2, :per_page =&gt; 15
+  facet :category_ids, :author_id
+end
+</code></pre>
+<p>Si vous avez installé la gem <strong>sunspot_solr</strong> vous pouvez lancer une instance de serveur Solr comme ceci : </p>
+<h2>bundle exec rake sunspot:solr:start</h2>
+<p>Pour le reste je vous laisse éplucher la documentation :)</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/sunspot/sunspot" onclick="window.open(this.href);return false;">Sunspot sur github</a></li>
+</ul>

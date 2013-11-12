@@ -1,0 +1,30 @@
+---
+layout: post
+title: Vendredi c'est Marginalia
+date: '2012-05-18T11:28:29+02:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/23283228179/vendredi-cest-marginalia
+permalink: post/23283228179/vendredi-cest-marginalia
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m45n5zYF9g1r58g99.jpg"></p>
+<h2>gem install marginalia</h2>
+<p><strong>Des commentaires et des requêtes</strong></p>
+<p>Qui n’a jamais rêvé de retrouver facilement une requête dans ses logs ? Eh bien votre rêve vient de se réaliser ! Grâce à un petit commentaire qui vous permettra facilement d’identifier la source de votre requête.</p>
+<p>Pour l’installation, faites comme d’habitude puis ajoutez ceci à votre <strong>config/application.rb</strong> :</p>
+<pre class="prettyprint linenums"><code>require 'marginalia/railtie'
+</code></pre>
+<p>Vous pourrez ensuite apprécier toute la beauté de la chose : </p>
+<pre class="prettyprint linenums"><code>Account Load (0.3ms) SELECT `accounts`.* FROM `accounts` 
+WHERE `accounts`.`queenbee_id` = 1234567890 
+LIMIT 1 
+/*application:BCX,controller:project_imports,action:show*/
+</code></pre>
+<p>Bien-sûr il est possible de customiser tout ça. Pour savoir comment et par où ça se passe, direction la doc :)</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/37signals/marginalia" onclick="window.open(this.href);return false;">Marginalia sur github</a></li>
+</ul><p><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/happynoff">@happynoff</a>
+</small></p>

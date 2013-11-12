@@ -1,0 +1,52 @@
+---
+layout: post
+title: Jeudi c'est Ohm
+date: '2012-07-19T09:47:00+02:00'
+tags:
+- base de données
+tumblr_url: http://www.bonjourgem.com/post/27543749597/jeudi-cest-ohm
+permalink: post/27543749597/jeudi-cest-ohm
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m7eb2q54NG1r58g99.jpg"></p>
+<h2>gem install ohm</h2>
+<p><strong>Un ORM pour Redis</strong></p>
+<p>Aujourd’hui une gem pour utiliser Redis comme une base de données et ceci assez simplement : </p>
+<pre class="prettyprint linenums"><code>require "ohm"
+Ohm.connect
+Ohm.redis.set "Foo", "Bar"
+#=&gt; "OK"
+Ohm.redis.get "Foo"
+#=&gt; "Bar"
+</code></pre>
+<p>Un exemple un peu plus concret avec un Model : </p>
+<pre class="prettyprint linenums"><code>class Event &lt; Ohm::Model
+  attribute :name
+  reference :venue, :Venue
+  set :participants, :Person
+  counter :votes
+
+  index :name
+
+  def validate
+    assert_present :name
+  end
+end
+
+class Venue &lt; Ohm::Model
+  attribute :name
+  collection :events, :Event
+end
+
+class Person &lt; Ohm::Model
+  attribute :name
+end
+</code></pre>
+<p>Étant donné que cette gem a pour but de lier des objets avec une base de données clé-valeur, il n’y a pas besoin de migration. Il suffit de définir les différents attributs du Model et c’est tout :)</p>
+<p>Voilà c’est tout pour aujourd’hui !</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/soveran/ohm" onclick="window.open(this.href);return false;">Ohm sur github</a></li>
+</ul><p><small>
+Sur une idée de
+<a href="https://twitter.com/#!/msadouni" onclick="window.open(this.href);return false;">@msadouni</a>
+</small></p>

@@ -1,0 +1,39 @@
+---
+layout: post
+title: Lundi c'est MultipleMailers
+date: '2012-03-26T12:47:41+02:00'
+tags:
+- utilitaire
+tumblr_url: http://www.bonjourgem.com/post/19949019734/lundi-cest-multiplemailers
+permalink: post/19949019734/lundi-cest-multiplemailers
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m1hmhyXelj1r58g99.gif"></p>
+<h2>gem install multiple_mailers</h2>
+<p><strong>smtp.count # =&gt; beaucoup</strong></p>
+<p>Besoin d’un SMTP par Mailer ? Alors dites bonjour à MultipleMailers qui permet cela, via un petit fichier de configuration et une simple ligne à ajouter dans vos Mailers.</p>
+<p><strong>config/mailers.yml</strong></p>
+<pre class="prettyprint linenums"><code>production:
+  default: &amp;default
+    address: 'smtp.gmail.com'
+    port: 587
+    domain: 'railsbp.com'
+    authentication: 'plain'
+
+  notification:
+    &lt;&lt;: *default
+    user_name: 'notification@railsbp.com'
+    password: 'password'
+
+  exception.notifier:
+    &lt;&lt;: *default
+    user_name: 'exception.notifier@railsbp.com'
+    password: 'password'
+</code></pre>
+<p>Une fois votre fichier prêt, il ne vous reste plus qu’à préciser le SMTP dont vous avez besoin dans vos Mailers : </p>
+<pre class="prettyprint linenums"><code>mailer_account "notification" # dans le cas où vous ne souhaitez pas utiliser le smtp par défaut
+</code></pre>
+<p>Voilà c’est tout pour aujourd’hui ! </p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/flyerhzm/multiple_mailers" onclick="window.open(this.href);return false;">MultipleMailers sur github</a></li>
+</ul>

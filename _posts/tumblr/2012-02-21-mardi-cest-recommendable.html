@@ -1,0 +1,34 @@
+---
+layout: post
+title: Mardi c'est Recommendable
+date: '2012-02-21T11:07:00+01:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/18004420552/mardi-cest-recommendable
+permalink: post/18004420552/mardi-cest-recommendable
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lzqlbr4akh1r58g99.gif"></p>
+<h2>gem install recommendable</h2>
+<p><strong>Mmh, moi aimer !</strong></p>
+<p>Il y a deux types de sites : ceux où on peut liker et ceux où on peut pas. Les premiers sont plutôt cool, les seconds moins.</p>
+<p>C’est pour cette raison que Recommendable existe, mais aussi parce que <a href="http://davidcelis.com/blog/2012/02/01/why-i-hate-five-star-ratings/" onclick="window.open(this.href);return false;">l’auteur semble haïr les notations à 5 points</a>.</p>
+<p>Pour l’utiliser dans votre prochaine application Rails, quelques étapes :</p>
+<h2>rails g recommendable:install</h2>
+<p>Qui génèrera <strong>config/initializers/recommendable.rb</strong> Vous y trouverez la configuration pour Redis ; dont je parlerai prochainement :)</p>
+<p>Ensuite pour permettre à vos visiteurs de liker / disliker, on ajoute la ligne suivante au model utilisateurs :</p>
+<pre class="prettyprint linenums"><code>class User &lt; ActiveRecord::Base
+  recommends :bonjourgems
+  # ...
+end
+</code></pre>
+<p>Vous voilà prêt à faire aimer ou désaimer des trucs divers et variés grâce aux méthodes suivantes :</p>
+<pre class="prettyprint linenums"><code>current_user.like Bonjourgem.find(1)
+current_user.dislike Bonjourgem.find(1)
+</code></pre>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/davidcelis/recommendable" onclick="window.open(this.href);return false;">Recommendable sur github</a></li>
+</ul><p><strong>Le lien qui sert à rien mais on aime bien</strong></p>
+<ul class="link">
+<li><a href="http://www.jeuxvideo.com/chroniques-video-3615-usul.htm" onclick="window.open(this.href);return false;">3615 Usul</a></li>
+</ul>

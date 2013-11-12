@@ -1,0 +1,32 @@
+---
+layout: post
+title: Vendredi c'est PaperTrail
+date: '2012-02-03T10:23:00+01:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/16968972466/vendredi-cest-papertrail
+permalink: post/16968972466/vendredi-cest-papertrail
+---
+<p class="img-post"><strong><img src="/tumblr_files/tumblr_lyt84u1ZI41r58g99.gif"></strong></p>
+<h2>gem install paper_trail</h2>
+<p><strong>Cmd + Z powaaa!</strong></p>
+<p>Cela peut être pratique de logguer les changements sur votre Base de Données et de pouvoir faire des retours sur celle-ci. </p>
+<p>PaperTrail en plus de logguer les changements vous permet de savoir qui fait quoi et quand dans votre application.</p>
+<p>Il est bien-sûr possible de paramétrer le suivi de vos entités :</p>
+<ul>
+<li>Définir quand une nouvelle version se crée : <strong>has_paper_trail :on =&gt; [:update, :destroy]</strong>
+</li>
+<li>
+<span>Définir quels attributs n’ont pas besoin d’être loggués : </span><strong>has_paper_trail :ignore =&gt; [:title, :rating]</strong>
+</li>
+<li>
+<span>Ou l’inverse : </span><strong>has_paper_trail :only =&gt; [:title]</strong>
+</li>
+<li><span>Et bien d’autres possibilités !</span></li>
+</ul><p><strong>Les liens utiles :</strong></p>
+<ul class="link">
+<li><a href="https://github.com/airblade/paper_trail" title="PaperTrail sur github" target="_blank">PaperTrail sur github</a></li>
+<li><a href="http://railscasts.com/episodes/255-undo-with-paper-trail" title="Railscast" target="_blank">Railscast</a></li>
+<li>
+<a href="http://www.linux-mag.com/id/7528/" title="Un tutoriel" target="_blank">Un tutoriel</a> </li>
+</ul>

@@ -1,0 +1,35 @@
+---
+layout: post
+title: Samedi c'est Factory Girl
+date: '2012-06-23T15:45:29+02:00'
+tags:
+- test
+tumblr_url: http://www.bonjourgem.com/post/25714269467/samedi-cest-factory-girl
+permalink: post/25714269467/samedi-cest-factory-girl
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m62om9sVhE1r58g99.gif"></p>
+<h2>gem install easy_key_value</h2>
+<p><strong>Arrêter les fixtures</strong></p>
+<p>Utiliser Factory Girl est plutôt simple.</p>
+<p>On commence par créer notre factory :</p>
+<p><strong>/spec/factories.rb</strong></p>
+<pre class="prettyprint linenums"><code>Factory.define :user do |f|
+  f.sequence(:email) { |n| "foo#{n}@example.com" }
+  f.password "secret"
+end
+</code></pre>
+<p>Maintenant nous avons un “factory” utilisateur pour les tests : </p>
+<pre class="prettyprint linenums"><code>describe "UnNomDeFeature" do
+  it "la description de la feature"
+    user = Factory(:user)
+    # on fait nos tests
+  end
+end
+</code></pre>
+<p>Voilà, c’est tout pour aujourd’hui :)</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/thoughtbot/factory_girl" onclick="window.open(this.href);return false;">Factory Girl sur github</a></li>
+<li><a href="http://railscasts.com/episodes/275-how-i-test?language=fr&amp;view=asciicast" onclick="window.open(this.href);return false;">RailsCast</a></li>
+<li><a href="http://rubysource.com/introducing-test-driven-development-with-rails-3/" onclick="window.open(this.href);return false;">C’est quoi le TDD ?</a></li>
+</ul>

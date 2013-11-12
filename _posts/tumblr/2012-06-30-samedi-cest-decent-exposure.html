@@ -1,0 +1,72 @@
+---
+layout: post
+title: Samedi c'est decent_exposure
+date: '2012-06-30T12:31:42+02:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/26203890226/samedi-cest-decent-exposure
+permalink: post/26203890226/samedi-cest-decent-exposure
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m6fds8evhV1r58g99.jpg"></p>
+<p><strong>Roulé à la main sous les aisselles !</strong></p>
+<p>Aujourd’hui on commence sur une notre fraîche en reprenant les mots de l’auteur de la gem : “Les controllers sont le dessous de bras humide de chaque application Rails”.</p>
+<p>Bon ça colle bien avec la température du moment et c’est normal, car les variables d’instance ne sont pas censées servir d’interface entre le controller et la vue.</p>
+<p>Donc avec cette gem au lieu d’avoir :</p>
+<pre class="prettyprint linenums"><code>class Controller
+  def new
+    @person = Person.new(params[:person])
+  end
+
+  def create
+    @person = Person.new(params[:person])
+    if @person.save
+      redirect_to(@person)
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @person = Person.find(params[:id])
+  end
+
+  def update
+    @person = Person.find(params[:id])
+    if @person.update_attributes(params[:person])
+      redirect_to(@person)
+    else
+      render :edit
+    end
+  end
+end
+</code></pre>
+<p>On aura : </p>
+<pre class="prettyprint linenums"><code>class Controller
+  expose(:person)
+
+  def create
+    if person.save
+      redirect_to(person)
+    else
+      render :new
+    end
+  end
+
+  def update
+    if person.save
+      redirect_to(person)
+    else
+      render :edit
+    end
+  end
+end
+</code></pre>
+<p>Et hop, un code refactorisé et qui est un peu moins humide ! Bien-sûr cela pourrait aussi fonctionner dans le cas où notre model person dépendrait d’un autre model. Mais ça, c’est une autre histoire :)</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/voxdolo/decent_exposure" onclick="window.open(this.href);return false;">decent_exposure sur github</a></li>
+<li><a href="http://blog.voxdolo.me/a-diatribe-on-maintaining-state.html" onclick="window.open(this.href);return false;">Mieux comprendre l’auteur de la gem</a></li>
+</ul><p><small>
+Sur une idée de
+<a href="https://twitter.com/#!/msadouni" onclick="window.open(this.href);return false;">@msadouni</a>
+</small></p>

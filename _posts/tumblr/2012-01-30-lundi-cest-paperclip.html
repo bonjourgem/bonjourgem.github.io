@@ -1,0 +1,45 @@
+---
+layout: post
+title: Lundi c'est Paperclip
+date: '2012-01-30T10:55:00+01:00'
+tags:
+- Upload de fichier
+tumblr_url: http://www.bonjourgem.com/post/16754697991/lundi-cest-paperclip
+permalink: post/16754697991/lundi-cest-paperclip
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lyluimQifH1r58g99.gif"></p>
+<h2>gem install paperclip</h2>
+<p><strong>L’upload tranquille</strong></p>
+<p>Il peut arriver dans un projet, on ait besoin de faire de l’upload de fichier. Parfois on écrit soit-même un petit script. Mais ça, c’est pour ceux qui ne connaissent pas Paperclip !</p>
+<p>Paperclip marche comme la plupart des gems. C’est-à-dire que l’on commence par l’ajouter à notre gemfile. Voici un exemple où on veut ajouter des images aux utilisateurs :</p>
+<p><strong>Model</strong></p>
+<pre class="prettyprint linenums"><code>class User &lt; ActiveRecord::Base
+  has_attached_file :avatar, :styles =&gt; { :medium =&gt; "300x300&gt;", :thumb =&gt; "100x100&gt;" }
+end
+</code></pre>
+<p><strong>Une migration</strong> </p>
+<pre class="prettyprint linenums"><code>class AddAvatarColumnsToUser &lt; ActiveRecord::Migration
+  def self.up
+    change_table :users do |t|
+      t.has_attached_file :avatar
+    end
+  end
+
+  def self.down
+    drop_attached_file :users, :avatar
+  end
+end
+</code></pre>
+<p><strong>On ajoute le formulaire à la vue</strong></p>
+<pre class="prettyprint linenums"><code>&lt;%= form_for :user, @user, :url =&gt; user_path, :html =&gt; { :multipart =&gt; true } do |form| %&gt;
+  &lt;%= form.file_field :avatar %&gt;
+&lt;% end %&gt;
+</code></pre>
+<p><strong>Afficher l’image</strong></p>
+<pre class="prettyprint linenums"><code>&lt;%= image_tag @user.avatar.url(:thumb) %&gt;
+</code></pre>
+<p>La suite et les autres options de Paperclip — créer un pré-processeur, définir l’organisation des fichiers sauvegardés etc. <strong>dans les liens utiles :</strong></p>
+<ul class="link">
+<li><a href="https://github.com/thoughtbot/paperclip" title="Paperclip sur github" target="_blank">Paperclip sur github</a></li>
+<li><a href="http://railscasts.com/episodes?utf8=%E2%9C%93&amp;search=paperclip" title="Les Railscasts" target="_blank">Les Railscasts</a></li>
+</ul>

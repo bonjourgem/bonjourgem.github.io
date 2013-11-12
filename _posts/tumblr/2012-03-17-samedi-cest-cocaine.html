@@ -1,0 +1,33 @@
+---
+layout: post
+title: Samedi c'est Cocaine
+date: '2012-03-17T11:26:14+01:00'
+tags:
+- utilitaire
+tumblr_url: http://www.bonjourgem.com/post/19445770959/samedi-cest-cocaine
+permalink: post/19445770959/samedi-cest-cocaine
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m10y36wUwi1r58g99.jpg"></p>
+<h2>gem install cocaine</h2>
+<p><strong>On se fait une ligne (de commande)</strong></p>
+<p>Voici une gem pour faire des lignes de commande dans vos projets / scripts, avec le code suivant :</p>
+<pre class="prettyprint linenums"><code>line = Cocaine::CommandLine.new("command", "some 'crazy' options")
+line.command      # =&gt; "command some 'crazy' options"
+output = line.run # =&gt; Get you some output!
+</code></pre>
+<p>Pour éviter que le script plante si la commande échoue, on peut aussi utiliser le bloc <a href="http://rubylearning.com/satishtalim/ruby_exceptions.html" onclick="window.open(this.href);return false;">begin-end</a> : </p>
+<pre class="prettyprint linenums"><code>line = Cocaine::CommandLine.new("git", "commit")
+begin
+  line.run
+rescue Cocaine::ExitStatusError =&gt; e
+  e.message # =&gt; "Command 'git commit' retourne 1. On attend 0"
+end
+</code></pre>
+<p>Et en bonus la possibilité de logger tout ce qui passe par cette gem : </p>
+<pre class="prettyprint linenums"><code>Cocaine::CommandLine.logger = Logger.new(STDOUT)
+Cocaine::CommandLine.new("date").run # =&gt; Logs this -&gt; Command :: date
+</code></pre>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/thoughtbot/cocaine" onclick="window.open(this.href);return false;">Cocaine sur github</a></li>
+</ul>

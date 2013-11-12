@@ -1,0 +1,35 @@
+---
+layout: post
+title: Jeudi c'est Foreman
+date: '2012-03-15T11:32:56+01:00'
+tags:
+- utilitaire
+tumblr_url: http://www.bonjourgem.com/post/19339557779/jeudi-cest-foreman
+permalink: post/19339557779/jeudi-cest-foreman
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m0x8zaNxpv1r58g99.jpg"></p>
+<h2>gem install foreman</h2>
+<p><strong>Manage Procfile-based applications</strong></p>
+<p>Le développeur est par nature feignant. Il utilise donc des outils pour se simplifier la vie, Foreman est l’un d’eux.</p>
+<p>Cette gem permet de simplifier le lancement d’une application complexe, par exemple : </p>
+<p><strong>Sans Foreman</strong></p><h2>bundle exec thin start -p $PORT</h2>
+<h2>bundle exec rake resque:work QUEUE=*</h2>
+<h2>bundle exec rake resque:scheduler</h2>
+<p><strong>Avec Foreman</strong></p>
+<h2>foreman start</h2>
+<p>Mieux non ? :) Vous aurez vos logs comme d’habitude dans votre terminal, avec une petite colorisation pour distinguer chaque process.</p>
+<p>Cette gem, en plus d’être bien pratique pendant la phase de développement d’un projet, peut aussi être utilisée lors de la mise en production pour générer un démon : </p>
+<h2>foreman export upstart /etc/init</h2>
+<p>Ce qui vous donnera accès aux commandes suivantes : </p>
+<h2>start testapp</h2>
+<h2>stop testapp</h2>
+<h2>restart testapp</h2>
+<p>Il est aussi possible d’exporter le tout pour votre inittab : </p>
+<h2>foreman export inittab</h2>
+<p>Voilà c’est tout pour aujourd’hui.</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/ddollar/foreman" onclick="window.open(this.href);return false;">Foreman sur github</a></li>
+<li><a href="http://michaelvanrooijen.com/articles/2011/06/08-managing-and-monitoring-your-ruby-application-with-foreman-and-upstart/" onclick="window.open(this.href);return false;">Un premier tutoriel de mise en route</a></li>
+<li><a href="http://railscasts.com/episodes/281-foreman" onclick="window.open(this.href);return false;">Un Railscast</a></li>
+</ul>

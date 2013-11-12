@@ -1,0 +1,28 @@
+---
+layout: post
+title: Mercredi c'est Googlecharts
+date: '2012-04-25T11:37:35+02:00'
+tags:
+- web app
+tumblr_url: http://www.bonjourgem.com/post/21775523423/mercredi-cest-googlecharts
+permalink: post/21775523423/mercredi-cest-googlecharts
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m30uvsxVSf1r58g99.gif"></p>
+<h2>gem install googlecharts</h2>
+<p><strong>Pour de belles data visualizations</strong></p>
+<p>Envie d’utiliser Google Chart sans difficulté ? Et bien voilà une solution prête à l’emploi.</p>
+<p>Un petit exemple issu de la documentation :</p>
+<pre class="prettyprint linenums"><code>require 'googlecharts'
+Gchart.line(  :size =&gt; '200x300', 
+              :title =&gt; "example title",
+              :bg =&gt; 'efefef',
+              :legend =&gt; ['first data set label', 'second data set label'],
+              :data =&gt; [10, 30, 120, 45, 72])
+</code></pre>
+<p>Ce qui nous produit ce superbe graphique de folie : </p>
+<p><img src="http://chart.apis.google.com/chart?chf=bg,s,efefef&amp;chd=s:FP9Xl&amp;chdl=first+data+set+label%7Csecond+data+set+label&amp;chtt=example+title&amp;cht=lc&amp;chs=400x400&amp;chxr=0,10,120"></p>
+<p>Les options sont multiples et variées, à découvrir dans la doc.</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/mattetti/googlecharts" onclick="window.open(this.href);return false;">Googlecharts sur github</a></li>
+</ul>

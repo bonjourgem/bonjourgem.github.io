@@ -1,0 +1,33 @@
+---
+layout: post
+title: Vendredi c'est Twitter
+date: '2012-03-09T11:45:27+01:00'
+tags:
+- web app
+tumblr_url: http://www.bonjourgem.com/post/18997453104/vendredi-cest-twitter
+permalink: post/18997453104/vendredi-cest-twitter
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m0m5h5Guvf1r58g99.gif"></p>
+<h2>gem install twitter</h2>
+<p><strong>Twitter on Rails</strong></p>
+<p>Envie d’intégrer des fonctionnalités de Twitter dans votre prochaine application ? Voici la gem parfaite pour arriver à vos fins.</p>
+<p>Après l’avoir installée comme n’importe quelle gem, vous aurez accès à tout plein de classes : </p>
+<pre class="prettyprint linenums"><code>Twitter::Configuration  Twitter::List       Twitter::Polygon            Twitter::Settings
+Twitter::Cursor         Twitter::Metadata   Twitter::RateLimitStatus    Twitter::Size
+Twitter::DirectMessage  Twitter::Mention    Twitter::Relationship       Twitter::Status
+Twitter::Favorite       Twitter::Photo      Twitter::Reply              Twitter::Suggestion
+Twitter::Follow         Twitter::Place      Twitter::Retweet            Twitter::Trend
+Twitter::Language       Twitter::Point      Twitter::SavedSearch        Twitter::User
+</code></pre>
+<p>Fonctionnalités que vous pouvez utiliser comme ceci : </p>
+<pre class="prettyprint linenums"><code># retourner ma position
+Twitter.user("davidmaylis").location
+# retourner mon dernier tweet
+Twitter.user_timeline("davidmaylis").first.text
+</code></pre>
+<p>Et pleins d’autres bonne choses disponibles dans la documentation de la gem.</p>
+<p><strong>Les liens utiles : </strong></p>
+<ul class="link">
+<li><a href="https://github.com/jnunemaker/twitter" onclick="window.open(this.href);return false;">Twitter sur github</a></li>
+<li><a href="https://twitter.com/#!/davidmaylis" onclick="window.open(this.href);return false;">Nous suivre sur Twitter ;)</a></li>
+</ul>

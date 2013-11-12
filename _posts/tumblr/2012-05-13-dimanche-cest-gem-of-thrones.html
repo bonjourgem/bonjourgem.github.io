@@ -1,0 +1,38 @@
+---
+layout: post
+title: Dimanche c'est Gem of Thrones
+date: '2012-05-13T13:32:46+02:00'
+tags:
+- WTF
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/22964269236/dimanche-cest-gem-of-thrones
+permalink: post/22964269236/dimanche-cest-gem-of-thrones
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m3yjzclu7B1r58g99.jpg"></p>
+<h2>gem install gem_of_thrones</h2>
+<p><strong>The King in the North!</strong></p>
+<p>Aujourd’hui une gem qui veut aussi le Trône de fer. Mais comme vous le savez, une seule peut gagner ! </p>
+<p>Ouais ok ça utilise Memcache, ce n’est pas ce qu’il y a de mieux, mais c’est pas mal tout de même. Un petit exemple de son pouvoir :</p>
+<pre class="prettyprint linenums"><code>aspirant = GemOfThrones.new(
+  :cache =&gt; Rails.cache, # où stocke-t-on le lock ?
+  :timeout =&gt; 60 # si le roi actuel met plus de 60 secondes à réagir, il sera remplacé par un autre aspirant
+)
+
+Thread.new do
+  loop do
+    # si je peux devenir le roi
+    if aspirant.rise_to_power
+    # quelque chose qui peut être fait seulement par ce roi
+    end
+    sleep 30 # si on choisit un timeout plus grand, le roi changera tout le temps 
+  end
+end
+</code></pre>
+<p>Allez, bon dimanche !</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/grosser/gem_of_thrones" onclick="window.open(this.href);return false;">Gem of Thrones sur github</a></li>
+</ul><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/lcoullet">@lcoullet</a>
+</small>

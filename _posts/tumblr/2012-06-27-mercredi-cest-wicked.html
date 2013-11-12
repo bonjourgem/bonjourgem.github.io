@@ -1,0 +1,47 @@
+---
+layout: post
+title: Mercredi c'est Wicked
+date: '2012-06-27T13:59:19+02:00'
+tags:
+- utilitaire
+tumblr_url: http://www.bonjourgem.com/post/25995480390/mercredi-cest-wicked
+permalink: post/25995480390/mercredi-cest-wicked
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m69u1jdGvr1r58g99.jpg"></p>
+<h2>gem install wicked</h2>
+<p><strong>Des controllers étape par étape</strong></p>
+<p>Besoin de faire un formulaire qui fonctionne en plusieurs étapes, tout en gardant un code propre ? Wicked est fait pour vous. Pour mettre en place cette gem, on procède comme ceci :</p>
+<p><strong>Un nouveau controller</strong></p>
+<h2>rails g controller after_signup</h2>
+<p><strong>config/routes.rb</strong></p>
+<pre class="prettyprint linenums"><code>resources :after_signup
+</code></pre>
+<p><strong>app/controllers/after_signup_controller.rb</strong></p>
+<pre class="prettyprint linenums"><code>include Wicked::Wizard
+steps :confirm_password, :confirm_profile, :find_friends
+</code></pre>
+<p>Les différentes étapes utiliseront l’action show qui emploiera la méthode <strong> render_wizard</strong> afin d’afficher la bonne vue. Ce qui nous donne une action show comme ceci :</p>
+<pre class="prettyprint linenums"><code>def show
+  @user = current_user
+  case step
+  when :find_friends
+    @friends = @user.find_friends
+  end
+  render_wizard
+end
+</code></pre>
+<p>Les vues seront bien-sûr nommées comme ceci : </p>
+<ul>
+<li>/views/after_signup/confirm_password</li>
+<li>/views/after_signup/confirm_profile</li>
+<li>/views/after_signup/find_friends</li>
+</ul><p>Voilà, c’est tout pour le moment.</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/schneems/wicked" onclick="window.open(this.href);return false;">Wicked sur github</a></li>
+<li><a href="https://github.com/schneems/wicked_example" onclick="window.open(this.href);return false;">Un exemple d’application utilisant Wicked</a></li>
+<li><a href="http://schneems.com/post/18437886598/wizard-ify-your-rails-controllers-with-wicked" onclick="window.open(this.href);return false;">Un screencast</a></li>
+</ul><p><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/msadouni">@msadouni</a>
+</small></p>

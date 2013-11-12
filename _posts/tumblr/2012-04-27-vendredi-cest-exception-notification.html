@@ -1,0 +1,27 @@
+---
+layout: post
+title: Vendredi c'est exception_notification
+date: '2012-04-27T16:28:28+02:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/21912669980/vendredi-cest-exception-notification
+permalink: post/21912669980/vendredi-cest-exception-notification
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m353swWYhA1r58g99.gif"></p>
+<h2>gem install exception_notification</h2>
+<p><strong>Parce que tout peux arriver</strong></p>
+<p>Aujourd’hui on va gérer les exceptions pour le bien de vos applications.</p>
+<p>Pour faire fonctionner cette petite gem il faut modifier votre config.ru comme ceci : </p>
+<pre class="prettyprint linenums"><code>Whatever::Application.config.middleware.use ExceptionNotifier,
+  :email_prefix =&gt; "[Whatever]",
+  :sender_address =&gt; %{"notifier" &lt;notifier@example.com&gt;},
+  :exception_recipients =&gt; %w{exceptions@example.com}
+</code></pre>
+<p>Vous l’aurez surement deviné, <strong>:sender_address</strong> c’est l’adresse email depuis laquelle la notification sera envoyée.</p>
+<p>Et <strong>exception_recipients</strong> le notifié.</p>
+<p>Voilà pour commencer cela sera suffisant. Pour le reste et pour affiner vos alertes, il n’y a plus qu’à aller jeter un œil à la documentation :)</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/smartinez87/exception_notification" onclick="window.open(this.href);return false;">exception_notification sur github</a></li>
+<li><a href="http://railscasts.com/episodes/104-exception-notifications-revised?view=asciicast" onclick="window.open(this.href);return false;">Un petit Railscast</a></li>
+</ul>

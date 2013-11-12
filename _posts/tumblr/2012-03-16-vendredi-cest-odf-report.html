@@ -1,0 +1,26 @@
+---
+layout: post
+title: Vendredi c'est odf-report
+date: '2012-03-16T12:55:02+01:00'
+tags:
+- Parseur
+tumblr_url: http://www.bonjourgem.com/post/19393921636/vendredi-cest-odf-report
+permalink: post/19393921636/vendredi-cest-odf-report
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m0z7a919GY1r58g99.gif"></p>
+<h2>gem install odf-report</h2>
+<p><strong>Génère-moi du .odf</strong></p>
+<p>Voilà une bien jolie gem pour générer des .odf en utilisant un template .odt que vous aurez créé au préalable.</p>
+<p>Par exemple on prépare un template avec des <strong>[USER_NAME]</strong> un peu partout. Puis on fait un essai avec le code suivant : </p>
+<pre class="prettyprint linenums"><code>report = ODFReport::Report.new("Chemin/vers/mon_template.odt") do |r|
+  r.add_field :user_name, 'Chuck Norris'
+end
+</code></pre>
+<p>Tout simplement ! Ça marche aussi avec les images : </p>
+<pre class="prettyprint linenums"><code>r.add_image :graphics1, "/chemin/vers/mon/image.jpg"
+</code></pre>
+<p>De nombreux exemples d’utilisation sont disponibles sur le dépôt de la gem donc bonne lecture.</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/sandrods/odf-report" onclick="window.open(this.href);return false;">odf-report sur github</a></li>
+</ul><p><small>Sur une idée de <a href="https://twitter.com/#!/eric030" onclick="window.open(this.href);return false;">@eric030</a></small></p>

@@ -1,0 +1,48 @@
+---
+layout: post
+title: Jeudi c'est Rqrcode-rails3
+date: '2012-05-10T11:03:06+02:00'
+tags:
+- web app
+tumblr_url: http://www.bonjourgem.com/post/22771960003/jeudi-cest-rqrcode-rails3
+permalink: post/22771960003/jeudi-cest-rqrcode-rails3
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m3ss0xMTVp1r58g99.jpg"></p>
+<h2>gem install rqrcode-rails3</h2>
+<p><strong>Des QR codes pour vos applications</strong></p>
+<p>Aujourd’hui une gem sympathique pour faciliter la génération de QR code en utilisant <a href="https://github.com/whomwah/rqrcode" onclick="window.open(this.href);return false;">rQRCode</a>, une librairie Ruby faite pour ça !</p>
+<p>Alors comment ça marche ? Quelques lignes qui permettent de générer un qrcode avec un lien vers la page :</p>
+<pre class="prettyprint linenums"><code>respond_to do |format|
+  format.html
+  format.svg { render :qrcode =&gt; request.url }
+  format.png { render :qrcode =&gt; request.url }
+end
+</code></pre>
+<p>Ensuite quelques options bien pratiques :</p>
+<ul>
+<li>
+<strong>:size</strong> Pour contrôler la taille du QR code</li>
+<li>
+<strong>:level</strong> Le niveau de correction d’erreur 
+</li>
+<li>
+<strong>:l</strong> 7% du code peut être restauré</li>
+<li>
+<strong>:m</strong> 15% du code peut être restauré</li>
+<li>
+<strong>:q</strong> 25% du code peut être restauré</li>
+<li>
+<strong>:h</strong> 30% du code peut être restauré (par défaut c’est :h)</li>
+<li>
+<strong>:offset</strong> Padding autour du QR code (10 par défaut)</li>
+<li>
+<strong>:unit</strong>  Combien de pixels par module</li>
+<li>
+<strong>:fill</strong> Couleur de fond</li>
+<li>
+<strong>:color</strong> Couleur du QR code</li>
+</ul><p>Voilà c’est tout pour aujourd’hui :)</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/samvincent/rqrcode-rails3" onclick="window.open(this.href);return false;">Rqrcode-rails3 sur github</a></li>
+</ul>

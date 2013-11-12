@@ -1,0 +1,64 @@
+---
+layout: post
+title: Dimanche c'est Cinch
+date: '2012-01-15T10:00:00+01:00'
+tags:
+- WTF
+tumblr_url: http://www.bonjourgem.com/post/15878145269/dimanche-cest-cinch
+permalink: post/15878145269/dimanche-cest-cinch
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lxshlzCdDb1r58g99.gif"></p>
+<h2>gem install cinch</h2>
+<p><strong>Le framework pour faire son bot IRC</strong></p>
+<p>Aujourd’hui c’est dimanche. C’est donc le jour de la gem utile mais pas trop. Mesdames, Messieurs, laissez-moi vous présenter Cinch, qui permet de créer votre bot pour IRC.</p>
+<p>Par exemple, répondre à une phrase donnée ou faire des requêtes Google :</p>
+<p><strong>Ruby</strong></p>
+<pre class="prettyprint linenums"><code>require 'rubygems'
+require 'cinch'
+require 'open-uri'
+require 'nokogiri'
+require 'cgi'
+
+bot = Cinch::Bot.new do
+  configure do |c|
+    c.server = "irc.freenode.org"
+    c.nick     = "Bonjourgem"
+    c.channels = ["#bonjourgem-bots"]
+  end
+
+  on :message, "mer il est fou" do |m|
+    m.reply "Mais si j'etais vous seriez vous #{m.user.nick} ?"
+  end
+  
+  on :message, /^!google (.+)/ do |m, query|
+    m.reply google(query)
+  end
+  
+  helpers do
+    def google(query)
+      url = "http://www.google.com/search?q=#{CGI.escape(query)}"
+      res = Nokogiri::HTML(open(url)).at("h3.r")
+      title = res.text
+      link = res.at('a')[:href]
+      desc = res.at("./following::div").children.first.text
+    rescue
+      "Pas de resultat"
+    else
+      CGI.unescape_html "#{title} - #{desc} (#{link})"
+    end
+  end 
+end
+
+bot.start
+</code></pre>
+<p>Voilà je vous laisse essayer ce petit bot. Demandez-lui par exemple :</p>
+<h2>!google mer il est fou ?</h2>
+<p>ou</p>
+<h2>mer il est fou</h2>
+<p>Libre à vous d’utiliser cette ressource pour créer un petit quizz ou spammer vos potes d’IRC ! </p>
+<p><strong>Quelques liens utiles :</strong></p>
+<ul class="link">
+<li><a href="https://github.com/cinchrb/cinch" title="Cinch sur github" target="_blank">Cinch sur github</a></li>
+<li><a href="http://fr.wikipedia.org/wiki/M%C3%A8me_Internet" title="Mème Internet" target="_blank">Qu’est-ce qu’un mème ?</a></li>
+<li><a href="http://www.gamekult.com/forum/topic-dois-je-acheter-la-psp-550218n.html" title="Culte" target="_blank">Mer il est fou</a></li>
+</ul>

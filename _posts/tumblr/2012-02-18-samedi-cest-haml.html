@@ -1,0 +1,38 @@
+---
+layout: post
+title: Samedi c'est Haml
+date: '2012-02-18T12:33:12+01:00'
+tags:
+- HTML
+tumblr_url: http://www.bonjourgem.com/post/17816938237/samedi-cest-haml
+permalink: post/17816938237/samedi-cest-haml
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lzja6pi7fR1r58g99.jpg"></p>
+<h2>gem install haml</h2>
+<p><strong>Mhhhh le bon jambon</strong></p>
+<p>Haml est au HTML ce que <a href="http://www.bonjourgem.com/2012/01/05/jeudi-cest-sass.html">Sass</a> est à la CSS, c’est-à-dire une solution pour générer du HTML avec une syntaxe légère, le tout parfaitement indenté.</p>
+<p>Un premier exemple pour vous mettre l’eau à la bouche : </p>
+<p><strong>HAML</strong></p>
+<pre class="prettyprint linenums"><code>!!! Strict
+</code></pre>
+<p><strong>HTML</strong></p>
+<pre class="prettyprint linenums"><code>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt; 
+</code></pre>
+<p>Et avec des morceaux de Ruby dedans cela donne :</p>
+<p><strong>Haml</strong></p>
+<pre class="prettyprint linenums"><code>#main
+  .left.column
+    #login= current_user.login
+</code></pre>
+<p><strong>HTML</strong></p>
+<pre class="prettyprint linenums"><code>&lt;div id="main"&gt;
+  &lt;div class="left column"&gt;
+    &lt;div id="login"&gt;&lt;%= current_user.login %&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Voilà c’est tout pour aujourd’hui.</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="http://haml-lang.com/" onclick="window.open(this.href);return false;">Le site officiel d’Haml</a></li>
+</ul>

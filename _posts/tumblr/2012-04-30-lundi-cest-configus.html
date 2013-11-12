@@ -1,0 +1,44 @@
+---
+layout: post
+title: Lundi c'est Configus
+date: '2012-04-30T09:36:09+02:00'
+tags:
+- utilitaire
+tumblr_url: http://www.bonjourgem.com/post/22112708960/lundi-cest-configus
+permalink: post/22112708960/lundi-cest-configus
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m3a55fACIf1r58g99.gif"></p>
+<h2>gem install configus </h2>
+<p><strong>La configuration tranquille</strong></p>
+<p>Parce que configurer une application peut être ennuyeux, un gentil <a href="https://github.com/kaize" onclick="window.open(this.href);return false;">russe</a> à créé Configus. Cette gem permet d’avoir des configurations qui ressemblent à ceci : </p>
+<pre class="prettyprint linenums"><code>Configus.build Rails.env do
+  env :production do
+    website_url 'http://example.com'
+    email do
+      pop do
+        address 'pop.example.com'
+        port    110
+      end
+      smtp do
+        address 'smtp.example.com'
+        port    25
+      end
+    end
+  end
+
+  env :development, :parent =&gt; :production do
+    website_url 'http://text.example.com'
+    email do
+      smtp do
+        address 'smpt.text.example.com'
+      end
+    end
+  end
+end
+</code></pre>
+<p>Le tout se place dans un initializer.</p>
+<p>C’est tout pour ce début de semaine :)</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/kaize/configus" onclick="window.open(this.href);return false;">Configus sur github</a></li>
+</ul>

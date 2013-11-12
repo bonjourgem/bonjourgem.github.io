@@ -1,0 +1,30 @@
+---
+layout: post
+title: Dimanche c'est Barby
+date: '2012-03-18T16:59:10+01:00'
+tags:
+- WTF
+tumblr_url: http://www.bonjourgem.com/post/19515968088/dimanche-cest-barby
+permalink: post/19515968088/dimanche-cest-barby
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m137znxcVO1r58g99.jpg"></p>
+<h2>gem install barby</h2>
+<p><strong>Barcodes for Ruby</strong></p>
+<p>Aujourd’hui une gem qui n’est pas inutile. En revanche je ne sais pas quand vous pourrez en avoir l’utilité, peut-être pour créer une étiqueteuse open-source pour le supermarché du coin :)</p>
+<p>Mais bon, un petit exemple n’a jamais tué personne, et vous brûlez sûrement d’impatience de générer votre premier code-barres. Donc voici : </p>
+<pre class="prettyprint linenums"><code>require 'barby'
+require 'barby/barcode/code_128'
+require 'barby/outputter/png_outputter'
+
+barcode = Barby::Code128B.new('Youhou un super code-barres')
+File.open('code128b.png', 'w'){|f|
+  f.write barcode.to_png(:height =&gt; 20, :margin =&gt; 5)
+}
+</code></pre>
+<p>Et voilà un beau code 128 de type B ! </p>
+<img src="/tumblr_files/tumblr_m136dnpoJC1r58g99.png"><p>Drôlement joli, non ?</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/toretore/barby" onclick="window.open(this.href);return false;">Barby sur github</a></li>
+<li><a href="http://toretore.eu/barby/" onclick="window.open(this.href);return false;">Site officiel</a></li>
+</ul><p><small>Sur une idée de <a href="https://twitter.com/#!/CamilleRoux" onclick="window.open(this.href);return false;">@CamilleRoux</a></small></p>

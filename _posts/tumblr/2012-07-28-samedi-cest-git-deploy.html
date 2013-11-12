@@ -1,0 +1,31 @@
+---
+layout: post
+title: Samedi c'est git-deploy
+date: '2012-07-28T13:04:21+02:00'
+tags:
+- Déploiement et hébergement
+tumblr_url: http://www.bonjourgem.com/post/28191837885/samedi-cest-git-deploy
+permalink: post/28191837885/samedi-cest-git-deploy
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m7vap0GX1c1r58g99.jpg"></p>
+<h2>gem install git-deploy</h2>
+<p><strong>Déployer un dépôt git</strong></p>
+<p>Aujourd’hui une petite gem pour déployer facilement les derniers changements sur votre dépôt git via FTP ou SSH.</p>
+<p>Pour ce faire, rien de plus simple. On commence par placer un <strong>deploy.yml</strong> à la racine du dépôt :</p>
+<pre class="prettyprint linenums"><code>'example':
+  skip: false
+  scheme: ftp
+  user: example
+  password: password
+  host: example.com
+  port: 21
+  path: /path/to/installation
+  overwrite_if_same_revision: true
+</code></pre>
+<p>Les différents paramètres sont plutôt clairs, non ? :) Pour lancer le déploiement, taper simplement : </p>
+<h2>git deploy</h2>
+<p>Voilà c’est tout pour aujourd’hui.</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/aizatto/git-deploy" onclick="window.open(this.href);return false;">git-deploy sur github</a></li>
+</ul>

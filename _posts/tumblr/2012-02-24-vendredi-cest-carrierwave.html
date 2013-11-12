@@ -1,0 +1,29 @@
+---
+layout: post
+title: Vendredi c'est CarrierWave
+date: '2012-02-24T16:35:42+01:00'
+tags: 
+tumblr_url: http://www.bonjourgem.com/post/18190144194/vendredi-cest-carrierwave
+permalink: post/18190144194/vendredi-cest-carrierwave
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lzwlfapJlr1r58g99.jpg"></p>
+<h2>gem install carrierwave</h2>
+<p><strong>Une autre solution pour faire de l’upload</strong></p> 
+<p>Il y a quelques temps je vous ai présenté <a href="http://www.bonjourgem.com/2012/01/30/lundi-cest-paperclip.html">Paperclip</a>, une solution simple et efficace mais pas forcément très DRY. Donc on dit bonjour à CarrierWave !</p>
+<p>Une fois que la gem est en place, il faut lancer une petite commande :</p>
+<h2>rails generate uploader Image</h2>
+<p>Ce qui donnera naissance à une classe qui permet de stocker et de retrouver vos fichiers comme ceci :</p>
+<pre class="prettyprint linenums"><code>uploader =ImageUploader.new
+# on stocke notre fichier
+uploader.store!(my_file)
+# on retrouve le fichier
+uploader.retrieve_from_store!('my_file.png')
+</code></pre>
+<p>Il est aussi possible de lier les fichiers à des models, avec cette ligne :</p>
+<pre class="prettyprint linenums"><code>mount_uploader :image, ImageUploader
+</code></pre>
+<p><strong>Pour la suite, les liens utiles :</strong></p>
+<ul class="link">
+<li><a href="https://github.com/jnicklas/carrierwave" onclick="window.open(this.href);return false;">CarrierWave sur github</a></li>
+<li><a href="http://railscasts.com/episodes/253-carrierwave-file-uploads" onclick="window.open(this.href);return false;">Railscast</a></li>
+</ul>

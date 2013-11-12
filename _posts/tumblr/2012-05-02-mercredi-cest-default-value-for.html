@@ -1,0 +1,29 @@
+---
+layout: post
+title: Mercredi c'est default_value_for
+date: '2012-05-02T11:53:20+02:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/22248806708/mercredi-cest-default-value-for
+permalink: post/22248806708/mercredi-cest-default-value-for
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m3e2zsU3vF1r58g99.jpg"></p>
+<h2>gem install default_value_for</h2>
+<p><strong>Pour définir des valeurs par défaut</strong></p>
+<p>Voici donc une petite gem qui sert à définir des valeurs par défaut pour vos models ActiveRecord. Mais on peut déjà les définir via les migrations non ? Avec un truc dans le genre :</p>
+<pre class="prettyprint linenums"><code>create_table :users do |t|
+  t.string    :username,  :null =&gt; false, :default =&gt; 'default username'
+  t.integer   :age,       :null =&gt; false, :default =&gt; 20
+end
+</code></pre>
+<p>Ouais mais comment il fait le monsieur pour changer sa valeur par défaut facilement ? Ou mettre une valeur par défaut pour colonne sérialisée ? Et bien dans ces cas-là, on peut utiliser default_value_for. Cela donne ce genre de code : </p>
+<pre class="prettyprint linenums"><code>class User &lt; ActiveRecord::Base
+  serialize :color
+  default_value_for :color, [255, 0, 0]
+end
+</code></pre>
+<p>Voilà c’est tout pour aujourd’hui, je vous laisse vous débrouiller avec la documentation.</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/FooBarWidget/default_value_for" onclick="window.open(this.href);return false;">default_value_for sur github</a></li>
+</ul>

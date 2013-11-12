@@ -1,0 +1,45 @@
+---
+layout: post
+title: Mercredi c'est Active Record
+date: '2012-01-11T10:00:00+01:00'
+tags:
+- Base de Données
+tumblr_url: http://www.bonjourgem.com/post/15664911220/mercredi-cest-active-record
+permalink: post/15664911220/mercredi-cest-active-record
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lxlo7iiQI41r58g99.jpg"></p>
+<h2>gem install activerecord</h2>
+<p><strong>La Base de Données tranquille</strong></p>
+<p>J’ai récemment eu besoin d’interagir avec une Base de Données sans me soucier de son format. J’ai donc pensé à Active Record.</p>
+<p>Active Record fait partie des gems que vous connaissez si vous utilisez Ruby on Rails. Dans un script Ruby on peut procéder comme ceci :</p>
+<p><strong>Ruby</strong> </p>
+<pre class="prettyprint linenums"><code>require 'rubygems'
+require 'active_record'
+require 'yaml'
+require 'awesome_print'
+ 
+# soit il y a un argument soit c'est "production" qui est pris en compte 
+dataBaseEnv = ARGV[0] || 'production'
+# mon config.yml sera le même que celui généré par défaut dans une apply rails
+config = YAML::load(IO.read('config.yml'))
+ 
+class Banana &lt; ActiveRecord::Base
+  set_table_name :bananas
+end
+ 
+# on établit la connexion en fonction de l'environnement choisi
+ActiveRecord::Base.establish_connection(config[dataBaseEnv])
+ap Banana.find(:all)
+</code></pre>
+<p>Ce petit script nous retournera donc toutes les entrées de la table <strong>bananas</strong>. Et il marchera sans se soucier du type de la Base de Données, pour peu que la gem adéquate soit installée, par exemple <a href="http://rubygems.org/gems/sqlite3-ruby" title="Gem sqlite3" target="_blank">sqlite3</a> ou <a href="http://rubygems.org/gems/mysql2" title="Gem mysql2" target="_blank">mysql2</a>.</p>
+<p>De plus, vous pouvez choisir l’environnement de votre Base de Données en ajoutant un argument au lancement du script :</p>
+<h2>ruby banana.rb developpement </h2>
+<p>ou</p> 
+<h2>ruby banana.rb production </h2>
+<p>etc.</p>
+<p><strong>Voilà, il ne vous reste plus qu’à suivre les liens utiles :</strong></p>
+<ul class="link">
+<li><a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html" title="Documentation officielle" target="_blank">Documentation officielle</a></li>
+<li><a href="http://guides.rubyonrails.org/getting_started.html#configuring-a-database" title="structure du .yml" target="_blank">Structure du .yml</a></li>
+<li><a href="http://snippets.dzone.com/posts/show/2263" title="DRY .yml" target="_blank">Un .yml DRY</a></li>
+</ul>

@@ -1,0 +1,23 @@
+---
+layout: post
+title: Vendredi c'est God
+date: '2012-01-27T10:00:00+01:00'
+tags:
+- Maintenance et monitoring
+tumblr_url: http://www.bonjourgem.com/post/16571670324/vendredi-cest-god
+permalink: post/16571670324/vendredi-cest-god
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lyg524q8W41r58g99.gif"></p>
+<h2>gem install god</h2>
+<p><strong>I’ve got the power!</strong></p>
+<p>Aujourd’hui dites bonjour à une gem de monitoring serveur. Pas de YAML pour la configuration. Ici tout est en Ruby et c’est lisible. Jugez plutôt :</p>
+<p><strong>Ruby</strong></p>
+<pre class="prettyprint linenums"><code>God.watch do |w|
+  w.name = "simple"
+  w.start = "ruby /full/path/to/simple.rb"
+  w.keepalive
+end
+</code></pre>
+<p>Nous avons ici un nom unique pour identifier notre watcher. La commande a lancé, la méthode keepalive pour que le process reste actif en en faisant un démon qui sera loggé par God.</p>
+<p><strong>Envie d’en savoir plus ? Le lien utile :</strong></p>
+<ul class="link"><li><a href="http://godrb.com/" title="God site officiel" target="_blank">God site officiel</a></li></ul>

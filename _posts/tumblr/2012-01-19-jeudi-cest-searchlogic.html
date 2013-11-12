@@ -1,0 +1,32 @@
+---
+layout: post
+title: Jeudi c'est Searchlogic
+date: '2012-01-19T10:00:00+01:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/16109256798/jeudi-cest-searchlogic
+permalink: post/16109256798/jeudi-cest-searchlogic
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_ly1fasP6Nw1r58g99.jpg"></p>
+<h2>gem install searchlogic</h2>
+<p><strong>La recherche c’était mon idée !</strong></p>
+<p>Searchlogic ou comment mettre en place un moteur de recherche dans son application Rails sans se poser de questions (enfin un minimum quand même !).</p>
+<p><a href="https://github.com/railsdog/" title="Railsdog" target="_blank">Railsdog</a> a produit un fork de la gem compatible 3.0.x. Pour l’utiliser, mettez simplement dans votre Gemfile :</p>
+<h2>gem ‘searchlogic’, :git =&gt; ‘git://github.com/railsdog/searchlogic.git’</h2>
+<p>Parlons moins, codons plus :</p>
+<p><strong>Model Banane (oui j’aime les bananes)</strong></p>
+<pre class="prettyprint linenums"><code>Banane(id: integer, bananame: string)
+</code></pre>
+<p>Et je veux trouver toutes mes bananes dont le bananame (oui je donne des noms à des fruits) commence par “meu” :</p>
+<p><strong>Ruby</strong></p>
+<pre class="prettyprint linenums"><code>Banane.bananame_begins_with("meu")
+</code></pre>
+<p>Pratique non ? Et puis si mes bananes on n bananios (oui le petit de la banane c’est le bananio) et que je veux les récupérer si leur âge est inférieur à 3 alors :</p>
+<p><strong>Ruby</strong></p>
+<pre class="prettyprint linenums"><code># ou Banane.bananios_age_lt(3) pour les pressés :)
+Banane.bananios_age_less_than(3)
+</code></pre>
+<p>Ce n’est qu’un petit exemple des possibilités offertes par Searchlogic. </p><p><strong>Le reste je vous laisse le découvrir dans les liens utiles :</strong></p>
+<ul class="link">
+<li><a href="https://github.com/railsdog/searchlogic" title="Searchlogic sur github" target="_blank">Searchlogic sur github</a></li>
+</ul>

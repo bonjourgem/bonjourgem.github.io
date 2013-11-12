@@ -1,0 +1,42 @@
+---
+layout: post
+title: Vendredi c'est fog
+date: '2012-04-20T16:17:30+02:00'
+tags:
+- Service et interaction
+tumblr_url: http://www.bonjourgem.com/post/21435395847/vendredi-cest-fog
+permalink: post/21435395847/vendredi-cest-fog
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m2s7bh2j8l1r58g99.jpg"></p>
+<h2>gem install fog</h2>
+<p><strong>La tête dans les nuages</strong></p>
+<p>Dites bonjour à fog, la librairie Ruby pour le cloud computing, qui utilise des services comme Amazon Elastic Compute Cloud.</p>
+<p>Un petit exemple issu de la documentation : </p>
+<pre class="prettyprint linenums"><code>require 'fog'
+
+compute = Fog::Compute.new(
+  :provider           =&gt; 'Rackspace',
+  :rackspace_api_key  =&gt; key,
+  :rackspace_username =&gt; username
+)
+
+# on démarre un serveur gentoo 
+server = compute.servers.create(:flavor_id =&gt; 1, :image_id =&gt; 3, :name =&gt; 'my_server')
+server.wait_for { ready? } # on donne au serveur le temps de démarrer 
+
+# on fait des trucs avec 
+
+server.destroy # on détruit le serveur
+</code></pre>
+<p>La gem propose de très nombreuses fonctionnalités comme :</p>
+<ul>
+<li>Stockage de données</li>
+<li>Gestion de DNS (avec <a href="https://www.zerigo.com" onclick="window.open(this.href);return false;">Zerigo</a> par exemple)
+</li>
+<li>Gestion de CDN</li>
+</ul><p>Voilà donc un beau jouet pour vous occuper.</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/fog/fog" onclick="window.open(this.href);return false;">fog sur github</a></li>
+<li><a href="http://fog.io/1.3.1/" onclick="window.open(this.href);return false;">Site officiel de fog</a></li>
+</ul>

@@ -1,0 +1,27 @@
+---
+layout: post
+title: Samedi c'est ARel
+date: '2012-04-21T13:22:44+02:00'
+tags:
+- base de données
+tumblr_url: http://www.bonjourgem.com/post/21490295269/samedi-cest-arel
+permalink: post/21490295269/samedi-cest-arel
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m2ttowKYWF1r58g99.jpg"></p>
+<h2>gem install arel</h2>
+<p><strong>Moi je génère mes requêtes SQL</strong></p>
+<p>Aujourd’hui on dit bonjour à ARel, un outil qui est souvent utilisé par d’autres gems. Mais pourquoi ? Et bien parce qu’avec cette gem on peut générer des requêtes compliquées sans difficulté, surtout quand il s’agit d’associations complexes.</p>
+<p>Comme un exemple vaut mieux qu’un long discours : </p>
+<pre class="prettyprint linenums"><code>users = Arel::Table.new(:users)
+users.where(users[:name].eq('amy'))
+# =&gt; SELECT * FROM users WHERE users.name = 'amy'
+</code></pre>
+<p>Bon là tout de suite comme ça, on ne voit pas forcément l’intérêt. Car ARel se veut être un framework pour construire ses propres ORM sans s’occuper de la génération des requêtes, ni de la compatibilité avec la Base de Données.</p>
+<p>C’est ce que font des gems comme <a href="https://github.com/ernie/squeel" onclick="window.open(this.href);return false;">Squeel</a></p>
+<p>C’est tout pour aujourd’hui !</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/brynary/arel" onclick="window.open(this.href);return false;">ARel sur github</a></li>
+<li><a href="http://railscasts.com/episodes/215-advanced-queries-in-rails-3?view=asciicast" onclick="window.open(this.href);return false;">Railscast</a></li>
+<li><a href="http://www.slideshare.net/tenderlove/zomg-why-is-this-code-so-slow" onclick="window.open(this.href);return false;">Quelques slides</a></li>
+</ul>

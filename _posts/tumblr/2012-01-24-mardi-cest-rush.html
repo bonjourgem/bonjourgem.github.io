@@ -1,0 +1,22 @@
+---
+layout: post
+title: Mardi c'est Rush
+date: '2012-01-24T19:57:00+01:00'
+tags:
+- Utilitaire
+tumblr_url: http://www.bonjourgem.com/post/16416547512/mardi-cest-rush
+permalink: post/16416547512/mardi-cest-rush
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lybfykytDp1r58g99.gif"></p>
+<h2>gem install rush</h2>
+<p><strong>Le shell Unix mais Ruby </strong></p>
+<p>Vous <a href="http://www.youtube.com/watch?v=qObzgUfCl28&amp;ob=av2e" title="Écouter Ruby" target="_blank">écoutez</a> Ruby, vous <a href="http://www.touteslesbieres.fr/bibliotheque/leffe-ruby.jpg" title="Boire Ruby" target="_blank">buvez</a> Ruby ? Alors il vous faut un shell Ruby ! </p>
+<p>Pour réaliser ce petit miracle : il y a Rush ! Cette gem vous donnera accès à des commandes shell avec une syntaxe rubyesque.</p>
+<p>Un petit exemple issu de la documentation :</p>
+<p><strong>Shell normal</strong></p>
+<h2>kill `ps aux | grep mongrel_rails | grep -v grep | cut -c 10-20`</h2>
+<p><strong>Avec Rush</strong></p>
+<h2>processes.filter(:cmdline =&gt; /mongrel_rails/).kill</h2>
+<p>Et hop, on tue le process mongrel récalcitrant et le tout avec style.</p>
+<p>Envie d’en savoir plus et de commencer à utiliser Rush ?<strong> Le lien utile :</strong></p>
+<ul class="link"><li><a href="http://rush.heroku.com/" title="Rush le site officiel" target="_blank">Site officiel de Rush</a></li></ul>

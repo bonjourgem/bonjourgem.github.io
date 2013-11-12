@@ -1,0 +1,44 @@
+---
+layout: post
+title: Vendredi c'est Jackpot
+date: '2012-04-13T16:44:09+02:00'
+tags:
+- web app
+tumblr_url: http://www.bonjourgem.com/post/21024743097/vendredi-cest-jackpot
+permalink: post/21024743097/vendredi-cest-jackpot
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m2f81ivPDQ1r58g99.jpg"></p>
+<h2>gem install jackpot</h2>
+<p><strong>Las Vegas Rails app</strong></p>
+<p>Aujourd’hui une gem pour gagner plein d’argent ! Enfin, pour implémenter une solution de paiement sur vos applications Rails plutôt :)</p>
+<p>Cette gem utilise <a href="https://github.com/Shopify/active_merchant" onclick="window.open(this.href);return false;">Active Merchant</a> qui supporte nativement trois plateformes de paiement françaises : </p>
+<ul>
+<li><a href="http://www.certodirect.com/documentation/payment-system-documentation.html" onclick="window.open(this.href);return false;">CertoDirect</a></li>
+<li><a href="http://www.ogone.com" onclick="window.open(this.href);return false;">Ogone DirectLink</a></li>
+<li><a href="http://www1.paybox.com" onclick="window.open(this.href);return false;">PayBox Direct</a></li>
+</ul><p>Une fois la solution de paiement choisie, on configure en créant un initializer : </p>
+<pre class="prettyprint linenums"><code>Jackpot.configure do |c|
+  if Rails.env.production? 
+    c.gateway_type      :braintree
+    c.gateway_login     ENV['JACKPOT_LOGIN']
+    c.gateway_password  ENV['JACKPOT_PASSWORD']
+    c.gateway_mode      :production
+  else
+    c.gateway_type      :braintree
+    c.gateway_login     'demo'
+    c.gateway_password  'password'
+    c.gateway_mode      :test
+  end 
+  c.default_from      'dont-reply@mycompany.com'
+end 
+</code></pre>
+<p>Puis il faut aussi ajouter les migrations qui vont bien :</p>
+<h2>rake jackpot:install:migrations</h2>
+<p>Et on ajoute Jackpot à nos routes : </p>
+<pre class="prettyprint linenums"><code>mount Jackpot::Engine =&gt; "/billing"
+</code></pre>
+<p>Bon, rien pour Atos, mais peut-être un autre jour :)</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/pellegrino/jackpot" onclick="window.open(this.href);return false;">Jackpot sur github</a></li>
+</ul>

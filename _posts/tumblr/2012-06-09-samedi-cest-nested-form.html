@@ -1,0 +1,36 @@
+---
+layout: post
+title: Samedi c'est Nested Form
+date: '2012-06-09T10:33:14+02:00'
+tags:
+- HTML
+tumblr_url: http://www.bonjourgem.com/post/24736008986/samedi-cest-nested-form
+permalink: post/24736008986/samedi-cest-nested-form
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m5c5j3FVqZ1r58g99.gif"></p>
+<h2>gem install nested_form</h2>
+<p><strong>Des formulaires pour vos nested models</strong></p>
+<p>Aujourd’hui une gem bien pratique lorsque vous utilisez ceci :</p>
+<pre class="prettyprint linenums"><code>class Project &lt; ActiveRecord::Base
+has_many :tasks
+accepts_nested_attributes_for :tasks
+end
+</code></pre>
+<p>Ce qui permet de manipuler des tâches tout en manipulant un projet, et cela, encore plus simplement avec cette gem : </p>
+<pre class="prettyprint linenums"><code>&lt;%= nested_form_for @project do |f| %&gt;
+  &lt;%= f.fields_for :tasks do |task_form| %&gt;
+    &lt;%= task_form.text_field :name %&gt;
+    &lt;%= task_form.link_to_remove "Remove this task" %&gt;
+  &lt;% end %&gt;
+  &lt;%= f.link_to_add "Add a task", :tasks %&gt;
+&lt;% end %&gt;
+</code></pre>
+<p><strong>link_to_add</strong> et <strong>link_to_remove</strong> permettent d’ajouter ou de supprimer un nested model.</p>
+<p>Voilà c’est tout pour aujourd’hui ! </p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/ryanb/nested_form" onclick="window.open(this.href);return false;">Nested Form sur github</a></li>
+</ul><p><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/systh0">@systh0</a>
+</small></p>

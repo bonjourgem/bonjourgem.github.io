@@ -1,0 +1,42 @@
+---
+layout: post
+title: Dimanche c'est I Told You it Was Private
+date: '2012-05-27T12:18:29+02:00'
+tags:
+- WTF
+tumblr_url: http://www.bonjourgem.com/post/23854703005/dimanche-cest-i-told-you-it-was-private
+permalink: post/23854703005/dimanche-cest-i-told-you-it-was-private
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m4oexce3xO1r58g99.jpg"></p>
+<h2>gem install i-told-you-it-was-private</h2>
+<p><strong>C’est mon code à moi nanananèreuh</strong></p>
+<p>Aujourd’hui c’est dimanche et comme tous les dimanches voici une gem d’une utilité douteuse :)</p>
+<p>Cette petite coquine n’a qu’une seule utilité : on reprend votre code, mais entre-temps vous avez enlevé quelques méthodes ? Ou vous avez juste envie de rigoler ? Alors ça marche comme ceci : </p>
+<pre class="prettyprint linenums"><code>require 'rubygems'
+require 'i-told-you-it-was-private'
+
+class BonjourGem
+  i_told_you_it_was_private :gone_method
+	
+    def another_method
+      puts 'uhuh'
+    end
+end
+
+test = BonjourGem.new
+test.another_method
+# mais si on essaye 
+test.gone_method
+# il se passe quelque chose de merveilleux :)
+</code></pre>
+<p>Une surprise vous attend si vous essayez d’utiliser <strong>gone_method</strong>.</p>
+<p>Bon dimanche :)</p>
+<p><strong>Le lien inutile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/fxn/i-told-you-it-was-private" onclick="window.open(this.href);return false;">I Told You it Was Private sur github</a></li>
+<li>
+</li>
+</ul><p><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/remi">@remi</a>
+</small></p>

@@ -1,0 +1,48 @@
+---
+layout: post
+title: Mardi c'est Jekyll
+date: '2012-04-24T21:46:57+02:00'
+tags:
+- web app
+tumblr_url: http://www.bonjourgem.com/post/21728923967/mardi-cest-jekyll
+permalink: post/21728923967/mardi-cest-jekyll
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m301ejIl6O1r58g99.jpg"></p>
+<h2>gem install jekyll</h2>
+<p><strong>Le blog rapide</strong></p>
+<p>Aujourd’hui un système de blog statique utilisant Markdown ou Textile pour la rédaction de vos articles.</p>
+<p>Pour plus de facilité on peut partir du Jekyll-Bootstrap :</p>
+<h2>git clone <a href="https://github.com/plusjade/jekyll-bootstrap.git">https://github.com/plusjade/jekyll-bootstrap.git</a>
+</h2>
+<p>Sinon il faut une structure dans ce goût-là : </p>
+<pre class="prettyprint linenums"><code>.
+|-- _config.yml
+|-- _includes
+|-- _layouts
+|   |-- default.html
+|   `-- post.html
+|-- _posts
+|   |-- 2007-10-29-why-every-programmer-should-play-nethack.textile
+|   `-- 2009-04-26-barcamp-boston-4-roundup.textile
+|-- _site
+`-- index.html
+</code></pre>
+<p><strong>config.yml</strong></p>
+<p>Contient la configuration de votre application Jekyll, par exemple le port sur lequel tourne l’application.</p>
+<p><strong>Dossier _includes</strong></p>
+<p>Contient les partials que vous pouvez réutiliser dans votre application.</p>
+<p><strong>Dossier _layouts</strong></p>
+<p>Vous y trouverez le corps de vos posts.</p>
+<p><strong>Dossier _posts</strong></p>
+<p>Vos posts en Markdown ou Textile.</p>
+<p><strong>Dossier _site</strong></p>
+<p>Votre blog prêt à l’emploi.</p>
+<p>Une fois que votre arborescence est prête, une petite commande pour voir le résultat : </p>
+<h2>jekyll —server</h2>
+<p>Vous voilà prêt à l’action !</p>
+<p><strong>Quelques liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/mojombo/jekyll" onclick="window.open(this.href);return false;">Jekyll sur github</a></li>
+<li><a href="http://jekyllbootstrap.com/" onclick="window.open(this.href);return false;">Jekyll-Bootstrap</a></li>
+<li><a href="http://paulstamatiou.com/how-to-wordpress-to-jekyll" onclick="window.open(this.href);return false;">Wordpress to Jekyll</a></li>
+</ul>

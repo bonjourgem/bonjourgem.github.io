@@ -1,0 +1,33 @@
+---
+layout: post
+title: Mardi c'est Active Sanity
+date: '2012-05-15T12:15:02+02:00'
+tags:
+- base de données
+tumblr_url: http://www.bonjourgem.com/post/23097374942/mardi-cest-active-sanity
+permalink: post/23097374942/mardi-cest-active-sanity
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m3z3s6diZt1r58g99.gif"></p>
+<h2>gem install active_sanity</h2>
+<p><strong>Validez vos Bases de Données !</strong></p>
+<p>La Base de Données de votre dernière application est-elle propre et saine ? Voici une petite gem qui vous le dira :)</p>
+<p>Comme d’habitude, après l’avoir ajoutée à votre Gemfile, une petite commande : </p>
+<h2>rails generate active_sanity</h2>
+<p>Ensuite on effectue les migrations :</p>
+<h2>rake db:migrate</h2>
+<p>Voilà maintenant vous allez voir si votre Base de Données ne s’est pas laissée remplir avec de mauvaises données, en passant par les validateurs d’ActiveRecord. Pour cela une commande : </p>
+<h2>rake db:check_sanity</h2>
+<p>Et là toutes les saletés de votre Base de Données seront sauvegardées dans la table <strong>invalid_records</strong> et seront aussi affichées dans votre terminal comme ceci : </p>
+<pre class="prettyprint linenums"><code>model       | id  | errors
+User        |   1 | { "email" =&gt; ["is invalid"] }
+Flight      | 123 | { "arrival_time" =&gt; ["can't be nil"], "departure_time" =&gt; ["is invalid"] }
+Flight      | 323 | { "arrival_time" =&gt; ["can't be nil"] }
+</code></pre>
+<p>Amusez-vous bien :)</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/versapay/active_sanity" onclick="window.open(this.href);return false;">Active Sanity sur github</a></li>
+</ul><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/pcreux">@pcreux</a>
+</small>

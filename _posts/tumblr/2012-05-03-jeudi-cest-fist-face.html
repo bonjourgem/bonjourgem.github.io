@@ -1,0 +1,54 @@
+---
+layout: post
+title: Jeudi c'est Fist Face
+date: '2012-05-03T14:26:36+02:00'
+tags:
+- Css
+tumblr_url: http://www.bonjourgem.com/post/22317359625/jeudi-cest-fist-face
+permalink: post/22317359625/jeudi-cest-fist-face
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m3g4rdaz6B1r58g99.jpg"></p>
+<h2>gem install fistface</h2>
+<p><strong>DIY @font-face web service</strong></p>
+<p>Vous avez un super site qui utilise des @font-face. Mais vous voulez que la police ne soit pas chargée à chaque rafraîchissement et aussi que la bonne police soit renvoyée en fonction du navigateur. Alors voilà une solution possible :)</p>
+<p>Tout commence comme ceci : créez un dossier, placez-vous dedans et créez un Gemfile :</p>
+<pre class="prettyprint linenums"><code>source "http://rubygems.org"
+gem "sinatra",  "~&gt; 1.1"
+gem "fistface", "~&gt; 1.0"
+</code></pre>
+<p>Ensuite créer un fichier <strong>config.ru</strong> :</p>
+<pre class="prettyprint linenums"><code>require 'rubygems'
+require 'bundler'
+Bundler.require
+run FistFace
+</code></pre>
+<p>Puis quelques commandes à balancer : </p>
+<h2>bundle install</h2>
+<h2>git init</h2>
+<h2>git add .</h2>
+<h2>git commit -m “Creating a Fist Face instance”</h2>
+<h2>heroku create</h2>
+<h2>heroku config:add S3_URL=https://your-bucket.s3.amazonaws.com</h2>
+<p>L’url S3 correspond à l’endroit où seront stockées vos fonts.</p>
+<p>Pour le rangement des polices dans votre bucket, cela doit se passer comme ceci : </p>
+<pre class="prettyprint linenums"><code>font-name.css
+font-name/
+  font-name.eot
+  font-name.otf
+  font-name.svg
+  font-name.ttf
+  font-name.woff
+</code></pre>
+<p>Le fichier CSS <strong>font-name.css</strong> (un par police) sera dans ce goût-là : </p>
+<pre class="prettyprint linenums"><code>@font-face {
+  font-family: 'Chunk';
+  font-weight: normal;
+  font-style: normal;
+  src: local('☺'), url('http://replace-me.com/chunk/chunk.ttf') format('truetype');
+}
+</code></pre>
+<p>Voilà, il ne reste plus qu’à appeler ces feuilles de style dans votre site :)</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/thoughtbot/fistface" onclick="window.open(this.href);return false;">Fist Face sur github</a></li>
+</ul>

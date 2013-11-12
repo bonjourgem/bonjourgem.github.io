@@ -1,0 +1,40 @@
+---
+layout: post
+title: Mardi c'est YAML Record
+date: '2012-06-19T11:55:38+02:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/25426499965/mardi-cest-yaml-record
+permalink: post/25426499965/mardi-cest-yaml-record
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m5uz93MZSf1r58g99.jpg"></p>
+<h2>gem install yaml_record</h2>
+<p><strong>Des données stockées dans un fichier YAML</strong></p>
+<p>Besoin de stocker quelques données pour un script ? Et bien voici YAML Record, une solution utilisant ActiveModel et un fichier YAML :)</p>
+<p>Un petit exemple : </p>
+<pre class="prettyprint linenums"><code>class Post &lt; YamlRecord::Base
+  # Les attributs de notre model 
+  properties :title, :body, :user_id
+
+  # Là où on stocke nos données
+  adapter :local # par défaut ou alors on peut utiliser Redis
+
+  # On indique le chemin du fichier 
+  source Rails.root.join("config/posts")
+end
+</code></pre>
+<p>Une fois que c’est fait, si vous avez l’habitude d’ActiveRecord, c’est la même chose : </p>
+<pre class="prettyprint linenums"><code>Post.all
+# =&gt; [@p1, @p2]
+Post.find("a1b2")
+# =&gt; @p1
+# etc …
+</code></pre>
+<p>Voilà c’est tout pour aujourd’hui :) </p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/Nico-Taing/yaml_record" onclick="window.open(this.href);return false;">YAML Record sur github</a></li>
+</ul><p><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/Mayeu">@Mayeu</a>
+</small></p>

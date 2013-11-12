@@ -1,0 +1,37 @@
+---
+layout: post
+title: Mardi c'est inherited_resources
+date: '2012-06-05T10:33:41+02:00'
+tags:
+- Plugin Rails
+tumblr_url: http://www.bonjourgem.com/post/24461826543/mardi-cest-inherited-resources
+permalink: post/24461826543/mardi-cest-inherited-resources
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m54shnzzHT1r58g99.gif"></p>
+<h2>gem install inherited_resources</h2>
+<p><strong>Pour des Controllers DRY !</strong></p>
+<p>Aujourd’hui une gem bien pratique qui vous permettra d’avoir un code un peu plus DRY. Pour ce faire il suffit de changer l’héritage :</p>
+<pre class="prettyprint linenums"><code># on remplace
+class ProjectsController &lt; ApplicationController
+end
+
+# par 
+class ProjectsController &lt; InheritedResources::Base
+end
+</code></pre>
+<p>Vous pouvez aussi faire comme ceci : </p>
+<pre class="prettyprint linenums"><code>class ProjectsController &lt; ApplicationController
+end
+</code></pre>
+<p>Il est aussi possible de surcharger les méthodes par défaut si besoin est : </p>
+<pre class="prettyprint linenums"><code>def create
+  @project = Project.new(params[:project])
+  @project.something_special!
+  create!
+end
+</code></pre>
+<p>Voilà c’est tout pour aujourd’hui !</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/josevalim/inherited_resources" onclick="window.open(this.href);return false;">inherited_resources sur github</a></li>
+</ul>

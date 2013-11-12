@@ -1,0 +1,51 @@
+---
+layout: post
+title: Samedi c'est Oj
+date: '2012-05-05T13:58:18+02:00'
+tags:
+- Parseur
+tumblr_url: http://www.bonjourgem.com/post/22440725141/samedi-cest-oj
+permalink: post/22440725141/samedi-cest-oj
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m3jszs1QTt1r58g99.jpg"></p>
+<h2>gem install oj</h2>
+<p><strong>Fast JSON parser</strong></p>
+<p>On a toujours besoin d’un outil pour parser du JSON. En voilà un dopé aux hormones de poney ! Quelques chiffres :</p>
+<pre class="prettyprint linenums"><code>Parse Performance
+Oj::Doc.parse 100000 times in 0.164 seconds or 609893.696 parse/sec.
+Yajl.parse 100000 times in 3.168 seconds or 31569.902 parse/sec.
+JSON::Ext.parse 100000 times in 3.282 seconds or 30464.826 parse/sec.
+
+Summary:
+   System  time (secs)  rate (ops/sec)
+---------  -----------  --------------
+  Oj::Doc       0.164      609893.696
+     Yajl       3.168       31569.902
+JSON::Ext       3.282       30464.826
+</code></pre>
+<p>Drôlement rapide le bousin ! Maintenant un petit exemple de code issu de la documentation : </p>
+<pre class="prettyprint linenums"><code>require 'oj'
+
+h = { 'one' =&gt; 1, 'array' =&gt; [ true, false ] }
+json = Oj.dump(h)
+
+# json =
+# {
+#   "one":1,
+#   "array":[
+#     true,
+#     false
+#   ]
+# }
+
+h2 = Oj.load(json)
+puts "Same? #{h == h2}"
+# true
+</code></pre>
+<p>La méthode <strong>dump()</strong> sert à convertir vos objets / tableaux en JSON et <strong>load()</strong> sert à lire :)</p>
+<p>Voilà c’est tout pour aujourd’hui !</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/ohler55/oj" onclick="window.open(this.href);return false;">Oj sur github</a></li>
+<li><a href="http://www.ohler.com/dev/need_for_speed/need_for_speed.html" onclick="window.open(this.href);return false;">Les origines d’Oj</a></li>
+</ul>

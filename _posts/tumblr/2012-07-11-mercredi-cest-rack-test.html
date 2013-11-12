@@ -1,0 +1,38 @@
+---
+layout: post
+title: Mercredi c'est Rack::Test
+date: '2012-07-11T10:33:58+02:00'
+tags:
+- test
+tumblr_url: http://www.bonjourgem.com/post/26968181550/mercredi-cest-rack-test
+permalink: post/26968181550/mercredi-cest-rack-test
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m6zm71zeNJ1r58g99.gif"></p>
+<h2>gem install rack-test</h2>
+<p><strong>Tester vos applications Rails</strong></p>
+<p>Une API simple pour tester vos applications Rake comme ceci :</p>
+<pre class="prettyprint linenums"><code>require "rack/test"
+
+class HomepageTest &lt; Test::Unit::TestCase
+  include Rack::Test::Methods
+
+  def app
+    MyApp.new
+  end
+
+  def test_redirect_logged_in_users_to_dashboard
+    authorize "bryan", "secret"
+    get "/"
+    follow_redirect!
+
+    assert_equal "http://example.org/redirected", last_request.url
+    assert last_response.ok?
+  end
+
+end
+</code></pre>
+<p>Voilà voilà c’est tout pour aujourd’hui :)</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/brynary/rack-test" onclick="window.open(this.href);return false;">Rack::Test sur github</a></li>
+</ul>

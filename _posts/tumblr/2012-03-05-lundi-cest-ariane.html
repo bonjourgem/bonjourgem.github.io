@@ -1,0 +1,52 @@
+---
+layout: post
+title: Lundi c'est Ariane
+date: '2012-03-05T10:29:58+01:00'
+tags:
+- HTML
+tumblr_url: http://www.bonjourgem.com/post/18785103912/lundi-cest-ariane
+permalink: post/18785103912/lundi-cest-ariane
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m0enlmR11h1r58g99.jpg"></p>
+<h2>gem install ariane</h2>
+<p><strong>Perdu dans un labyrinthe ?</strong></p>
+<p>Aujourd’hui c’est Ariane, une gem bien pratique pour mettre en place un ** roulement de tambour ** fil d’ariane dans votre application Rails.</p>
+<p>Pour mettre en place cette gem, quelques lignes : </p>
+<pre class="prettyprint linenums"><code>class ApplicationController &lt; ActionController::Base
+  before_filter :set_ariane
+
+  protected
+
+  def set_ariane
+    ariane.add 'Home', root_path
+  end
+end
+</code></pre> 
+<p>Dans les autres controllers, on se sert l’héritage pour continuer le fil : </p>
+<pre class="prettyprint linenums"><code>class OtherController &lt; ApplicationController
+  protected
+
+  def set_ariane
+    super
+    ariane.add 'Other', other_path
+  end
+end
+</code></pre>
+<p>Puis on ajoute l’helper suivant dans notre layout :</p>
+<pre class="prettyprint linenums"><code>&lt;%= ariane.render %&gt;
+</code></pre>
+<p>Ce qui nous produira — par défaut — en sortie : </p>
+<pre class="prettyprint linenums"><code>&lt;ul class="breadcrumb"&gt;
+  &lt;li&gt;
+    &lt;a href="/"&gt;Home&lt;/a&gt;
+    &lt;span class="divider"&gt;/&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class="active"&gt;Other&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>Ariane possède plusieurs options et est compatible avec le <a href="http://twitter.github.com/bootstrap/" onclick="window.open(this.href);return false;">Twitter Bootstrap</a>, ce qui ne gâche rien.</p>
+<p><strong>En savoir plus avec les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/simonc/ariane" onclick="window.open(this.href);return false;">Ariane sur github</a></li>
+<li><a href="http://blog.happynoff.fr/" onclick="window.open(this.href);return false;">Le blog de l’auteur (FR)</a></li>
+</ul>

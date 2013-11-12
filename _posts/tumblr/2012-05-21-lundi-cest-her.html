@@ -1,0 +1,55 @@
+---
+layout: post
+title: Lundi c'est Her
+date: '2012-05-21T16:20:28+02:00'
+tags:
+- Service et interaction
+- base de données
+tumblr_url: http://www.bonjourgem.com/post/23479826285/lundi-cest-her
+permalink: post/23479826285/lundi-cest-her
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m4dm32lUSg1r58g99.gif"></p>
+<h2>gem install her</h2>
+<p><strong>ORM pour API REST</strong></p>
+<p>Her est une gem qui vous donnera un ORM fait pour construire des API. Maintenant pour le tester, quelques petits trucs à faire :</p>
+<p><strong>Ajout d’un initializer</strong></p>
+<pre class="prettyprint linenums"><code>Her::API.setup :url =&gt; "https://api.example.com" do |builder|
+  builder.use Faraday::Request::UrlEncoded
+  builder.use Her::Middleware::DefaultParseJSON
+  builder.use Faraday::Adapter::NetHttp
+end
+</code></pre>
+<p><strong>On ajoute Her aux models</strong></p>
+<pre class="prettyprint linenums"><code>class User
+  include Her::Model
+end
+</code></pre>
+<p>Vous voilà prêt à l’action ! Et vous avez accès aux url REST : </p>
+<pre class="prettyprint linenums"><code>User.all
+# GET <a href="https://api.example.com/users">https://api.example.com/users</a> et retourne un tableau d'objets user
+
+User.find(1)
+# GET <a href="https://api.example.com/users/1">https://api.example.com/users/1</a> et retourne un objet utilisateur
+
+@user = User.create(:fullname =&gt; "Tobias Fünke")
+# POST "https://api.example.com/users" avec les données et retourne un objet utilisateur
+
+@user = User.new(:fullname =&gt; "Tobias Fünke")
+@user.occupation = "actor"
+@user.save
+# POST <a href="https://api.example.com/users">https://api.example.com/users</a> avec les données et retourne un objet utilisateur
+
+@user = User.find(1)
+@user.fullname = "Lindsay Fünke"
+@user.save
+# PUT <a href="https://api.example.com/users/1">https://api.example.com/users/1</a> avec les données et retourne un objet utilisateur 
+</code></pre>
+<p>Pour la suite vous avez à votre disposition une belle documentation à consommer sans modération :)</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/remiprev/her" onclick="window.open(this.href);return false;">Her sur github</a></li>
+<li><a href="http://remiprev.github.com/her/" onclick="window.open(this.href);return false;">Site officiel</a></li>
+</ul><p><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/remi">@remi</a>
+</small></p>

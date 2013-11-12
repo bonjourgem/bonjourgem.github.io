@@ -1,0 +1,47 @@
+---
+layout: post
+title: Vendredi c'est Rakismet
+date: '2012-05-04T12:17:19+02:00'
+tags:
+- utilitaire
+tumblr_url: http://www.bonjourgem.com/post/22376283833/vendredi-cest-rakismet
+permalink: post/22376283833/vendredi-cest-rakismet
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m3hsrpVRyP1r58g99.gif"></p>
+<h2>gem install rakismet</h2>
+<p><strong>Les spams say mal !</strong></p>
+<p>Aujourd’hui une gem bien pratique qui utilise Akismet. Pour ceux qui ne connaissent pas, Akismet est un service de filtre collaboratif.</p>
+<p>Après les commandes habituelles pour installer une gem, il faut créer un initializer avec les lignes suivantes :</p>
+<pre class="prettyprint linenums"><code>config.rakismet.key = 'la clef Akismet'
+config.rakismet.url = 'http://votredomaine.fr'
+</code></pre>
+<p>Ensuite pour accéder aux méthodes de la gem dans le model concerné, on ajoute cette ligne : </p>
+<pre class="prettyprint linenums"><code>include Rakismet::Model
+</code></pre>
+<p>Ce qui vous donne accès aux méthodes suivantes : </p>
+<p><strong>spam?</strong></p>
+<p>On soumet le commentaire à Akismet qui retournera vrai ou faux.</p>
+<p><strong>ham!</strong></p>
+<p>On re-soumet un commentaire valide qui a été marqué comme spam par erreur par Akismet.</p>
+<p><strong>spam!</strong></p>
+<p>On re-soumet un commentaire qui se trouve être un spam et qu’Akismet a manqué.</p>
+<p>Par défaut Rakismet utilisera les attributs suivants dans votre model : </p> 
+<pre class="prettyprint linenums"><code>author        : "le nom envoyé avec le commentaire"
+author_url    : "le site de l'auteur du commentaire"
+author_email  : "son email"
+comment_type  : "le type de commentaire, par défaut 'comment'"
+content       : "le contenu"
+permalink     : "l'url de la page commentée"
+user_ip       : "l'adresse IP de l'auteur du commentaire"
+user_agent    : "user agent"
+referrer      : "l'url referer (note the spelling)"
+</code></pre>
+<p>Il est possible de changer les attributs qui seront utilisés comme ceci : </p>
+<pre class="prettyprint linenums"><code>rakismet_attrs :author =&gt; :commenter_name, :author_email =&gt; :commenter_email
+</code></pre>
+<p>Voilà c’est tout pour aujourd’hui :)</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/joshfrench/rakismet" onclick="window.open(this.href);return false;">Rakismet sur github</a></li>
+<li><a href="http://akismet.com/" onclick="window.open(this.href);return false;">Site officiel d’Akismet</a></li>
+</ul>

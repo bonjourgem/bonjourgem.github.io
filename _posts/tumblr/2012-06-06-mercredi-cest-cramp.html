@@ -1,0 +1,46 @@
+---
+layout: post
+title: Mercredi c'est Cramp
+date: '2012-06-06T10:52:31+02:00'
+tags:
+- Service et interaction
+tumblr_url: http://www.bonjourgem.com/post/24530322355/mercredi-cest-cramp
+permalink: post/24530322355/mercredi-cest-cramp
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m56ovuyCSq1r58g99.gif"></p>
+<h2>gem install cramp</h2>
+<p><strong>La gem pour vos apps asynchrones</strong></p>
+<p>Aujourd’hui une gem sympa pour faire des applications entièrement asynchrones. C’est construit sur la base d’<a href="http://rubyeventmachine.com/" onclick="window.open(this.href);return false;">EventMachine</a> et ça nous donne accès à des fonctionnalités sympathiques comme les WebSockets par exemple.</p>
+<p>Le code ressemble à n’importe quelle application Rack : </p>
+<pre class="prettyprint linenums"><code>require 'rubygems'
+require 'cramp'
+require 'thin'
+
+class StreamController &lt; Cramp::Action
+  periodic_timer :send_data, :every =&gt; 1
+  periodic_timer :check_limit, :every = &gt; 2
+
+  def start
+    @limit = 0
+  end
+
+  def send_data
+    render ["Hello World", "\n"]
+  end
+
+  def check_limit
+    @limit += 1
+    finish if @limit &gt; 1
+  end
+
+end
+
+Rack::Handler::Thin.run StreamController, :Port =&gt; 3000
+</code></pre>
+<p>Avec quelques petits trucs en plus, comme des timers :)</p>
+<p>Voilà maintenant il ne reste plus qu’à tester !</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/lifo/cramp" onclick="window.open(this.href);return false;">Cramp sur github</a></li>
+<li><a href="http://cramp.in/" onclick="window.open(this.href);return false;">Site officiel</a></li>
+</ul>

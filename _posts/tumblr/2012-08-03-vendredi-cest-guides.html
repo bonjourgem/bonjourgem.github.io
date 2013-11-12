@@ -1,0 +1,32 @@
+---
+layout: post
+title: Vendredi c'est Guides
+date: '2012-08-03T11:15:07+02:00'
+tags:
+- Outil pour la documentation
+tumblr_url: http://www.bonjourgem.com/post/28619896460/vendredi-cest-guides
+permalink: post/28619896460/vendredi-cest-guides
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m8644umpdr1r58g99.jpg"></p>
+<h2>gem install guides</h2>
+<p><strong>Read The Fucking Manual!</strong></p>
+<p>Aujourd’hui une gem pour générer et maintenir de la documentation pour vos projets. Guides s’inspire de <a href="http://guides.rubyonrails.org/" onclick="window.open(this.href);return false;">guides.rubyonrails.org</a> pour l’interface.</p>
+<p>Pour créer un nouveau guide, on commence comme ceci :</p>
+<h2>guides new nomduprojet</h2>
+<p>Ensuite vous allez éditer le fichier <strong>guides.yml</strong> pour y ajouter des sections et articles :</p>
+<pre class="prettyprint linenums"><code>index:
+  Section:
+    - title: Texte du lien vers l'article
+      url: nom_du_fichier_correspondant_sans_extension
+      text: Une description du lien
+</code></pre>
+<p>Enfin il ne vous reste qu’à utiliser soit <strong>.textile</strong> soit <strong>.md</strong> pour les fichiers correspondants aux articles et voilà :)</p>
+<p>Pour visualiser votre guide :</p>
+<h2>guides preview</h2>
+<p>Et pour générer une version déployable : </p>
+<h2>guides build</h2>
+<p>C’est tout pour aujourd’hui.</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/wycats/guides" onclick="window.open(this.href);return false;">Guides sur github</a></li>
+</ul>

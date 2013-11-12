@@ -1,0 +1,38 @@
+---
+layout: post
+title: Samedi c'est Unread
+date: '2012-03-31T10:25:38+02:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/20216703658/samedi-cest-unread
+permalink: post/20216703658/samedi-cest-unread
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m1mt8e71IK1r58g99.jpg"></p>
+<h2>gem install unread</h2>
+<p><strong>Unread sauf cet article :)</strong></p>
+<p>Une nouvelle gem à ajouter à votre boîte à outils. Unread permet de gérer facilement un statut lu / non lu sur un objet ActiveRecord. Cela peut être pratique pour un système de tickets par exemple.</p>
+<p>Pour la faire fonctionner il y a quelques étapes à respecter. Tout d’abord reprendre la migration suivante : </p>
+<pre class="prettyprint linenums"><code>class CreateReadMarks &lt; ActiveRecord::Migration
+  def self.up
+    create_table :read_marks, :force =&gt; true do |t|
+      t.integer  :readable_id
+      t.integer  :user_id,       :null =&gt; false
+      t.string   :readable_type, :null =&gt; false, :limit =&gt; 20
+      t.datetime :timestamp
+    end
+    add_index :read_marks, [:user_id, :readable_type, :readable_id]
+  end
+
+  def self.down
+    drop_table :read_marks
+  end
+end
+</code></pre>
+<p>Pour la suite vous aurez juste besoin de la méthode suivante dans les models qui doivent avoir ce fonctionnement : </p>
+<pre class="prettyprint linenums"><code>acts_as_reader
+</code></pre>
+<p>Vous voilà prêt à l’action !</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link"><li>
+<a href="https://github.com/ledermann/unread" onclick="window.open(this.href);return false;">Unread sur github</a>
+</li></ul>

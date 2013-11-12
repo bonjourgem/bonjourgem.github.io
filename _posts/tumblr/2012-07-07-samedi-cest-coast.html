@@ -1,0 +1,47 @@
+---
+layout: post
+title: Samedi c'est Coast
+date: '2012-07-07T10:16:19+02:00'
+tags:
+- Plugin Rails
+tumblr_url: http://www.bonjourgem.com/post/26688033004/samedi-cest-coast
+permalink: post/26688033004/samedi-cest-coast
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m6s6fsXP171r58g99.jpg"></p>
+<h2>gem install coast</h2>
+<p><strong>Un DSL pour vos controllers</strong></p>
+<p>Vous cherchez une solution de remplacement pour <a href="http://www.bonjourgem.com/2012/06/05/mardi-cest-inherited-resources.html">inherited_resources</a> ? Et bien voici Coast :</p>
+<ul>
+<li>Très léger (200 lignes de codes)</li>
+<li>Non-obtrusif</li>
+<li>Support pour tous les formats de réponses (html, json, etc.)</li>
+<li>Un DSL</li>
+</ul><p>Pour vous donner une idée : </p>
+<pre class="prettyprint linenums"><code>class BeachBumsController &lt; ApplicationController
+  # Hop on a les actions : new, edit, index, show, create, update, destroy 
+  include Coast
+
+  before :show do
+    # Au lieu de laisser Coast faire le boulot on charge une BeachBurn soi-même 
+    @resourceful_item = BeachBum.find(params[:id])
+
+    # La gem a aussi généré de manière implicite une variable @beach_bum qui fait référence à @resourceful_item
+  end
+
+  respond_to :show do
+    # On change le rendu de la page
+    render :text =&gt; "Out surfing."
+  end
+
+  after :show do
+    # On fait des trucs de dernière minute après que tout soit fait 
+    flash[:notice] = "Sorry brah... we'll be back when the surf stops crackin'"
+  end
+
+end
+</code></pre>
+<p>Et voilà ! C’est tout pour aujourd’hui :) </p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/hopsoft/coast" onclick="window.open(this.href);return false;">Coast sur github</a></li>
+</ul>

@@ -1,0 +1,35 @@
+---
+layout: post
+title: Mardi c'est Pkgr
+date: '2012-06-26T14:58:54+02:00'
+tags:
+- Outil de développement
+- Déploiement et hébergement
+tumblr_url: http://www.bonjourgem.com/post/25923934969/mardi-cest-pkgr
+permalink: post/25923934969/mardi-cest-pkgr
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m67s7jjcwX1r58g99.gif"></p>
+<h2>gem install pkgr</h2>
+<p><strong>Transformer vos applications Rails en paquet Debian</strong></p>
+<p>Non non ce n’est pas une blague, et cela se fait en quelques minutes :</p>
+<p><strong>On ajoute quelques gems au Gemfile</strong></p>
+<pre class="prettyprint linenums"><code>gem 'pkgr'
+gem 'thin'
+</code></pre>
+<p><strong>On initialise le dépôt git</strong></p>
+<h2>cd my-rails-app</h2>
+<h2>git init</h2>
+<h2>git add .</h2>
+<h2>git commit -m “Premier commit”</h2>
+<p><strong>Pour préparer le pkgr</strong></p>
+<h2>rake pkgr:setup</h2>
+<p><strong>Pour générer les fichiers nécessaires à la création du package</strong></p>
+<h2>rake pkgr:generate</h2>
+<p>Maintenance c’est prêt à l’emploi. Il n’y a plus qu’à l’installer et à l’utiliser comme n’importe qu’elle paquet Debian : </p>
+<h2>my-rails-app console development</h2>
+<h2>my-rails-app server start -e development</h2>
+<p>Voilà, c’est tout pour aujourd’hui :)</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/crohr/pkgr" onclick="window.open(this.href);return false;">Pkgr sur github</a></li>
+</ul>

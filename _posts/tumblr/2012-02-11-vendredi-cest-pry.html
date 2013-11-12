@@ -1,0 +1,38 @@
+---
+layout: post
+title: Vendredi c'est Pry
+date: '2012-02-11T17:08:24+01:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/17429033265/vendredi-cest-pry
+permalink: post/17429033265/vendredi-cest-pry
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lz86f2SH7d1r58g99.jpg"></p>
+<h2>gem install pry</h2>
+<p><strong>L’IRB en mieux</strong></p>
+<p>Un IRB avec de jolies couleurs et un explorateur de classe, voilà ce qu’est Pry.</p>
+<p>Pour faire l’essai dans votre application Rails, vous pouvez procéder comme ceci : </p>
+<p><strong>Gemfile</strong></p>
+<pre class="prettyprint linenums"><code>gem 'pry', :group =&gt; :development 
+</code></pre>
+<p><strong>environments/development.rb</strong></p>
+<pre class="prettyprint linenums"><code># à la fin du fichier 
+# remplace irb par pry
+silence_warnings do 
+  require 'pry'
+  IRB = Pry
+end
+</code></pre>
+<p>Ensuite si vous tapez :</p>
+<h2>rails console</h2>
+<p>Vous utiliserez par défaut une console Pry pour faire ce genre de choses :</p>
+<h2>cd MonModel</h2>
+<p>Cette commande vous “placera” dans un model afin d’exécuter les méthodes de celui-ci avec des couleurs et tout et tout :</p>
+<h2>first.unattribut</h2>
+<p><strong>La suite se passe dans les liens utiles</strong></p>
+<ul class="link">
+<li><a href="http://pry.github.com/" onclick="window.open(this.href);return false;">Site officiel de Pry</a></li>
+<li><a href="https://github.com/pry/pry" onclick="window.open(this.href);return false;">Pry sur github</a></li>
+<li><a href="http://vimeo.com/26391171" onclick="window.open(this.href);return false;">Un screencast</a></li>
+<li><a href="http://railscasts.com/episodes/280-pry-with-rails?view=asciicast" onclick="window.open(this.href);return false;">Un Railscast</a></li>
+</ul>

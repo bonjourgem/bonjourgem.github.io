@@ -1,0 +1,38 @@
+---
+layout: post
+title: Lundi c'est Globalize3
+date: '2012-04-16T09:54:16+02:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/21202664745/lundi-cest-globalize3
+permalink: post/21202664745/lundi-cest-globalize3
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m2k7mnooY41r58g99.jpg"></p>
+<h2>gem install globalize3</h2>
+<p><strong>Aujourd’hui on fait de la traduction !</strong></p>
+<p>C’est dans le titre, la gem d’aujourd’hui sert à ajouter des traductions à vos models.</p>
+<p>Par exemple : </p>
+<pre class="prettyprint linenums"><code>class Post &lt; ActiveRecord::Base
+  translates :title, :text
+end
+</code></pre>
+<p>Ce qui nous permet de faire ce genre de choses : </p>
+<pre class="prettyprint linenums"><code>I18n.locale = :en
+post.title # =&gt; Globalize3 rocks!
+
+I18n.locale = :he
+post.title # =&gt; גלובאלייז2 שולט!
+</code></pre>
+<p>Mais avant que cela fonctionne il faut effectuer une migration. Dans le cas du model Post cela donne ceci : </p>
+<pre class="prettyprint linenums"><code>class CreateTranslation  :string, :text =&gt; :text
+  end
+  def self.down
+    Post.drop_translation_table!
+  end
+end
+</code></pre>
+<p>Vous voilà prêt à l’action !</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/svenfuchs/globalize3" onclick="window.open(this.href);return false;">Globalize3 sur github</a></li>
+</ul>

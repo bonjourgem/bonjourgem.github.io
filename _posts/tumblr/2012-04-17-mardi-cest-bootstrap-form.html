@@ -1,0 +1,36 @@
+---
+layout: post
+title: 'Mardi c''est bootstrap_form '
+date: '2012-04-17T09:38:00+02:00'
+tags:
+- HTML
+tumblr_url: http://www.bonjourgem.com/post/21259996827/mardi-cest-bootstrap-form
+permalink: post/21259996827/mardi-cest-bootstrap-form
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m2m1vifLAF1r58g99.gif"></p>
+<h2>gem install bootstrap_form</h2>
+<p><strong>Un form builder utilisant le Twitter Bootstrap</strong></p>
+<p>Aujourd’hui une gem bien pratique pour créer des formulaires. Pour commencer on ajoute ceci à notre application.css : </p>
+<pre class="prettyprint linenums"><code>/*
+ *= require bootstrap_form
+*/
+</code></pre>
+<p>Ensuite on peut faire quelque chose dans ce genre :</p>
+<pre class="prettyprint linenums"><code>&lt;%= bootstrap_form_for(@user) do |f| %&gt;
+  &lt;%= f.alert_message "Please fix the errors below." %&gt;
+
+  &lt;%= f.text_field :email, autofocus: :true %&gt;
+  &lt;%= f.password_field :password, help: 'Must be at least 6 characters long' %&gt;
+  &lt;%= f.password_field :password_confirmation, label: 'Confirm Password' %&gt;
+  &lt;%= f.check_box :terms, label: 'I agree to the Terms of Service' %&gt;
+
+  &lt;%= f.actions do %&gt;
+    &lt;%= f.primary 'Sign Up', disable_with: 'Saving...' %&gt;
+  &lt;% end %&gt;
+&lt;% end %&gt;
+</code></pre>
+<p>Et voilà un bien joli formulaire avec différentes options de présentation ainsi qu’une gestion des erreurs propre. C’est tout pour aujourd’hui !</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/potenza/bootstrap_form" onclick="window.open(this.href);return false;">bootstrap_form sur github</a></li>
+</ul>

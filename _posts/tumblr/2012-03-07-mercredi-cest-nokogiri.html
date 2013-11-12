@@ -1,0 +1,45 @@
+---
+layout: post
+title: Mercredi c'est Nokogiri
+date: '2012-03-07T11:59:55+01:00'
+tags:
+- Parseur
+tumblr_url: http://www.bonjourgem.com/post/18897275112/mercredi-cest-nokogiri
+permalink: post/18897275112/mercredi-cest-nokogiri
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m0ih15vFJJ1r58g99.gif"></p>
+<h2>gem install nokogiri</h2>
+<p><strong>Pour ceux qui aiment parser</strong></p>
+<p>Si vous n’avez jamais eu besoin de parser du HTML / XML, cela ne saurait tarder. Ce jour funeste vous pourrez utiliser Nokogiri.</p>
+<p>Un petit exemple issu de la documentation : </p>
+<pre class="prettyprint linenums"><code>require 'nokogiri'
+require 'open-uri' # Utile pour ouvrir du contenu distant
+
+doc = Nokogiri::HTML(open('http://www.google.com/search?q=tenderlove'))
+
+####
+# On recherche tous les &lt;a&gt; dont le parent est un &lt;h3&gt; avec la classe 'r' 
+doc.css('h3.r a').each do |link|
+  puts link.content
+end
+
+####
+# On recherche tous les  &lt;a&gt; dont le parent est un &lt;h3&gt;
+doc.xpath('//h3/a').each do |link|
+  puts link.content
+end
+
+####
+# Un mélange des deux 
+doc.search('h3.r a.l', '//h3/a').each do |link|
+  puts link.content
+end
+</code></pre>
+<p>Faites-en bonne usage ! </p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/tenderlove/nokogiri" onclick="window.open(this.href);return false;">Nokogiri sur github</a></li>
+<li><a href="http://nokogiri.org/" onclick="window.open(this.href);return false;">Site officiel</a></li>
+<li><a href="http://www.engineyard.com/blog/2010/getting-started-with-nokogiri/" onclick="window.open(this.href);return false;">Commencer avec Nokogiri</a></li>
+<li><a href="http://railscasts.com/episodes/190-screen-scraping-with-nokogiri" onclick="window.open(this.href);return false;">Railscast</a></li>
+</ul>

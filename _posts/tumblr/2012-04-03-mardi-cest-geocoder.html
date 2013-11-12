@@ -1,0 +1,33 @@
+---
+layout: post
+title: Mardi c'est Geocoder
+date: '2012-04-03T13:28:07+02:00'
+tags:
+- Temps et espace
+tumblr_url: http://www.bonjourgem.com/post/20403749610/mardi-cest-geocoder
+permalink: post/20403749610/mardi-cest-geocoder
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m1wiavdtJj1r58g99.jpg"></p>
+<h2>gem install geocoder</h2>
+<p><strong>Trouvez vos utilisateurs</strong></p>
+<p>Aujourd’hui c’est Geocoder, une solution de  géolocalisation utilisant par défaut l’API de  Google et de FreeGeoIP pour trouver ce que vous voulez.</p>
+<p>Avant de commencer à faire joujou, il faut préparer le terrain pour cette gem et donc ajouter des colonnes longitude et latitude aux models que vous souhaitez géolocaliser : </p>
+<h2>rails g migration AddCoordinatesToModel latitude:float longitude:float</h2>
+<p>Ensuite il vous faudra ajouter cette méthode pour préciser comment votre model doit être “géocodé” : </p>
+<pre class="prettyprint linenums"><code>geocoded_by :full_street_address   # ou une adresse IP par exemple
+after_validation :geocode          # met les bonnes coordonnées
+</code></pre>
+<p>Il est possible de faire l’inverse en partant des coordonnées pour trouver l’adresse avec cette méthode : </p>
+<pre class="prettyprint linenums"><code>reverse_geocoded_by :latitude, :longitude
+after_validation :reverse_geocode  # récupère l'adresse 
+</code></pre>
+<p>Une fois tout cela en place vous aurez accès à tout plein de bonnes choses : </p>
+<ul>
+<li>Trouver tous les objets dans un périmètre</li>
+<li>Les objets dans une ville, un pays etc.</li>
+ </ul><p>Voilà de quoi vous amuser !</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/alexreisner/geocoder" onclick="window.open(this.href);return false;">Geocoder sur github</a></li>
+<li><a href="http://railscasts.com/episodes/273-geocoder?language=fr&amp;view=asciicast" onclick="window.open(this.href);return false;">Railscast</a></li>
+</ul>

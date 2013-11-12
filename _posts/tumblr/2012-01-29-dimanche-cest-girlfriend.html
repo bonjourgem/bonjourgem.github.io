@@ -1,0 +1,48 @@
+---
+layout: post
+title: Dimanche c'est Girlfriend
+date: '2012-01-29T10:00:00+01:00'
+tags:
+- WTF
+tumblr_url: http://www.bonjourgem.com/post/16688431045/dimanche-cest-girlfriend
+permalink: post/16688431045/dimanche-cest-girlfriend
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lyiymzky7M1r58g99.jpg"></p>
+<h2>gem install girlfriend</h2>
+<p><strong>Envie de parler à une ligne de commande sexy ?</strong></p>
+<p>Comme tous les dimanches, une gem inutile, mais amusante ! Aujourd’hui je vous présente Girlfriend, ou comment parler à sa console quand on s’ennuie.</p>
+<p>Pour faire fonctionner votre “nana”, rien de plus simple : après avoir installé la gem, vous pouvez déjà lui parler en tapant :</p>
+<h2>girlfriend —ability interactive</h2>
+<p>Mais comme par défaut elle est un peu prise de tête vous pouvez la configurer :</p>
+<p><strong>Ruby (~/.girlfriend/config.rb)</strong></p>
+<pre class="prettyprint linenums"><code>Girlfriend.configure do |config|
+  config.name = 'Natalia'
+  config.age = 23
+  config.hometown = 'Moscow, Russia'
+  config.school = 'Russian Bartender School'
+  config.hobbies = ['gaming','travelling','drinking']
+end
+</code></pre>
+<p>Bon maintenant elle s’appelle Natalia, elle est russe et elle fait une école de barmaid. Mais ce n’est pas encore la femme parfaite ! On peut maintenant lui rajouter quelques compétences :</p>
+<pre class="prettyprint linenums"><code>module Girlfriend 
+  module Ability
+    class Play &lt; Base
+      def play(input)
+        if input =~ /Mortal kombat/i
+          'if you lose you will do the dishes'
+        else
+          'I dont\'t like this game'
+        end
+      end
+    end
+  end
+end
+Girlfriend.register_ability :play do |girl|
+  Girlfriend::Ability::Play.new(girl)
+end
+</code></pre>
+<p>Et pour tester qu’elle a bien compris :</p>
+<h2>girlfriend —ability play —input ‘Mortal kombat’</h2>
+<p>Voilà, il ne vous reste plus qu’à vous créer la console / femme parfaite ! </p>
+<p><strong>Le lien inutile :</strong></p>
+<ul class="link"><li><a href="https://github.com/icebreaker/girlfriend" title="Ta copine sur github" target="_blank">Ta copine sur github</a></li></ul>

@@ -1,0 +1,40 @@
+---
+layout: post
+title: Jeudi c'est data_miner
+date: '2012-05-24T11:36:31+02:00'
+tags:
+- Parseur
+tumblr_url: http://www.bonjourgem.com/post/23664575750/jeudi-cest-data-miner
+permalink: post/23664575750/jeudi-cest-data-miner
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m4ip54zsVu1r58g99.jpg"></p>
+<h2>gem install data_miner</h2>
+<p><strong>Pour parser tout et n’importe quoi</strong></p>
+<p>Aujourd’hui une gem bien pratique qui vous permettra de parser à peu près tout (XLS, ODS, XML, CSV, HTML et bien d’autres).</p>
+<p>Comment ça marche : </p>
+<pre class="prettyprint linenums"><code>class Country &gt; ActiveRecord::Base
+  self.primary_key = 'iso_3166_code'
+
+  data_miner do
+    import("OpenGeoCode.org's Country Codes to Country Names list",
+           :url =&gt; 'http://opengeocode.org/download/countrynames.txt',
+           :format == :delimited,
+           :delimiter == '; ',
+           :headers == false,
+           :skip == 22) do
+      key   :iso_3166_code, :field_number == 0
+      store :iso_3166_alpha_3_code, :field_number == 1
+      store :iso_3166_numeric_code, :field_number == 2
+      store :name, :field_number == 5
+    end
+  end
+end
+</code></pre>
+<p>Cool, non ? Maintenant il ne vous reste plus qu’à tester et à lire un peu de documentation.</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/seamusabshere/data_miner" onclick="window.open(this.href);return false;">data_miner sur github</a></li>
+</ul><p><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/systh0">@systh0</a>
+</small></p>

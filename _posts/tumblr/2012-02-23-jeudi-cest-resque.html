@@ -1,0 +1,27 @@
+---
+layout: post
+title: Jeudi c'est Resque
+date: '2012-02-23T12:29:45+01:00'
+tags:
+- utilitaire
+tumblr_url: http://www.bonjourgem.com/post/18125398667/jeudi-cest-resque
+permalink: post/18125398667/jeudi-cest-resque
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lzufuoL9eK1r58g99.gif"></p>
+<h2>gem install resque</h2>
+<p><strong>Resque à la rescousse !</strong></p>
+<p>Aujourd’hui je vous présente Resque, une librairie qui permet de créer des tâches, de les mettre à la queue leu leu afin de les exécuter plus tard.</p>
+<p>Resque dépend de <a href="http://redis.io/" onclick="window.open(this.href);return false;">Redis</a>, un SGBD libre qui bénéficie d’excellentes performances. Pour l’installer, si vous êtes sur Mac et que vous utilisez <a href="http://mxcl.github.com/homebrew/" onclick="window.open(this.href);return false;">Homebrew</a>, il vous suffit de taper :</p>
+<h2>brew install redis</h2>
+<p>Mais dans quel cas utiliser Resque ? Prenons l’exemple de <a href="http://www.bonjourgem.com/2012/02/21/mardi-cest-recommendable.html">Recommendable</a>. Pour éviter que notre application soit surchargée, on peut mettre les likes dans une file d’attente.</p>
+<p>La gem Recommendable est prévue pour fonctionner avec Resque. Donc si votre serveur Redis est lancé, il vous suffit de balancer la commande suivante :</p>
+<h2>$ QUEUE=recommendable rake environment resque:work</h2>
+<p>Ce qui aura pour effet de créer un worker pour traiter la file d’attente. Il est possible d’avoir plusieurs workers.</p>
+ <p>Resque dispose aussi de fonctionnalités intéressantes comme la possibilité de voir ce que font nos workers, via la commande suivante :</p>
+<h2>resque-web</h2>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/defunkt/resque" onclick="window.open(this.href);return false;">Resque sur github</a></li>
+<li><a href="https://github.com/blog/542-introducing-resque" onclick="window.open(this.href);return false;">Un article sur Resque</a></li>
+<li><a href="http://railscasts.com/episodes/271-resque?view=asciicast" onclick="window.open(this.href);return false;">Un Railscast</a></li>
+</ul>

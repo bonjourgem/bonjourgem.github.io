@@ -1,0 +1,35 @@
+---
+layout: post
+title: Mardi c'est Cells
+date: '2012-06-12T11:05:22+02:00'
+tags:
+- Plugin Rails
+tumblr_url: http://www.bonjourgem.com/post/24945291814/mardi-cest-cells
+permalink: post/24945291814/mardi-cest-cells
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m5hrd0gJXZ1r58g99.jpg"></p>
+<h2>gem install cells</h2>
+<p><strong>Pour des applications Rails pluricellulaires</strong></p>
+<p>Admettons que vous êtes en train de faire un e-commerce en Rails et que vous avez besoin d’afficher sur toutes vos vues un petit panier. En général pour ce genre de chose on part sur un mix entre controllers / helpers / partials etc. Eh bien c’est NUL ! Utilisez Cells :)</p>
+<p>Pour continuer avec cet exemple, on commence par générer notre nouvelle cellule : </p>
+<h2>rails generate cell cart display -e haml</h2>
+<p>Cette commande va créer un dossier <strong>cells/</strong> ainsi que la cellule <strong>cart</strong> avec l’action <strong>display</strong> et un partial en haml.</p>
+<p>Le code de notre cellule d’exemple ressemble à ça : </p>
+<pre class="prettyprint linenums"><code>class CartCell &lt; Cell::Rails
+  def display(args)
+    user    = args[:user]
+    @items  = user.items_in_cart
+
+    render  # affichera display.html.haml
+  end
+end
+</code></pre>
+<p>Maintenant pour appeler l’action display de notre cellule fraîchement générée, on fait comme ceci : </p>
+<pre class="prettyprint linenums"><code>&lt;%= render_cell :cart, :display, :user =&gt; @current_user %&gt;
+</code></pre>
+<p>Ensuite on édite la vue associée. Mais ça, vous le saviez déjà :)</p>
+<p>C’est tout pour aujourd’hui !</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/apotonick/cells" onclick="window.open(this.href);return false;">Cells sur github</a></li>
+</ul>

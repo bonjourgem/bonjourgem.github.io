@@ -1,0 +1,28 @@
+---
+layout: post
+title: Lundi c'est Merit
+date: '2012-02-27T11:57:32+01:00'
+tags:
+- web app
+tumblr_url: http://www.bonjourgem.com/post/18375228253/lundi-cest-merit
+permalink: post/18375228253/lundi-cest-merit
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m01sq7RUNw1r58g99.gif"></p>
+<h2>gem install merit</h2>
+<p><strong>Tout se mérite !</strong></p>
+<p>Aujourd’hui je vous présente Merit, une chouette gem qui permet d’implémenter un système d’utilisateurs à la <a href="http://stackoverflow.com" onclick="window.open(this.href);return false;">Stackoverflow</a>.</p>
+<p>Pour ceux qui ne connaissent pas, Stackoverflow est un site de questions / réponses sur le développement où tout est auto-modéré : plus vous avez de points, plus il y a d’actions à votre disposition. Par exemple : commenter, éditer les posts des autres, participer aux chats etc.</p>
+<p>Cette gem s’installe comme ceci : </p>
+<h2>rails g merit:install</h2>
+<p>Ensuite on crée le model associé : </p>
+<h2>rails g merit monmodel</h2>
+<p>Il ne reste plus qu’à migrer et vous voilà presque prêt. Vous avez maintenant la possibilité de définir les capacités de vos utilisateurs quand ils atteignent un certain nombre de points. Par exemple :</p>
+<pre class="prettyprint linenums"><code>score 20, :on =&gt; [
+  'comments#create',
+  'photos#create'
+]
+</code></pre>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/tute/merit" onclick="window.open(this.href);return false;">Merit sur github</a></li>
+</ul>

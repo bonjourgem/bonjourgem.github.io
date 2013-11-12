@@ -1,0 +1,38 @@
+---
+layout: post
+title: Samedi c'est Cuba
+date: '2012-04-28T11:44:41+02:00'
+tags:
+- web app
+tumblr_url: http://www.bonjourgem.com/post/21968911086/samedi-cest-cuba
+permalink: post/21968911086/samedi-cest-cuba
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m36mt7Qgi11r58g99.jpg"></p>
+<h2>gem install cuba</h2>
+<p><strong>Un Cuba libre svp !</strong></p>
+<p>Aujourd’hui on ne boit pas d’alcool (enfin pas avant midi quoi !) mais on découvre un micro-framework à base de <a href="https://github.com/chneukirchen/rum" onclick="window.open(this.href);return false;">Rum</a>.</p>
+<p>Dans le principe cela se veut plus mieux que Sinatra. Donc un petit exemple : </p>
+<p><strong>Sinatra</strong></p>
+<pre class="prettyprint linenums"><code>get "/articles/:id" do |id|
+  article = Article[id]
+end
+
+get "/articles/:article_id/comments/:id" do |article_id, id|
+  article = Article[article_id]
+  comment = article.comments[id]
+end
+</code></pre>
+<p><strong>Cuba</strong></p>
+<pre class="prettyprint linenums"><code>on get, "articles/:id" do |id|
+  article = Article[id]
+
+  on "comments/:id" do |id|
+    comment = article.comments[id]
+  end
+end
+</code></pre>
+<p>Ouais c’est un peu moins long à écrire :) Si cela a attisé votre curiostité, direction <strong>les liens utiles</strong> !</p>
+<ul class="link">
+<li><a href="https://github.com/soveran/cuba" onclick="window.open(this.href);return false;">Cuba sur github</a></li>
+<li><a href="http://files.soveran.com/cuba/#0" onclick="window.open(this.href);return false;">Des slides sur Cuba</a></li>
+</ul>

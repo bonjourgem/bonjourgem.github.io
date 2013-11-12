@@ -1,0 +1,34 @@
+---
+layout: post
+title: Lundi c'est MailCatcher
+date: '2012-05-07T11:51:02+02:00'
+tags:
+- utilitaire
+tumblr_url: http://www.bonjourgem.com/post/22580163721/lundi-cest-mailcatcher
+permalink: post/22580163721/lundi-cest-mailcatcher
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m3n6ca3ivz1r58g99.gif"></p>
+<h2>gem install mailcatcher</h2>
+<p><strong>Attrapez des emails et distribuez-les comme dans un rêve</strong></p>
+<p>Aujourd’hui une gem pour capturer et envoyer vos mails. Après l’installation, lancez la commande suivante :</p>
+<h2>mailcatcher</h2>
+<p>Ensuite rendez-vous à l’adresse <strong>http://localhost:1080</strong> pour visionner vos mails. Puis configurez votre client favori avec l’adresse <strong>smtp://localhost:1025</strong> pour les envoyer.</p>
+<p>Vous pouvez aussi utiliser MailCatcher pour envoyer vos mails depuis votre dernière appli Rails : </p>
+<pre class="prettyprint linenums"><code>config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = { :address =&gt; "localhost", :port =&gt; 1025 }
+</code></pre>
+<p>Et enfin vous avez à votre disposition une petite API : </p>
+<ul>
+<li>
+<strong>/message</strong> pour récupérer la liste des messages en JSON.</li>
+<li>
+<strong>/messages/:id.json</strong> pour récupérer les métadonnées d’un message en particulier en JSON, il est possible de mettre <strong>.html</strong> ou <strong>plain</strong> pour le reste.</li>
+<li>
+<strong>/messages/:id/:cid</strong> pour les pièces jointes.</li>
+<li>
+<strong>/messages/:id.source</strong> pour l’intégralité du message.</li>
+</ul><p>Voilà c’est tout pour aujourd’hui ^^</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/sj26/mailcatcher" onclick="window.open(this.href);return false;">MailCatcher sur github</a></li>
+</ul>

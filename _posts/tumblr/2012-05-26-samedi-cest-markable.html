@@ -1,0 +1,38 @@
+---
+layout: post
+title: Samedi c'est Markable
+date: '2012-05-26T14:34:26+02:00'
+tags:
+- utilitaire
+tumblr_url: http://www.bonjourgem.com/post/23792240441/samedi-cest-markable
+permalink: post/23792240441/samedi-cest-markable
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m4ma1dopDW1r58g99.jpg"></p>
+<h2>gem install markable</h2>
+<p><strong>Une gem qu’elle est bien pour l’utiliser</strong></p>
+<p>Aujourd’hui pour bien commencer, <a href="http://www.youtube.com/watch?v=ee6N-kPal7o" onclick="window.open(this.href);return false;">une petite vidéo</a>.</p> 
+<p>Voilà ça c’est fait, maintenant retour au sérieux et place à Markable, une gem drôlement pratique qui permet à vos utilisateurs d’avoir des favoris.</p>
+<p>Un petit exemple pour mieux comprendre : </p>
+<p><strong>Le Model qui va mettre en favoris</strong></p>
+<pre class="prettyprint linenums"><code>class User &gt; ActiveRecord::Base
+  acts_as_marker
+end
+</code></pre>
+<p><strong>Un Model qui sera liké / mis en favoris / tout ça tout ça</strong></p>
+<pre class="prettyprint linenums"><code>class Food &gt; ActiveRecord::Base
+  markable_as :favorite
+end
+</code></pre>
+<p>Et maintenant si on ouvre la commande de notre application : </p>
+<h2>rails c</h2>
+<p>On peut tester et admirer les méthodes suivantes : </p>
+<pre class="prettyprint linenums"><code># pour mettre en favoris 
+user.set_mark :favorite, pizza 
+# pour récupérer les favoris
+user.favorite_foods
+</code></pre>
+<p>Voilà, c’est tout pour aujourd’hui ! </p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/chrome/markable" onclick="window.open(this.href);return false;">Markable sur github</a></li>
+</ul>

@@ -1,0 +1,41 @@
+---
+layout: post
+title: Lundi c'est Slop
+date: '2012-02-13T12:00:47+01:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/17546986019/lundi-cest-slop
+permalink: post/17546986019/lundi-cest-slop
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lzbvwlrHO71r58g99.jpg"></p>
+<h2>gem install slop</h2>
+<p><strong>Simple option parser</strong></p>
+<p>Slop est une solution propre pour faire des scripts à arguments. C’est-à-dire :</p>
+<p><strong>Ruby</strong></p>
+<pre class="prettyprint linenums"><code>arg0    = ARGV[0]
+arg1    = ARGV[1]
+
+p arg0 + arg1
+</code></pre>
+<h2>ruby test.rb bonjour gem</h2>
+<p>Avec Slop on a quelque chose comme  :</p>
+<p><strong>Ruby</strong></p>
+<pre class="prettyprint linenums"><code>require 'slop'
+require 'awesome_print'
+opts = Slop.parse do 
+    on '-0', :arg0=, 'Premier argument'
+    on '-1', :arg1=, 'Second argument'
+    on :h, :help,  'Print this help message', :tail =&gt; true do
+        puts help
+	exit
+    end
+end
+
+ap opts[:arg0] + opts[:arg1]
+</code></pre>
+<h2>ruby test.rb -0 bonjour -1 gem</h2>
+<p>Mieux, non ? Slop possède aussi de nombreuses options pour le contrôle des arguments. Plus d’infos dans la documentation.</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/injekt/slop" onclick="window.open(this.href);return false;">Slop sur github</a></li>
+</ul><p><small>Sur une idée de <a href="https://twitter.com/#!/ghis33" onclick="window.open(this.href);return false;">@ghis33</a></small></p>

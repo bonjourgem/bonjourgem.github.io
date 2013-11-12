@@ -1,0 +1,30 @@
+---
+layout: post
+title: Mercredi c'est Ancestry
+date: '2012-05-30T13:43:28+02:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/24058546513/mercredi-cest-ancestry
+permalink: post/24058546513/mercredi-cest-ancestry
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m4tnq2beDV1r58g99.jpg"></p>
+<h2>gem install ancestry</h2>
+<p><strong>Un peu d’organisation dans vos entités</strong></p>
+<p>Aujourd’hui une gem qui vous permettra d’organiser des données de manière hiérarchique.</p>
+<p>Pour ce faire on a besoin d’une petite colonne en plus dans le Model : </p>
+<pre class="prettyprint linenums"><code>add_index table_du_model, :ancestry
+</code></pre>
+<p>On exécute la migration et ensuite on ajoute ceci au Model : </p>
+<pre class="prettyprint linenums"><code>has_ancestry
+</code></pre>
+<p>Et enfin pour créer un parent / enfant : </p>
+<pre class="prettyprint linenums"><code>MonModel.create! :name =&gt; 'Luke', :parent =&gt; MonModel.create!(:name =&gt; 'Anakin')
+</code></pre>
+<p>Vous aurez aussi accès à une multitude de méthodes pour naviguer entre parents et enfants.</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/stefankroes/ancestry" onclick="window.open(this.href);return false;">Ancestry sur github</a></li>
+</ul><p><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/dacano_fr">@dacano_fr</a>
+</small></p>

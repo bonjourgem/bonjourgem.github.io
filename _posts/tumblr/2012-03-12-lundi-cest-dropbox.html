@@ -1,0 +1,39 @@
+---
+layout: post
+title: Lundi c'est Dropbox
+date: '2012-03-12T11:11:49+01:00'
+tags:
+- web app
+tumblr_url: http://www.bonjourgem.com/post/19174708888/lundi-cest-dropbox
+permalink: post/19174708888/lundi-cest-dropbox
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m0pr7w3ALF1r58g99.gif"></p>
+<h2>gem install dropbox</h2>
+<p><strong>Encore une gem à API</strong></p>
+<p>Aujourd’hui je vous présente la gem Dropbox, pour une utilisation simplifiée de l’API Dropbox.</p>
+<p>Une fois la gem installée, il faut tout d’abord vous connecter au service : </p>
+<pre class="prettyprint linenums"><code>session = Dropbox::Session.new('your_consumer_key', 'your_consumer_secret')
+session.mode = :sandbox # ou :dropbox selon votre compte 
+puts "Visit #{session.authorize_url} pour autoriser l'application, appuyer sur entrée quand c'est fait"
+gets
+session.authorize
+</code></pre>
+<p>L’étape suivante consiste à faire mumuse avec Dropbox : </p>
+<pre class="prettyprint linenums"><code>session.upload('testfile.txt', '/')
+uploaded_file = session.file('testfile.txt')
+puts uploaded_file.metadata.size
+</code></pre>
+<p>Voilà c’est tout ! Pour ne pas avoir à refaire l’étape 1 à chaque fois vous pouvez toujours sauvegarder votre session : </p>
+<pre class="prettyprint linenums"><code>File.open('serialized_session.txt', 'w') do |f|
+  f.puts session.serialize
+end
+</code></pre>
+<p>Et l’utiliser plus tard : </p>
+<pre class="prettyprint linenums"><code>new_session = Dropbox::Session.deserialize(File.read('serialized_session.txt'))
+account = new_session.account
+puts account.display_name
+</code></pre>
+<p><strong>D’autres exemples disponibles directement sur le dépôt de la gem :</strong></p>
+<ul class="link">
+<li><a href="https://github.com/RISCfuture/dropbox" onclick="window.open(this.href);return false;">Dropbox sur github</a></li>
+</ul>

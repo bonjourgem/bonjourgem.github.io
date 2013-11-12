@@ -1,0 +1,40 @@
+---
+layout: post
+title: Samedi c'est Mini Rails
+date: '2012-02-04T11:10:00+01:00'
+tags:
+- Web app
+tumblr_url: http://www.bonjourgem.com/post/17023987816/samedi-cest-mini-rails
+permalink: post/17023987816/samedi-cest-mini-rails
+---
+<p class="img-post"><strong><img src="/tumblr_files/tumblr_lyv583WPLe1r58g99.jpg"></strong></p>
+<h2>gem install rails-mini</h2>
+<p><strong>Rails et Sinatra ont un bébé</strong></p>
+<p>Cette gem vous donne la possibilité de créer des applications simples. Il suffit de modifier un seul et unique fichier, que voici :</p>
+<p><strong>Ruby</strong></p>
+<pre class="prettyprint linenums"><code>require 'bundler' 
+require 'bundler/setup' 
+require 'rails_mini' 
+app = Rails.mini do       
+    config.secret_token = '!*#&amp;$' * 31       
+    get '/' do            
+        render text: "Gem Rails like Sinatra. /rails-mini"       
+    end       
+    get '/hello' do         
+        render text: "Hello #{params[:to]}!"     
+    end       
+    get '/ping' do             
+        render json: {'ping' =&gt; 'pong'}       
+    end 
+end 
+run app </code></pre>
+<p>Mini-application que l’on lance avec la commande suivante :</p>
+<h2>bundle exec rackup</h2>
+<div><strong>La suite, c’est dans les liens utiles :</strong></div>
+<div>
+<ul class="link">
+<li><a href="http://gmarik.info/talks/gem-rails-like-sinatra#0" title="Présentation de Mini Rails" target="_blank">Présentation de Mini Rails</a></li>
+<li>
+<a href="https://github.com/gmarik/mini-rails" title="Mini Rails sur github" target="_blank">Mini Rails sur github</a> </li>
+</ul>
+</div>

@@ -1,0 +1,27 @@
+---
+layout: post
+title: Mardi c'est agent_orange
+date: '2012-03-14T16:18:09+01:00'
+tags:
+- utilitaire
+tumblr_url: http://www.bonjourgem.com/post/19291393637/mardi-cest-agent-orange
+permalink: post/19291393637/mardi-cest-agent-orange
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m0vqnftTNo1r58g99.gif"></p>
+<h2>gem install agent_orange</h2>
+<p><strong>Merci Monsanto pour tous tes bienfaits</strong></p>
+<p>Aujourd’hui une gem bien pratique qui permet d’adapter votre site en fonction des visiteurs.</p>
+<p>Rien de plus parlant qu’un exemple, alors : </p>
+<pre class="prettyprint linenums"><code>agent_orange = AgentOrange::UserAgent.new(user_agent_string)
+device = agent_orange.device
+# l'appareil est-il un mobile ? 
+device.is_mobile? 
+</code></pre>
+<p>La variable user_agent_string doit être initialisée par : </p>
+<pre class="prettyprint linenums"><code>user_agent_string =  request.env['HTTP_USER_AGENT']
+</code></pre>
+<p>Pour la suite je vous laisse vous débrouiller avec la documentation.</p><p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/kevinelliott/agent_orange" onclick="window.open(this.href);return false;">L’agent_orange sur github</a></li>
+<li><a href="http://fr.wikipedia.org/wiki/Agent_orange" onclick="window.open(this.href);return false;">Mais l’Agent orange c’est quoi, au juste ?</a></li>
+</ul>

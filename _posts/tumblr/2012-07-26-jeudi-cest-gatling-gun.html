@@ -1,0 +1,63 @@
+---
+layout: post
+title: Jeudi c'est Gatling Gun
+date: '2012-07-26T09:47:02+02:00'
+tags:
+- web app
+tumblr_url: http://www.bonjourgem.com/post/28042969113/jeudi-cest-gatling-gun
+permalink: post/28042969113/jeudi-cest-gatling-gun
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m7r8te5miE1r58g99.jpg"></p>
+<h2>gem install gatling_gun</h2>
+<p><strong>API SendGrid</strong></p>
+<p>Aujourd’hui une gem qui utilise l’API de SendGrid, cette dernière permettant d’envoyer des tonnes de newsletters. Pour l’utilisation de cette gem, cela se passe comme ceci :</p>
+<pre class="prettyprint linenums"><code>SendGrid = GatlingGun.new("USERNAME", "PASSWORD")
+
+# l'origine de la newsletter
+SendGrid.add_identity( 
+    "test", name:    "Test User",
+    email:   "test@subinterest.com",
+    address: "513 Cinnamon Dr.",
+    city:    "Edmond",
+    state:   "OK",
+    zip:     "73003",
+    country: "USA" 
+)
+
+# la newsletter
+SendGrid.add_newsletter( 
+    "episode1", identity: "test",
+    subject:  "Episode 1",
+    text:     "The Text Body",
+    html:     "&lt;h1&gt;The HTML Body&lt;/h1&gt;"
+)
+
+# on crée une nouvelle liste de destinataires que l'on nomme 
+SendGrid.add_list("subscribers")
+
+# on ajoute des destinataires à cette liste
+SendGrid.add_emails( 
+    "subscribers", [ 
+        { 
+            name:  "James Edward Gray II",
+            email: "james@graysoftinc.com"
+        },
+        { 
+            name:  "Admin",
+            email: "admin@graysoftinc.com" 
+        }
+     ]
+ )
+
+# on ajoute une liste de destinataires à notre newsletter
+SendGrid.add_recipients("episode1", "subscribers")
+
+# on programme l'envoi 
+SendGrid.add_schedule("episode1", at: Time.now + 10 * 60)
+</code></pre>
+<p>Voilà voilà c’est tout pour aujourd’hui :)</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/okrb/gatling_gun" onclick="window.open(this.href);return false;">Gatling Gun sur github</a></li>
+<li><a href="http://go.sendgrid.com/SendGrid-Pricing.html?ls=SEM&amp;cid=70180000000cl5Z&amp;lsd=adwords&amp;kw=sendgridExact&amp;gaid=SendGrid-FR-Brand&amp;gclid=CMTq47CCtbECFYcntAodrGsAtA" onclick="window.open(this.href);return false;">SendGrid</a></li>
+</ul>

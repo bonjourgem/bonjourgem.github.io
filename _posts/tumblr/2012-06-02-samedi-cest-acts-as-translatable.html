@@ -1,0 +1,35 @@
+---
+layout: post
+title: Samedi c'est acts_as_translatable
+date: '2012-06-02T10:16:36+02:00'
+tags:
+- gestion de contenu
+tumblr_url: http://www.bonjourgem.com/post/24250714288/samedi-cest-acts-as-translatable
+permalink: post/24250714288/samedi-cest-acts-as-translatable
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m4zdei6PmB1r58g99.jpg"></p>
+<h2>gem install acts_as_translatable</h2>
+<p><strong>One, two, one, two, this is a test</strong></p>
+<p>Aujourd’hui on traduit nos modèles avec acts_as_translatable. Tout commence comme ceci :</p>
+<h2>rails generate acts_as_translatable fr category name description</h2>
+<p><strong>fr</strong> correspond à la langue par défaut, ensuite le model puis les attributs qui doivent être traduits.</p>
+<p>Maintenant il faut ajouter quelques petites choses au model concerné :</p>
+<pre class="prettyprint linenums"><code>class Category &lt; ActiveRecord::Base
+  acts_as_translatable_on :name, :description
+end
+</code></pre>
+<p>Maintenant on peut faire mumuse avec les traductions : </p>
+<pre class="prettyprint linenums"><code>I18n.locale = "fr"
+Category.first.update_attribute :name, "Nom français"
+
+I18n.locale = "en"
+Category.first.update_attribute :name, "English name"
+
+puts Category.first.name      # Le nom dans la langue par défaut
+puts Category.first.name_en   # Affichera le nom en anglais
+</code></pre>
+<p>Voilà c’est tout pour aujourd’hui !</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/lassebunk/acts_as_translatable" onclick="window.open(this.href);return false;">acts_as_translatable sur github</a></li>
+</ul>

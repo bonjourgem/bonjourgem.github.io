@@ -1,0 +1,28 @@
+---
+layout: post
+title: Jeudi c'est Brakeman
+date: '2012-06-28T10:41:40+02:00'
+tags:
+- test
+tumblr_url: http://www.bonjourgem.com/post/26061611760/jeudi-cest-brakeman
+permalink: post/26061611760/jeudi-cest-brakeman
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m6bja0Nxo61r58g99.jpg"></p>
+<h2>gem install brakeman</h2>
+<p><strong>Application sécurisée ou pas ?</strong></p>
+<p>Voilà une question à laquelle Brakeman peut répondre. Pour tester votre application, il vous suffit de lancer cette commande à la racine de votre application (Rails 2.x ou 3.x) :</p>
+<h2>brakeman</h2>
+<p>Vous récupérerez en sortie un log d’analyse assez complet, contenant les différentes failles de votre application et à quel endroit. Par exemple un <a href="http://railscasts.com/episodes/26-hackers-love-mass-assignment/" onclick="window.open(this.href);return false;">mass assignment</a> possible sur un modèle.</p>
+<p>Pour plus de lisibilité ou pour indiquer au stagiaire qu’il n’a pas fini son travail, vous pouvez sortir un compte-rendu mis en page avec l’option <strong>-o report.html</strong>. D’autres format de sortie sont disponibles : </p>
+<ul>
+<li>text</li>
+<li>tabs</li>
+<li>json</li>
+<li>csv</li>
+</ul><p>Et c’est tout pour aujourd’hui !</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/presidentbeef/brakeman" onclick="window.open(this.href);return false;">Brakeman sur github</a></li>
+<li><a href="https://github.com/oreoshake/guard-brakeman" onclick="window.open(this.href);return false;">Brakeman + Guard</a></li>
+<li><a href="http://brakemanscanner.org/docs/jenkins/" onclick="window.open(this.href);return false;">Brakeman + Jenkins</a></li>
+</ul>

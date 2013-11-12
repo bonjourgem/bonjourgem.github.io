@@ -1,0 +1,80 @@
+---
+layout: post
+title: Vendredi c'est Grape
+date: '2012-04-06T10:01:34+02:00'
+tags:
+- web app
+tumblr_url: http://www.bonjourgem.com/post/20579181566/vendredi-cest-grape
+permalink: post/20579181566/vendredi-cest-grape
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m21r8cXBJo1r58g99.gif"></p>
+<h2>gem install grape</h2>
+<p><strong>Trop d’API tuent l’API !</strong></p>
+<p>Si vous nous suivez depuis quelques temps vous avez pu voir pas mal de gems pour utiliser des API. C’est cool, mais si on faisait la nôtre ? :)</p>
+<p>Aujourd’hui c’est Grape qui sert à faire des API sous forme d’application à la Sinatra mais avec quelques trucs sympathiques : </p>
+<ul>
+<li>Versioning</li>
+<li>Réponse multi-formats</li>
+<li>Et pleins d’autres trucs !</li>
+</ul><p>Un petit exemple issu de la documentation : </p>
+ <pre class="prettyprint linenums"><code>class Twitter::API &lt; Grape::API
+  version 'v1', :using =&gt; :header, :vendor =&gt; 'twitter'
+
+  helpers do
+    def current_user
+      @current_user ||= User.authorize!(env)
+    end
+
+    def authenticate!
+      error!('401 Unauthorized', 401) unless current_user
+    end
+  end
+
+  resource :statuses do
+    get :public_timeline do
+      Tweet.limit(20)
+    end
+
+    get :home_timeline do
+      authenticate!
+      current_user.home_timeline
+    end
+
+    get '/show/:id' do
+      Tweet.find(params[:id])
+    end
+
+    post :update do
+      authenticate!
+      Tweet.create(
+        :user =&gt; current_user,
+        :text =&gt; params[:status]
+      )
+    end
+  end
+
+  resource :account do
+    before { authenticate! }
+
+    get '/private' do
+      "Congratulations, you found the secret!"
+    end
+  end
+
+end
+</code></pre>
+<p>Ensuite on ajoute une petite ligne à notre config.ru : </p>
+<pre class="prettyprint linenums"><code>run Twitter::API
+</code></pre>
+<p>Voilà maintenant toute une liste de routes accessibles : </p>
+<h2>GET  /statuses/public_timeline(.json)</h2>
+<h2>GET  /statuses/home_timeline(.json)</h2>
+<h2>GET  /statuses/show/:id(.json)</h2>
+<h2>POST /statuses/update(.json)</h2>
+<p>Pratique, non ? Oui mais le faire en Rails au final aurait pris autant de lignes. Alors quel intérêt ? </p>
+<p>Et bien il vaut mieux laisser le serveur Web pour le reste, non ?</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/intridea/grape" onclick="window.open(this.href);return false;">Grape sur github</a></li>
+<li><a href="http://rubylive.fr/items/681-implementer-sa-propre-solution-single-sign-on-sso" onclick="window.open(this.href);return false;">Une news de Rubylive</a></li>
+</ul>

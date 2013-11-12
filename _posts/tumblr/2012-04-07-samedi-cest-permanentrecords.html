@@ -1,0 +1,35 @@
+---
+layout: post
+title: Samedi c'est PermanentRecords
+date: '2012-04-07T15:26:05+02:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/20648477279/samedi-cest-permanentrecords
+permalink: post/20648477279/samedi-cest-permanentrecords
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m242cifdFu1r58g99.jpg"></p>
+<h2>gem install permanent_records</h2>
+<p><strong>On efface pour de faux</strong></p>
+<p>Aujourd’hui une petite gem permettant de faire du soft-delete, ce qui peut être bien pratique.</p>
+<p>Du soft-delete ? On efface pas réellement les données de la BDD, on leur ajoute un attribut <strong>deleted_at</strong> qui sera renseigné quand l’entité sera “détruite” :)</p>
+<p>Un petit exemple issu de la documentation : </p>
+<pre class="prettyprint linenums"><code># on assigne à  'deleted_at' le Time.now
+User.find(3).destroy
+ # on détruit tout pour de vrai
+User.find(3).destroy(:force)
+# on efface tout pour de faux !
+User.destroy_all
+# on envoie Terminator dans nos utilisateurs              
+User.delete_all               
+</code></pre>
+<p>En cadeau deux scopes de recherche : </p>
+<pre class="prettyprint linenums"><code># on récupère les utilisateurs effacés 
+User.deleted.find(...)        
+# on récupère les utilisateurs qui ne sont pas effacés
+User.not_deleted.find(...)    
+</code></pre>
+<p>Voilà de quoi jouer pour ce samedi ^^</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/JackDanger/permanent_records" onclick="window.open(this.href);return false;">PermanentRecords sur github</a></li>
+</ul>

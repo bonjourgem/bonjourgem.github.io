@@ -1,0 +1,28 @@
+---
+layout: post
+title: Mercredi c'est Valium
+date: '2012-08-01T12:14:44+02:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/28477253856/mercredi-cest-valium
+permalink: post/28477253856/mercredi-cest-valium
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m82byvRZx31r58g99.jpg"></p>
+<h2>gem install valium</h2>
+<p><strong>Soigner votre anxiété</strong></p>
+<p>Vous souffrez d’anxiété chronique due à trop d’instanciation d’objets ActiveRecord ? Prenez un peu de cette gem trois fois par jour pendant une semaine et il n’y paraîtra plus.</p>
+<p>Plus sérieusement, vous l’aurez peut-être compris, cette gem permet d’accéder aux attributs d’un Model ActiveRecord sans l’instancier, par exemple : </p>
+<pre class="prettyprint linenums"><code># un seul attribut 
+Post.where(:published =&gt; true).value_of :title
+
+# plusieurs 
+Employee.where(:title =&gt; 'Sr. Monkey Wrangler').values_of :first_name, :last_name, :hired_at
+</code></pre>
+<p>Une gem à utiliser avec modération, seulement dans le cas où vous n’avez pas besoin de tous les trucs cools provenant d’ActiveRecord :)</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/ernie/valium" onclick="window.open(this.href);return false;">Valium sur github</a></li>
+</ul><p><small>
+Sur une idée de
+<a href="https://twitter.com/#!/msadouni" onclick="window.open(this.href);return false;">@msadouni</a>
+</small></p>

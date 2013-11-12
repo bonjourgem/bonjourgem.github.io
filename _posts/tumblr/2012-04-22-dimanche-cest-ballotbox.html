@@ -1,0 +1,33 @@
+---
+layout: post
+title: Dimanche c'est BallotBox
+date: '2012-04-22T19:58:34+02:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/21584679398/dimanche-cest-ballotbox
+permalink: post/21584679398/dimanche-cest-ballotbox
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m2vzptv4Dn1r58g99.gif"></p>
+<h2>gem install ballot_box</h2>
+<p><strong>Aujourd’hui on vote !</strong></p>
+<p>C’est dimanche mais ce n’est pas un dimanche comme les autres, on vote ! Pour rester dans cette thématique, voici BallotBox.</p>
+<p>Tout commence avec cette commande :</p>
+<h2>rails generate ballot_box:install</h2>
+<p>Quelques lignes pour votre application.rb :</p>
+<pre class="prettyprint linenums"><code>config.app_middleware.use BallotBox::Manager do |config|
+  config.routes = { "/posts/votes" =&gt; "Post" }
+end
+</code></pre>
+<p>Maintenant il faut préparer le model sur lequel nous allons voter : </p>
+<pre class="prettyprint linenums"><code>class Post &lt; ActiveRecord::Base
+  ballot_box :counter_cache =&gt; true,
+             :strategies =&gt; [:authenticated],
+             :place =&gt; :position,
+             :scope =&gt; :group_id
+end
+</code></pre>
+<p>Maintenant vous avez accès à toute une liste de functions et callbacks.</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/galetahub/ballot_box" onclick="window.open(this.href);return false;">BallotBox sur github</a></li>
+</ul>

@@ -1,0 +1,48 @@
+---
+layout: post
+title: Jeudi c'est Ajaxful Rating
+date: '2012-04-05T11:20:07+02:00'
+tags:
+- web app
+tumblr_url: http://www.bonjourgem.com/post/20519095040/jeudi-cest-ajaxful-rating
+permalink: post/20519095040/jeudi-cest-ajaxful-rating
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m1zzgiSKtm1r58g99.jpg"></p>
+<h2>gem install ajaxful_rating</h2>
+<p><strong>Pluie d’étoiles en prévision</strong></p>
+<p>Aujourd’hui une gem qui me donne un prétexte pour placer cette phrase : “Ton père est un voleur, il a volé toutes les étoiles du ciel pour les mettre dans tes yeux” ! </p>
+<p>Passons aux choses sérieuses. Une fois la gem installée on utilise le générateur (veillez à utiliser la bonne branche si c’est pour une application fonctionnant avec Rails 3 et plus) :</p>
+<h2>rails generate ajaxful_rating UserModelName</h2>
+<p>Maintenant, comme à l’accoutumée, on ajoute quelques méthodes à nos models : </p>
+<pre class="prettyprint linenums"><code>ajaxful_rateable :stars =&gt; 10, :dimensions =&gt; [:speed, :beauty, :price]
+</code></pre>
+<p>À mettre dans le model qui va être noté. Et pour les options : </p>
+<ul>
+<li>
+<strong>:stars</strong> pour le nombre d’étoiles</li>
+<li>
+<strong>:dimensions</strong> on précise tout ce qui peut être noté pour un même model par exemple une voiture : son état, sa vitesse etc.</li>
+</ul><p>Le model de l’utilisateur devra avoir cette méthode : </p>
+<pre class="prettyprint linenums"><code>ajaxful_rater
+</code></pre>
+<p>Pour que ça marche il faut une action dans le controller aussi : </p>
+<pre class="prettyprint linenums"><code>def rate
+  @model = LeModel.find(params[:id])
+  respond_to do |format|
+    if @model.rate(params[:stars], current_user, params[:dimension])
+      format.js { render :partial =&gt; "rating" }
+    else
+      format.js { render :partial =&gt; "rating" }
+    end
+  end
+end
+</code></pre>
+<p>Et dans votre vue : </p>
+<pre class="prettyprint linenums"><code>ratings_for @model, current_user
+</code></pre>
+<p>Voilà, amusez-vous bien ! </p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="http://axr.heroku.com" onclick="window.open(this.href);return false;">Démo</a></li>
+<li><a href="https://github.com/edgarjs/ajaxful-rating" onclick="window.open(this.href);return false;">Ajaxful Rating sur github</a></li>
+</ul>

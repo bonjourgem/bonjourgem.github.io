@@ -1,0 +1,43 @@
+---
+layout: post
+title: Mardi c'est Mailman
+date: '2012-03-20T11:09:03+01:00'
+tags:
+- Communication
+tumblr_url: http://www.bonjourgem.com/post/19621845298/mardi-cest-mailman
+permalink: post/19621845298/mardi-cest-mailman
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m16h4hfBtq1r58g99.gif"></p>
+<h2>gem install mailman</h2>
+<p><strong>Mails on Rails</strong></p>
+<p>Comme vous avez pu le deviner, cette gem concerne les mails et permet de les récupérer en quelques lignes de Ruby.</p>
+<p>Mailman fonctionne via un script où l’on décrira ce qu’il doit faire avec nos mails. En reprenant l’exemple de Ryan Bates, il suffit de le placer dans le répertoire script de notre application Rails — si on souhaite utiliser du Rails :) Ensuite, on va le remplir : </p>
+<p><strong>mailman_server</strong></p>
+<pre class="prettyprint linenums"><code>#!/usr/bin/env ruby
+require "rubygems"
+require "bundler/setup"
+require "mailman"
+
+# on précise la connexion à utiliser par Mailman
+Mailman.config.pop3 = {
+  server: 'pop.gmail.com', port: 995, ssl: true,
+  username: ENV["GMAIL_USERNAME"],
+  password: ENV["GMAIL_PASSWORD"]
+}
+
+# on affiche le titre de nos messages reçus
+Mailman::Application.run do
+# ce qui se passera par défaut pour tous les emails
+  default do
+    puts "Received: #{message.subject}" 
+  end
+end
+</code></pre>
+<p>Une petite commande pour lancer le serveur : </p>
+<h2>script/mailman_server </h2>
+<p>Et là miracle : vous allez voir des titres de mails ! La documentation de Mailman est très complète et les tutos nombreux. Je vous laisse donc avec <strong>les liens utiles</strong> :)</p>
+<ul class="link">
+<li><a href="https://github.com/titanous/mailman" onclick="window.open(this.href);return false;">Mailman sur github</a></li>
+<li><a href="http://dansowter.com/mailman-guide/" onclick="window.open(this.href);return false;">Start guide</a></li>
+<li><a href="http://railscasts.com/episodes/313-receiving-email-with-mailman?view=asciicast" onclick="window.open(this.href);return false;">Railscast</a></li>
+</ul>

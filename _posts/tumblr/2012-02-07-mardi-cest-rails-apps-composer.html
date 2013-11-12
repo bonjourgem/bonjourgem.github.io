@@ -1,0 +1,28 @@
+---
+layout: post
+title: Mardi c'est Rails Apps Composer
+date: '2012-02-07T10:15:00+01:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/17203802566/mardi-cest-rails-apps-composer
+permalink: post/17203802566/mardi-cest-rails-apps-composer
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lz0mqmzxuj1r58g99.jpg"></p>
+<h2>gem install rails_apps_composer</h2>
+<p><strong>Pour une base d’application saine et équilibrée</strong></p>
+<p>Tout développeur Rails utilise les gems pour se faciliter la vie. Mais il arrive qu’on ait du mal à les faire fonctionner ensemble. Pas vrai ?</p>
+<p>Basé sur le travail de <a href="https://github.com/intridea/rails_wizard" title="Michael Bleigh" target="_blank">Michael Bleigh</a>, Rails Apps Composer s’utilise comme ceci :</p>
+<h2>rails_apps_composer list </h2>
+<p>pour voir la liste des gems disponibles.</p>
+<h2>rails_apps_composer new myapp -r haml rspec cucumber devise home_page </h2>
+<p>etc. à vous de mettre les gems qui sont visibles grâce à la commande citée plus haut.</p>
+<p>La flemme de taper le nom des gems à chaque fois ? Pas de problème :</p>
+<h2>rake print —silent RECIPES=gem1,gem2 &gt; ~/Desktop/template.txt</h2> 
+<p>créer votre template.</p>
+<h2>rails new myapp -m ~/Desktop/template.txt</h2> 
+<p>créer votre application à partir du template.</p>
+<p><strong>Pour la suite c’est pas là :</strong></p>
+<ul class="link">
+<li><a href="https://github.com/RailsApps/rails_apps_composer" title="Rails Apps Composer sur github" target="_blank">Rails Apps Composer sur github</a></li>
+<li>
+</ul>

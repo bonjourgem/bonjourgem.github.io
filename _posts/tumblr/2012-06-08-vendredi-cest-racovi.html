@@ -1,0 +1,38 @@
+---
+layout: post
+title: Vendredi c'est racovi
+date: '2012-06-08T12:11:00+02:00'
+tags:
+- javascript
+tumblr_url: http://www.bonjourgem.com/post/24671489586/vendredi-cest-racovi
+permalink: post/24671489586/vendredi-cest-racovi
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m5amm9xgQd1r58g99.jpg"></p>
+<h2>gem install racovi</h2>
+<p><strong>Comment activer le bon JS au bon moment en toute simplicité ?</strong></p>
+<p> Aujourd’hui voilà une solution proposée par <a href="https://twitter.com/#!/yarmand" onclick="window.open(this.href);return false;">Yann Armand</a>. On la met en place comme ceci :</p>
+<p><strong>application.html.erb</strong></p>
+<pre class="prettyprint linenums"><code>&lt;!-- Helper pour appeler les différents initializers --&gt;
+&lt;%= init_view_js %&gt; 
+</code></pre>
+<p><strong>application.js</strong></p>
+<pre class="prettyprint linenums"><code>//= require hevents
+//= require racovi
+</code></pre>
+<p>Voilà maintenant tout est prêt pour ceci :</p>
+<p><strong>persons.js</strong></p>
+<pre class="prettyprint linenums"><code>// hop on appelle ce js pour tout le controller persons 
+Racovi.register_init('persons', function(){
+  console.log('hello from Person controller')
+});
+// ou alors pour des actions spécifiques !
+Racovi.register_init(['persons_new','persons_edit'], function(){
+  console.log('hello from Person controller')
+});
+</code></pre>
+<p>C’est tout pour aujourd’hui !</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/yarmand/racovi" onclick="window.open(this.href);return false;">racovi sur github</a></li>
+<li><a href="http://blog.harakys.com/blog/2011/09/05/javascript-initializers-to-your-views-with-rails-3-dot-1-and-coffeescript/" onclick="window.open(this.href);return false;">Un article bonus</a></li>
+</ul>

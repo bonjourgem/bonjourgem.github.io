@@ -1,0 +1,29 @@
+---
+layout: post
+title: Mercredi c'est Heroku San
+date: '2012-04-11T10:37:49+02:00'
+tags:
+- Service et interaction
+tumblr_url: http://www.bonjourgem.com/post/20895898277/mercredi-cest-heroku-san
+permalink: post/20895898277/mercredi-cest-heroku-san
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m2b3p5JVCC1r58g99.gif"></p>
+<h2>gem install heroku_san</h2>
+<p><strong>Des tâches rake utiles pour Heroku</strong></p>
+<p>Aujourd’hui une chouette gem regroupant tout plein de commandes rake qui pourront vous être utiles si vous utilisez Heroku.</p>
+<p>Par exemple, pour ajouter le fichier de config d’Heroku à votre application : </p>
+<h2>rake heroku:create_config</h2>
+<p>Un exemple plus concret, avec la gem heroku pour effectuer les migrations il faut faire quelque chose dans ce goût-là : </p>
+<h2>heroku run rake db:migrate</h2>
+<p>Mais comme on est feignant, avec heroku_san on enlève quelques mots : </p>
+<h2>rake heroku:db:migrate</h2>
+<p>Cette gem permet aussi de gérer plus facilement toutes vos applications Heroku via des tâches rake, avec une gestion : </p>
+<ul>
+<li>Des collaborateurs</li>
+<li>Du mode maintenance</li>
+<li>Et d’autres trucs </li>
+</ul><p>Intéressé ? Alors bonne lecture ! </p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/fastestforward/heroku_san" onclick="window.open(this.href);return false;">Heroku San sur github</a></li>
+</ul>

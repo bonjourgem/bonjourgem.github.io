@@ -1,0 +1,52 @@
+---
+layout: post
+title: Jeudi c'est Mailboxer
+date: '2012-03-08T12:42:45+01:00'
+tags:
+- Plugin Rails
+tumblr_url: http://www.bonjourgem.com/post/18944693448/jeudi-cest-mailboxer
+permalink: post/18944693448/jeudi-cest-mailboxer
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m0kda1LYG01r58g99.gif"></p>
+<h2>gem install mailboxer</h2>
+<p><strong>You’ve got a mail!</strong></p>
+<p>Aujourd’hui on dit bonjour à Mailboxer ! Le développement de cette gem suit de près celui de <a href="http://www.bonjourgem.com/2012/02/02/jeudi-cest-social-stream.html">Social Stream</a> ; afin de lui donner un système de communication / notification simple et efficace.</p>
+<p>Pour mettre en place cette gem on procède comme ceci : </p>
+<h2>rails g mailboxer:install</h2>
+<p>Commande qui génère l’initializer de Mailboxer. Initializer que voici : </p>
+<pre class="prettyprint linenums"><code>Mailboxer.setup do |config|
+  # Permet de configurer si votre application utilise ou non les emails pour les messages et notifications 
+  config.uses_emails = true  
+  # Adresse par défaut d'expédition
+  config.default_from = "no-reply@dit.upm.es"
+  # Par défaut l'attribut email du model sera pris mais il est possible de changer cela ici
+  config.email_method = :mailboxer_email
+  # La même chose pour l'attribut name
+  config.name_method = :name
+end
+</code></pre>
+<p>Préparer nos utilisateurs à communiquer : </p>
+<pre class="prettyprint linenums"><code>class User &lt; ActiveRecord::Base
+  acts_as_messageable
+end
+</code></pre>
+<p>On peut ajouter cette méthode à d’autres models pour qu’ils communiquent entre eux.</p>
+<p>Une fois que tout est prêt, vous avez accès à toute une liste de méthodes. Par exemple : </p>
+<pre class="prettyprint linenums"><code>alfa = User.find(1)
+beta = User.find(2)
+# alfa veut envoyer un message à beta
+alfa.send_message(beta, "Body", "subject")
+# alfa récupère toutes ses conversations
+alfa.mailbox.conversations
+# alfa récupère son courrier entrant
+alfa.mailbox.inbox
+# alfa récupère son courrier sortant
+alfa.mailbox.sentbox
+# alfa récupère sa corbeille
+alfa.mailbox.trash
+</code></pre>
+<p>La gem est bien maintenue et ne cesse d’évoluer. D’autres fonctionnalités devraient s’ajouter prochainement !</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/ging/mailboxer" onclick="window.open(this.href);return false;">Mailboxer sur github</a></li>
+</ul>

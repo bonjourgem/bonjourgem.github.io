@@ -1,0 +1,37 @@
+---
+layout: post
+title: Mardi c'est I18nRouting
+date: '2012-07-10T10:36:44+02:00'
+tags:
+- Plugin Rails
+tumblr_url: http://www.bonjourgem.com/post/26895094113/mardi-cest-l18nrouting
+permalink: post/26895094113/mardi-cest-l18nrouting
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m6xrnzjNqx1r58g99.jpg"></p>
+<h2>gem install i18n_routing</h2>
+<p><strong>Pour des url multilingues</strong></p>
+<p>Vous voulez traduire les différentes url de votre application Rails ? Eh bien voici une solution ! Après avoir ajouté la gem à votre Gemfile vous pourrez continuer à utiliser les helpers générés, sauf que : </p>
+<h2>rails console</h2>
+<pre class="prettyprint linenums">I18n.locale = :en
+# =&gt; :en 
+app.users_path
+# =&gt; "/users" 
+I18n.locale = :fr
+# =&gt; :fr 
+app.users_path
+# =&gt; "/utilisateurs" 
+</pre>
+<p>Pour les traductions ça se passe comme d’habitude :</p>
+<p><strong>config/locales/fr.yml</strong></p>
+<pre class="prettyprint linenums"><code>fr:
+  resources:
+    users: 'utilisateurs'
+</code></pre>
+<p>Voilà c’est tout pour aujourd’hui !</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/kwi/i18n_routing" onclick="window.open(this.href);return false;">I18nRouting sur github</a></li>
+</ul><p><small>
+Sur une idée de
+<a href="https://twitter.com/#!/msadouni" onclick="window.open(this.href);return false;">@msadouni</a>
+</small></p>

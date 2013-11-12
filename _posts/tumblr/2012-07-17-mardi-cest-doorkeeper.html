@@ -1,0 +1,26 @@
+---
+layout: post
+title: Mardi c'est Doorkeeper
+date: '2012-07-17T12:30:19+02:00'
+tags:
+- authentification
+tumblr_url: http://www.bonjourgem.com/post/27400677797/mardi-cest-doorkeeper
+permalink: post/27400677797/mardi-cest-doorkeeper
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m7av9rWXED1r58g99.jpg"></p>
+<h2>gem install doorkeeper</h2>
+<p><strong>Votre propre solution single sign-on</strong></p>
+<p>Aujourd’hui une gem qui permet de créer votre propre provider pour OmniAuth et donc Devise. En d’autres termes vous pourrez mettre en place une solution de connexion unique pour plusieurs applications et ce, assez simplement.</p>
+<p>Tout commence avec ceci :</p>
+<h2>rails generate doorkeeper:install</h2>
+<p>Ce qui aura pour effet de créer un initializer ainsi que les migrations.</p>
+<p>Voilà vous y êtes presque, il ne vous reste plus qu’à mettre en place Devise et Omniauth en utilisant OmniAuth OAuth2 pour créer une nouvelle règle de connexion (comme pour Twitter ou Facebook).</p>
+<p>C’est tout pour aujourd’hui !</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/applicake/doorkeeper/" onclick="window.open(this.href);return false;">Doorkeeper sur github</a></li>
+<li><a onclick="window.open(this.href);return false;" href="https://github.com/railscasts/353-oauth-with-doorkeeper">Exemple d’application utilisant Doorkeeper avec OmniAuth</a></li>
+</ul><p><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/marcgreenstock">@marcgreenstock</a>
+</small></p>

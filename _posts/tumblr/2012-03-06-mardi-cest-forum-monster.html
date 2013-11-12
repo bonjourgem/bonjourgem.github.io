@@ -1,0 +1,26 @@
+---
+layout: post
+title: 'Mardi c''est Forum Monster '
+date: '2012-03-06T17:44:43+01:00'
+tags:
+- web app
+tumblr_url: http://www.bonjourgem.com/post/18850626932/mardi-cest-forum-monster
+permalink: post/18850626932/mardi-cest-forum-monster
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m0h1npItCV1r58g99.gif"></p>
+<h2>gem install forum_monster</h2>
+<p><strong>Un monstre de forum</strong></p>
+<p>Il manquait à ma liste une gem pour créer des forums en quelques secondes. Erreur réparée avec Forum Monster.</p>
+<p>Après avoir ajouté la gem à votre Gemfile, une petite commande :</p>
+<h2>rails g forum_monster:install ModelUtilisateur</h2>
+<p>Puis des associations à ajouter dans votre model utilisateur : </p>
+<pre class="prettyprint linenums"><code>has_many :topics, :dependent =&gt; :destroy
+has_many :posts, :dependent =&gt; :destroy
+</code></pre>
+<p>Vous voilà prêt à lancer votre propre forum ! Sans oublier bien entendu d’exécuter les migrations :) </p>
+<p>Forum Monster est pour le moment très simple. Si l’utilisateur n’est pas authentifié, il ne peut pas poster et il n’y a pas de système d’autorisations. À vous de l’implémenter avec <a href="http://www.bonjourgem.com/2012/01/25/mercredi-cest-cancan.html">Cancan</a> par exemple.</p> 
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/gitt/forum_monster" onclick="window.open(this.href);return false;">Forum Monster sur github</a></li>
+<li><a href="http://forum-monster.heroku.com/" onclick="window.open(this.href);return false;">Démo</a></li>
+</ul>

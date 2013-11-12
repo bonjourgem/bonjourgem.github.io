@@ -1,0 +1,31 @@
+---
+layout: post
+title: Mardi c'est Visage
+date: '2012-04-10T09:26:48+02:00'
+tags:
+- Maintenance et Monitoring
+tumblr_url: http://www.bonjourgem.com/post/20832832227/mardi-cest-visage
+permalink: post/20832832227/mardi-cest-visage
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m292peo45P1r58g99.jpg"></p>
+<h2>gem install visage-app</h2>
+<p><strong>Web interface for viewing collectd statistics</strong></p>
+<p>Pour bien commencer, qu’est-ce que collectd ? Il s’agit là d’un démon (daemon) qui récupère de manière périodique vos ressources systèmes ! </p>
+<p>Vous voulez logguer les ressources que vous utilisez sur un serveur dédié avec une petite interface et le tout, plutôt rapidement ? Alors utilisons Visage :</p>
+<h2>sudo apt-get install -y build-essential librrd-ruby ruby ruby-dev rubygems collectd</h2>
+<p>Petite commande pour installer vos pré-requis sur votre serveur Ubuntu (ou votre machine).</p>
+<p>Ensuite on installe la gem avec la commande que vous connaissez bien.</p>
+<p>Et pour finir un petit exemple de vhost avec Nginx et Passenger : </p>
+<pre class="prettyprint linenums"><code>server {
+    listen 80;
+    server_name visage.domain.com;
+    root /home/visage/.gems/visage-app-0.9.6/lib/visage-app/public; 
+    passenger_enabled on;
+    passenger_set_cgi_param CONFIG_PATH "/home/visage/visage-config";
+}</code></pre>
+<p>Vous voilà prêt à l’action ! Bonne lecture de documentation :)</p>
+<ul class="link">
+<li><a href="https://github.com/auxesis/visage" onclick="window.open(this.href);return false;">Visage sur github</a></li>
+<li><a href="http://collectd.org/" onclick="window.open(this.href);return false;">Site officiel de collectd</a></li>
+<li><a href="http://visage.unstated.net/nadia/cpu+load" onclick="window.open(this.href);return false;">Démo</a></li>
+</ul>

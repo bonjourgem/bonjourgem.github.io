@@ -1,0 +1,31 @@
+---
+layout: post
+title: Lundi c'est Squeel
+date: '2012-05-28T11:09:18+02:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/23920978287/lundi-cest-squeel
+permalink: post/23920978287/lundi-cest-squeel
+---
+<p class="img-post"> <img src="/tumblr_files/tumblr_m4pzjyqq6R1r58g99.jpg"></p>
+<h2>gem install squeel</h2>
+<p><strong>Des requêtes plus sympa</strong></p>
+<p>Aujourd’hui c’est Squeel ou comment écrire des requêtes ActiveRecord moins longues et plus “Ruby”.</p>
+<p>Quelques petits exemples :</p>
+<pre class="prettyprint linenums"><code># Avec AR
+Article.where ['created_at &gt;= ?', 2.weeks.ago]
+# Avec Squeel
+Article.where{created_at &gt;= 2.weeks.ago}
+# Avec AR
+Person.joins(:articles =&gt; {:comments =&gt; :person})
+# Avec Squeel 
+Person.joins{articles.comments.person}
+</code></pre>
+<p>Et encore plein de petits raccourcis que je vous laisse découvrir ;) </p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a onclick="window.open(this.href);return false;" href="https://github.com/ernie/squeel">Squeel sur github</a></li>
+</ul><p><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/RomainTribes">@RomainTribes</a>
+</small></p>

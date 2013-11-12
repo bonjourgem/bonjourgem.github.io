@@ -1,0 +1,38 @@
+---
+layout: post
+title: Lundi c'est Apartment
+date: '2012-06-18T10:20:57+02:00'
+tags:
+- base de données
+tumblr_url: http://www.bonjourgem.com/post/25353264974/lundi-cest-apartment
+permalink: post/25353264974/lundi-cest-apartment
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m5swzb48i71r58g99.jpg"></p>
+<h2>gem install apartment</h2>
+<p><strong>Plusieurs Bases de Données, une seule application</strong></p>
+<p>Aujourd’hui une gem pour gérer plusieurs Bases de Données au sein d’une même appli Rails.</p>
+<p>Par exemple, pour changer de Bases de Données en fonction du nom de domaine ou du sous-domaine : </p>
+<p><strong>application.rb</strong></p>
+<pre class="prettyprint linenums"><code>module My Application
+  class Application &lt; Rails::Application
+    # avec le nom de domaine
+    config.middleware.use 'Apartment::Elevators::Domain'
+    # avec le sous-domaine
+    config.middleware.use 'Apartment::Elevators::Subdomain'
+  end
+end
+</code></pre>
+<p>On peut même changer de Bases de Données à volonté : </p>
+<pre class="prettyprint linenums"><code>Apartment::Database.switch('database_name')
+</code></pre>
+<p>Et ainsi toutes les nouvelles requêtes iront vers la nouvelle Base de Données sélectionnée :)</p>
+<p>Cela devrait suffire pour jouer !</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/bradrobertson/apartment" onclick="window.open(this.href);return false;">Apartment sur github</a></li>
+<li><a href="http://railscasts.com/episodes/151-rack-middleware?view=asciicast" onclick="window.open(this.href);return false;">Un vieux RailsCast</a></li>
+<li><a href="http://railscasts.com/episodes/319-rails-middleware-walkthrough" onclick="window.open(this.href);return false;">Un plus récent (mais payant)</a></li>
+</ul><p><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/msadouni">@msadouni</a>
+</small></p>

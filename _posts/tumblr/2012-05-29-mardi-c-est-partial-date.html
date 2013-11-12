@@ -1,0 +1,34 @@
+---
+layout: post
+title: Mardi c'est partial-date
+date: '2012-05-29T14:32:06+02:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/23993729428/mardi-c-est-partial-date
+permalink: post/23993729428/mardi-c-est-partial-date
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m4sap9BNkF1r58g99.jpg"></p>
+<h2>gem install partial-date</h2>
+<p><strong>Une petite gem pratique pour la route</strong></p>
+<p>Envie de stocker vos dates sous formes d’entier ? Mais pas envie d’écrire la classe pour faire ça de manière propre et réutilisable ? Et bien tadaaam :</p>
+<pre class="prettyprint linenums"><code># On initialize avec des entiers
+date = PartialDate::Date.new {|d| d.year = 2012; d.month = 01}
+# =&gt; 2012-01
+date.value
+# =&gt; 20120100
+
+# On initialize avec un entier
+date = PartialDate::Date.load 20121201
+# =&gt; 2012-12-01
+date.year
+# =&gt; 2012
+date.month
+# =&gt; 12
+date.day
+# =&gt; 1
+</code></pre>
+<p>Voilà il n’y a plus qu’à forker pour en faire une gem qui marche bien avec ActiveRecord :)</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a onclick="window.open(this.href);return false;" href="https://github.com/58bits/partial-date">partial-date sur github</a></li>
+</ul>

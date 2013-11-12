@@ -1,0 +1,81 @@
+---
+layout: post
+title: Jeudi c'est Sass
+date: '2012-01-05T09:31:00+01:00'
+tags:
+- CSS
+tumblr_url: http://www.bonjourgem.com/post/15338850807/jeudi-cest-sass
+permalink: post/15338850807/jeudi-cest-sass
+---
+<p></p><p class="img-post"><img src="/tumblr_files/tumblr_lxaigtBavM1r58g99.gif"></p>
+<h2>gem install sass</h2>
+<p class="p1"><strong>Qu’est-ce que Sass ?</strong> </p>
+<p class="p1">Sass, c’est l’outil du Webdesigner moderne qui en a marre  de perdre du temps. C’est une façon d’écrire la CSS sans se répéter en  utilisant des variables, des fonctions, des opérateurs. Et comme un  exemple est toujours plus parlant qu’un long discours :</p>
+<p class="p1"><strong>Sass</strong></p>
+<pre class="prettyprint linenums"><code>@mixin dim($height, $width: 895px)
+  width: $width
+  height: $height
+@mixin pos($position: relative, $float: left)
+  position: $position
+  float: $float
+#topNav
+  @include pos()
+  @include dim($height: 90px)
+  margin: 0
+  padding: 0
+  ul
+    @include pos($position: relative, $float: right)
+    margin: 0 0 0 0
+    li
+      @include pos()
+      margin: 0 0 0 20px
+      a
+        &amp;:link, &amp;:visited
+          font-size: 12px
+          color: #000
+          text-decoration: none
+          background: #eaeaea
+          border: 0
+          padding: 3px 6px 3px 6px
+          line-height: 18px
+        &amp;:hover
+          color: #fff
+          background: #000</code></pre>
+<p class="p1"><strong>CSS générée</strong></p>
+<pre class="prettyprint linenums"><code>#topNav {
+  position: relative;
+  float: left;
+  width: 895px;
+  height: 90px;
+  margin: 0;
+  padding: 0; <br>}
+#topNav ul {
+  position: relative;
+  float: right;
+  margin: 0 0 0 0; <br>}
+#topNav ul li {
+  position: relative;
+  float: left;
+  margin: 0 0 0 20px; <br>}
+#topNav ul li a:link, #topNav ul li a:visited {
+  font-size: 12px;
+  color: black;
+  text-decoration: none;
+  background: #eaeaea;
+  border: 0;
+  padding: 3px 6px 3px 6px;
+  line-height: 18px; <br>}
+#topNav ul li a:hover {
+  color: white;
+  background: black; <br>}
+</code></pre>
+<p class="p2">Pour que la magie s’opère :</p>
+<h2>sass —watch monsass.sass:macss.css</h2>
+<p class="p1">Chaque changement sur le fichier .sass générera  automatiquement la feuille de style .css correspondante, tant que le  script sera actif.</p>
+<p class="p1">Maintenant que vous savez à quoi sert Sass et pourquoi cela peut vous faire gagner du temps il ne reste plus qu’à y aller !</p>
+<p class="p1"><strong>Quelques liens utiles : </strong></p>
+<ul class="link">
+<li><a href="http://sass-lang.com/" title="site officielle" target="_blank">Le site officiel</a></li>
+<li><a href="http://css2sass.heroku.com/" target="_blank">Convertisseur CSS vers Sass</a></li>
+<li><a href="http://sass-lang.com/docs/yardoc/_index.html" target="_blank">Documentation officielle</a></li>
+</ul>

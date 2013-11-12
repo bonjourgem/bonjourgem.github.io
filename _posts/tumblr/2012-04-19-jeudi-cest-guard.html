@@ -1,0 +1,29 @@
+---
+layout: post
+title: Jeudi c'est Guard
+date: '2012-04-19T11:32:49+02:00'
+tags:
+- test
+tumblr_url: http://www.bonjourgem.com/post/21374504021/jeudi-cest-guard
+permalink: post/21374504021/jeudi-cest-guard
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m2pzikh9Zm1r58g99.jpg"></p>
+<h2>gem install guard</h2>
+<p><strong>Pour un environnement de dév pratique</strong></p>
+<p>Quand vous modifiez un fichier vous souhaiteriez qu’une tâche automatisée se lance ? Dites bonjour à Guard !</p>
+<p>Prenons par exemple <a href="https://github.com/guard/guard-livereload" onclick="window.open(this.href);return false;">guard-livereload</a> qui permet de rafraîchir automatiquement votre navigateur à chaque modification de HTML / CSS, avec cette petite commande : </p>
+<h2>guard init livereload</h2>
+<p>Il vous faudra aussi le module <a href="https://addons.mozilla.org/fr/firefox/addon/livereload/" onclick="window.open(this.href);return false;">LiveReload</a> pour le navigateur concerné, dans mon cas Firefox.</p>
+<p>Encore un exemple mais cette fois-ci avec <a href="https://github.com/guard/guard-rails" onclick="window.open(this.href);return false;">guard-rails</a> qui permet de relancer votre serveur de développement après une modification sur un fichier, ici le Gemfile.lock : </p>
+<pre class="prettyprint linenums"><code>guard 'rails', :port =&gt; 5000 do
+  watch('Gemfile.lock')
+  watch(%r{^(config|lib)/.*})
+end
+</code></pre>
+<p>Si vous voulez en savoir plus, regardez un peu plus bas :)</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/guard/guard" onclick="window.open(this.href);return false;">Guard sur github</a></li>
+<li><a href="http://railscasts.com/episodes/264-guard?view=asciicast" onclick="window.open(this.href);return false;">Railscast</a></li>
+<li><a href="https://github.com/guard/guard/wiki/List-of-available-Guards" onclick="window.open(this.href);return false;">Liste de Guards</a></li>
+</ul>

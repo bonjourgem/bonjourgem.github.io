@@ -1,0 +1,28 @@
+---
+layout: post
+title: Samedi c'est JBuilder
+date: '2012-02-11T17:09:00+01:00'
+tags:
+- Service et interaction
+tumblr_url: http://www.bonjourgem.com/post/17429060881/samedi-cest-jbuilder
+permalink: post/17429060881/samedi-cest-jbuilder
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lz878o9K1k1r58g99.jpg"></p>
+<h2>gem install jbuilder</h2>
+<p><strong>Builder-like JSON templating</strong></p>
+<p>Dans un des épisodes précédents, vous avez pu voir <a href="http://www.bonjourgem.com/2012/01/26/jeudi-cest-acts-as-api.html">acts_as_api</a>, une gem qui propose d’utiliser vos models et vos controllers pour retourner du JSON.</p>
+<p>Une gem pratique mais pas très respectueuse du modèle MVC. Voici une autre solution mais cette fois-ci cela ce gère avec des vues au format .json.jbuilder</p>
+<p>Le fichier se structure comme ceci :</p>
+<p><strong>JBuilder</strong></p>
+<pre class="prettyprint linenums"><code>json.gem do
+  json.value :id, 666
+  json.name "JBuilder"
+  json.is       "awesome"
+end
+</code></pre>
+<p>Voilà, plus de méthode à mettre dans vos controllers ou vos models. Tout se fait via les vues et cette gem.</p>
+<p><strong>Les liens utiles :</strong></p>
+<ul class="link">
+<li><a href="https://github.com/antiveb/JBuilder" title="JBuilder sur github" target="_blank">JBuilder sur github</a></li>
+<li><a href="http://railscasts.com/episodes/320-jbuilder" title="Railscast">Railscast</a></li>
+</ul>

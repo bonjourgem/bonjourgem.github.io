@@ -1,0 +1,33 @@
+---
+layout: post
+title: Jeudi c'est Kaminari
+date: '2012-03-01T18:27:11+01:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/18556255574/jeudi-cest-kaminari
+permalink: post/18556255574/jeudi-cest-kaminari
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m07uanzlcJ1r58g99.jpg"></p>
+<h2>gem install kaminari</h2>
+<p><strong>La pagination, c’est drôlement important</strong></p>
+<p>Qui n’a jamais eu besoin de paginer des résultats ou une liste dans une application Rails ? Pour cela il y a Kaminari.</p>
+<p>On utilise cette gem comme ceci :</p>
+<h2>rails g kaminari:config</h2>
+<p>Pour générer l’initializer de kaminari.</p>
+<p><strong>Model</strong></p>
+<pre class="prettyprint linenums"><code>class User &lt; ActiveRecord::Base
+  paginates_per 666
+end
+</code></pre>
+<p><strong>Controller</strong></p>
+<pre class="prettyprint linenums"><code>@users = User.order(:name).page params[:page]
+</code></pre>
+<p><strong>View</strong></p>
+<pre class="prettyprint linenums"><code>&lt;%= paginate @users %&gt;
+</code></pre>
+<p>Cet helper va générer dans la vue où il se trouve le morceau de HTML pour parcourir les éléments paginés.</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/amatsuda/kaminari" onclick="window.open(this.href);return false;">Kaminari sur github</a></li>
+<li><a href="http://railscasts.com/episodes/254-pagination-with-kaminari" onclick="window.open(this.href);return false;">Railscast</a></li>
+</ul>

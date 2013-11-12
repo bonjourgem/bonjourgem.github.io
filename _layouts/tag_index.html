@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+
+{% assign post      = paginator.posts.first %}
+{% assign page_next = paginator.next_page_path %}
+{% assign page_prev = paginator.previous_page_path %}
+{% assign page      = paginator.posts.first %}
+{% assign content   = post.content %}
+
+{% include post.html %}

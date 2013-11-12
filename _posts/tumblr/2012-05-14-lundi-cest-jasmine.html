@@ -1,0 +1,34 @@
+---
+layout: post
+title: Lundi c'est Jasmine
+date: '2012-05-14T13:15:26+02:00'
+tags:
+- javascript
+- test
+tumblr_url: http://www.bonjourgem.com/post/23033451132/lundi-cest-jasmine
+permalink: post/23033451132/lundi-cest-jasmine
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m3z3jak0lo1r58g99.gif"></p>
+<h2>gem install jasmine</h2>
+<p><strong>Testez vos JS</strong></p>
+<p>Les développeurs le savent, c’est très important de tester son code et c’est encore mieux quand on peut le faire de manière automatisée. Mais pour tester du JavaScript c’est souvent à la main que cela se passe… Eh bien vous allez changer vos habitudes :)</p>
+<p>Après avoir ajouté la gem à votre Gemfile, une première commande : </p>
+<h2>rails g jasmine:install</h2>
+<p>Voilà un beau dossier <strong>spec/</strong> prêt à recevoir vos premières spécifications.</p>
+<p>Un petit exemple issu de la documentation : </p>
+<pre class="prettyprint linenums"><code>describe("JasmineFirstTest", function() {
+  it("des tests de JavaScript cools !", function() {
+    expect(myCode).toBeLotsBetter();
+  });
+});
+</code></pre>
+<p>Voilà notre superbe test. Maintenant on veut voir si notre JS passe le test : </p>
+<h2>rake jasmine</h2>
+<p>Puis on se rend à l’adresse <strong>http://localhost:8888</strong> pour admirer le résultat :)</p>
+<p>Bon ok comme ça cela n’a pas l’air utile. Mais quand vous aurez 800 lignes de JavaScript à valider à la main vous comprendrez. Autant commencer tout de suite à écrire vos tests ! </p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/pivotal/jasmine" onclick="window.open(this.href);return false;">Jasmine sur github</a></li>
+<li><a href="http://pivotal.github.com/jasmine/" onclick="window.open(this.href);return false;">Site officiel</a></li>
+<li><a href="http://railscasts.com/episodes/261-testing-javascript-with-jasmine?view=asciicast" onclick="window.open(this.href);return false;">Railscast</a></li>
+</ul>

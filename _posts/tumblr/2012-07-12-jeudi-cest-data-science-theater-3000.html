@@ -1,0 +1,33 @@
+---
+layout: post
+title: Jeudi c'est data_science_theater_3000
+date: '2012-07-12T10:12:21+02:00'
+tags:
+- web app
+tumblr_url: http://www.bonjourgem.com/post/27040484838/jeudi-cest-data-science-theater-3000
+permalink: post/27040484838/jeudi-cest-data-science-theater-3000
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m71alqt9DF1r58g99.gif"></p>
+<h2>gem install data_science_theater_3000</h2>
+<p><strong>Une interface Ruby pour l’API Data Science</strong></p>
+<p>Ok c’est cool mais c’est quoi cette API ? Eh bien c’est :</p>
+<ul>
+<li>Plein d’outils pour la géolocalisation</li>
+<li>Transforme un fichier (PDF, Word, Excel, JPEG, PNG ou TIFF) en texte</li>
+<li>HTML vers texte</li>
+<li>Texte vers temps</li>
+<li>Etc.</li>
+</ul><p>Avec la gem, l’utilisation de l’API se passe comme ceci : </p>
+<pre class="prettyprint linenums"><code>require "data_science_theater_3000"
+
+request = DataScienceTheater3000::Ip2Coordinates.new( '8.8.8.8' )
+# =&gt; &lt;DataScienceTheater3000::Ip2Coordinates:0x000000019c7f60 @ip="8.8.8.8"&gt;
+request.result
+# =&gt;  {"8.8.8.8"=&gt;{"longitude"=&gt;-122.057403564453, "country_name"=&gt;"United States", "postal_code"=&gt;"94043", "region"=&gt;"CA", "locality"=&gt;"Mountain View", "country_code"=&gt;"US", "dma_code"=&gt;807, "latitude"=&gt;37.4192008972168, "country_code3"=&gt;"USA", "area_code"=&gt;650}}
+</code></pre>
+<p>Et le truc cool c’est que cette API est installable sur votre propre serveur, sans limite. Que du bonheur !</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/rthbound/data_science_theater_3000" onclick="window.open(this.href);return false;">data_science_theater_3000 sur github</a></li>
+<li><a href="http://www.datasciencetoolkit.org/" onclick="window.open(this.href);return false;">Data Science</a></li>
+</ul>

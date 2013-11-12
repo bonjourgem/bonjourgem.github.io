@@ -1,0 +1,39 @@
+---
+layout: post
+title: Mercredi c'est Stringex
+date: '2012-06-13T10:04:41+02:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/25012194034/mercredi-cest-stringex
+permalink: post/25012194034/mercredi-cest-stringex
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m5jlbpP9eo1r58g99.jpg"></p>
+<h2>gem install stringex</h2>
+<p><strong>La gem 3 en 1</strong></p>
+<p>Aujourd’hui une gem qui groupe trois librairies bien pratiques pour les manipulations de chaînes de caractères :</p>
+<p><strong>ActsAsUrl</strong></p>
+<p>Celle-ci permet de transformer un attribut en url. Pour une utilisation basique, on ajoute dans le model : </p>
+<pre class="prettyprint linenums"><code>acts_as_url :title
+</code></pre>
+<p><strong>Unidecoder</strong></p>
+<p>Celle-là permet de changer des caractères accentués en caractères non-accentués (Unicode ou ASCII accentué vers ASCII non-accentué : </p>
+<pre class="prettyprint linenums"><code>"Chasseur de démons c'est cheaté !".to_ascii
+#=&gt; Chasseur de demons c'est cheate !
+</code></pre>
+<p><strong>StringExtensions</strong></p>
+<p>D’autres méthodes comme :</p>
+<pre class="prettyprint linenums"><code>"&amp;eacute;".convert_accented_entities
+#=&gt; e
+"&lt;p&gt;BonjourGem&lt;/p&gt;".strip_html_tags
+#=&gt; BonjourGem
+</code></pre>
+<p>Et bien d’autres !</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/rsl/stringex" onclick="window.open(this.href);return false;">Stringex sur github</a></li>
+<li><a href="http://rubydoc.info/gems/stringex/1.4.0/frames" onclick="window.open(this.href);return false;">Documentation</a></li>
+<li><a href="http://www.youtube.com/watch?v=fO4hlo20bOs" onclick="window.open(this.href);return false;">Bonus contre-productif</a></li>
+</ul><p><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/msadouni">@msadouni</a>
+</small></p>

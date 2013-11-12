@@ -1,0 +1,44 @@
+---
+layout: post
+title: Vendredi c'est Watir
+date: '2012-05-25T16:49:13+02:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/23734406839/vendredi-cest-watir
+permalink: post/23734406839/vendredi-cest-watir
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m4l24jeT8t1r58g99.jpg"></p>
+<h2>gem install watir</h2>
+<p><strong>Naviguer sur le web sans les mains !</strong></p>
+<p>Aujourd’hui nous allons naviguer en utilisant un script Ruby et une jolie gem, Watir.</p>
+<p>Pour mieux comprendre, un petit exemple issu de la documentation : </p>
+<pre class="prettyprint linenums"><code>require 'watir'
+# le site que l'on veut visiter
+test_site = "http://www.google.com"
+
+# on ouvre notre navigateur préféré
+browser = Watir::Browser.new
+
+# on se rend sur le site
+browser.goto test_site
+
+# on rentre "tu sens mon talon aiguille" dans l'input de type text qui a l'attribut name "q" 
+browser.text_field(:name, "q").set "tu sens mon talon aiguille"
+
+# on clique sur le bouton rechercher
+browser.button(:name, "btnG").click
+
+# on fait un petit test pour voir si ce que l'on veut s'affiche
+if browser.text.include? "Sporto Kantes"
+  puts "Je le sens !"
+else
+  puts "Nan je sens rien :p"
+end
+</code></pre>
+<p>Voilà pour les bases. Pour la suite, direction la doc !</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/watir/watir" onclick="window.open(this.href);return false;">Watir sur github</a></li>
+<li><a href="http://wiki.openqa.org/display/WTR/Project+Home" onclick="window.open(this.href);return false;">Documentation</a></li>
+<li><a href="http://watirmelon.com/" onclick="window.open(this.href);return false;">Un blog sympa</a></li>
+</ul>

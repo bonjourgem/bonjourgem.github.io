@@ -1,0 +1,51 @@
+---
+layout: post
+title: Samedi c'est Awesome Print
+date: '2012-01-07T10:09:00+01:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/15445434441/samedi-cest-awesome-print
+permalink: post/15445434441/samedi-cest-awesome-print
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lxe9pp9OE41r58g99.jpg"></p>
+<h2>gem install awesome_print</h2>
+<p><strong>Un monde de couleurs</strong></p>
+<p>Awesome Print est un outil qui permet d’inspecter les objets de manière lisible. L’équivalent d’un <strong>puts monObjet.inspect </strong>mais en bien plus sexy.</p>
+<p>Les objets sont affichés avec une coloration correspondant au type de donnée (string, number, array, hash, symbol, etc.). Les array et les hash apparaissent avec une indentation qui permet d’en visualiser rapidement la structure. L’index ou la clé est face à la valeur qui lui est associée.</p>
+<p>Les structures emboîtées comme les tableaux de tableaux de hash resteront toujours très lisibles.</p>
+<p>Awesome Print est configurable. En plus des couleurs utilisées qui peuvent être redéfinies, il est possible de changer l’indentation utilisée dans les tableaux, de limiter le maximum d’éléments à afficher, de trier les hash, etc.</p>
+<p>Un exemple tout simple de l’utilisation d’Awesome Print :</p>
+<p><strong>Ruby</strong></p>
+<pre class="prettyprint linenums"><code>require "awesome_print"
+data = [ false, 42, %w(forty two), { :now =&gt; Time.now, :class =&gt; Time.now.class, :distance =&gt; 42e42 } ]
+
+puts "----- Sortie inspect, deprimant non ? -----"
+puts data.inspect
+
+puts "----- Sortie Awesome Print, la j'ai envie de lire, pas de partir en courant -----"
+ap data
+</code></pre>
+<p><strong>Résultat</strong></p>
+<h2>
+——- Sortie inspect, deprimant non ? ——-<br>
+[false, 42, [“forty”, “two”], {:now=&gt;2012-02-11 16:38:04 +0100, :class=&gt;Time, :distance=&gt;4.2e+43}]<br>
+——- Sortie Awesome Print, la j’ai envie de lire, pas de partir en courant ——-<br>
+[<br>
+  <span class="grey">[0]</span> <span class="red">false</span>,<br>
+ <span class="grey"> [1]</span> <span class="aqua">42</span>,<br>
+  <span class="grey">[2]</span> [<br>
+     <span class="grey">[0]</span> <span class="yellow">"forty"</span>,<br>
+     <span class="grey">[1]</span> <span class="yellow">"two""</span><br>
+  ],<br>
+  <span class="grey">[3]</span> {<br>
+       :now <span class="grey">=&gt;</span> <span class="green">2012-02-11 16:38:04 +0100</span>,<br>
+      :class <span class="grey">=&gt;</span> <span class="yellow">Time &lt; Object</span>,<br>
+     :distance <span class="grey">=&gt;</span> <span class="aqua">4.2e+43</span><br>
+   }<br>
+]
+</h2>
+<p>Awesome Print peut bien entendu être utilisé depuis la console de votre application Rails, pour de jolies couleurs !</p>
+<p><strong>Un lien utile :</strong></p>
+<ul class="link">
+<li><a href="https://github.com/michaeldv/awesome_print" title="github d'Awesome Print" target="_blank">Awesome Print sur github</a></li>
+</ul>

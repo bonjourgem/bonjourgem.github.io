@@ -1,0 +1,49 @@
+---
+layout: post
+title: Mercredi c'est Datagrid
+date: '2012-03-21T14:10:55+01:00'
+tags:
+- gestion de contenu
+tumblr_url: http://www.bonjourgem.com/post/19677929807/mercredi-cest-datagrid
+permalink: post/19677929807/mercredi-cest-datagrid
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m18k2lyi1f1r58g99.jpg"></p>
+<h2>gem install datagrid</h2>
+<p><strong>Pour les amoureux des tableaux</strong></p>
+<p>Quel plaie de devoir mettre en place un tableau triable (sans JS) ! Pas de panique, il y a une gem pour chaque chose, et chaque chose a sa gem — à méditer.</p>
+<p>Voici Datagrid qui permet d’avoir un résultat rapidement et proprement afin de se concentrer sur le reste (s’il reste quelque chose à faire). Pour l’utiliser, on crée un model qui n’hérite pas d’ActiveRecord, une classe vide, et on lui ajoute ces quelques lignes : </p>
+<pre class="prettyprint linenums"><code>include Datagrid
+  # on définit le model utilisé dans notre tableau ici User
+  scope do
+    User
+  end
+  # les différents filtres
+  filter(:email, :string)
+  filter(:disabled, :eboolean)
+  filter(:registration_type, :enum, :select =&gt; User::REGISTRATION_TYPES.map {|r| [r.humanize, r]})
+  integer_range_filters(:logins_count, {:default =&gt; proc { User.minimum(:logins_count)}}, {:default =&gt; proc {User.maximum(:logins_count)}})
+  date_range_filters(:registered_at)
+  # les colonnes que l'on souhaite afficher
+  column(:id)
+  column(:email, :url =&gt; proc {|user| "mailto:#{user.email}"})
+  column(:registration_type) do |record|
+    record.registration_type.humanize
+  end
+  column(:logins_count)
+  column(:registered_at)
+  column(:disabled) do
+    self.disabled? ? "Yes" : "No"
+  end
+</code></pre>
+<p>Ensuite dans l’action et le controller concernés on ajoute ceci : </p>
+<pre class="prettyprint linenums"><code>@user_report = UserReport.new(params[:user_report])
+    @assets = @user_report.assets.page(params[:page])
+</code></pre>
+<p>Et pour finir, une jolie vue utilisant pleins d’helpers pour encore plus de facilité : </p>
+<pre class="prettyprint linenums"><code>&lt;%= datagrid_table(@user_report, @assets) %&gt;
+  &lt;%= paginate @assets %&gt;
+</code></pre>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/bogdan/datagrid" onclick="window.open(this.href);return false;">Datagrid sur github</a></li>
+</ul>

@@ -1,0 +1,51 @@
+---
+layout: post
+title: Jeudi c'est Slim
+date: '2012-06-07T10:01:32+02:00'
+tags:
+- HTML
+tumblr_url: http://www.bonjourgem.com/post/24598626696/jeudi-cest-slim
+permalink: post/24598626696/jeudi-cest-slim
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m58it8ipHc1r58g99.jpg"></p>
+<h2>gem install slim</h2>
+<p><strong>Pour des vues humainement lisibles</strong></p>
+<p>Aujourd’hui une gem pour des templates de vues, comme <a href="http://www.bonjourgem.com/2012/02/18/samedi-cest-haml.html">HAML</a>. Voici un petit exemple issu de la documentation : </p>
+<pre class="prettyprint linenums"><code>doctype html
+html
+  head
+    title Slim Examples
+    meta name="keywords" content="template language"
+
+  body
+    h1 Markup examples
+    #content.example1
+      p Nest by indentation
+
+    = yield
+
+    - if items.any?
+      table
+        - for item in items do
+          tr
+            td = item.name
+            td = item.price
+    - else
+      p No items found
+
+    #footer
+      | Copyright © 2010 Andrew Stone
+
+    = render 'tracking_code'
+
+    script
+      | $(content).do_something();
+</code></pre>
+<p>Verdict : c’est aussi rapide qu’HAML. Maintenant à vous de choisir votre moteur de template préféré :)</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/stonean/slim" onclick="window.open(this.href);return false;">Slim sur github</a></li>
+<li><a href="http://slim-lang.com" onclick="window.open(this.href);return false;">Site officiel</a></li>
+<li><a href="https://github.com/fredwu/haml2slim" onclick="window.open(this.href);return false;">HAML to Slim</a></li>
+<li><a href="https://github.com/joaomilho/html2slim" onclick="window.open(this.href);return false;">HTML to Slim</a></li>
+</ul>

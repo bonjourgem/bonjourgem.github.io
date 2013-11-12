@@ -1,0 +1,22 @@
+---
+layout: post
+title: Lundi c'est Noexec
+date: '2012-04-02T12:29:50+02:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/20343402597/lundi-cest-noexec
+permalink: post/20343402597/lundi-cest-noexec
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m1ujupIyyn1r58g99.jpg"></p>
+<h2>gem install noexec</h2>
+<p><strong>Arrêtons d’utiliser bundle exec</strong></p>
+<p>Aujourd’hui une gem bien pratique dont toute l’utilité est dans le titre. Elle permet de lancer vos commandes et d’exécuter vos scripts dans le contexte de votre Gemfile, s’il y en a un dans le répertoire en cours, sans ajouter la commande : </p>
+<h2>bundle exec</h2>
+<p>Mais pour que cela fonctionne il faut ajouter la ligne suivante à votre .profile : </p>
+<pre class="prettyprint linenums"><code>RUBYOPT="-r`noexec`"</code></pre>
+<p>Une fois que c’est fait, à chaque fois que Ruby sera utilisé, il vérifiera si un Gemfile est présent pour fonctionner dans son contexte.</p>
+<p>Voilà c’est tout pour aujourd’hui ! </p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/joshbuddy/noexec" onclick="window.open(this.href);return false;">Noexec sur github</a></li>
+</ul>

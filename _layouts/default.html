@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ page.title }}</title>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+    
+    <!-- Google Webfonts -->
+    <link href='http://fonts.googleapis.com/css?family=Noticia+Text:400,400italic,700,700italic' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css' />   
+    <!-- Feuille de style font -->
+    <link href="https://s3-eu-west-1.amazonaws.com/bonjourgem/css/font.css" rel="stylesheet" />
+    <!-- Le styles -->
+    <link href="https://s3-eu-west-1.amazonaws.com/bonjourgem/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- Le fav icon -->
+    <link rel="shortcut icon" href="https://s3-eu-west-1.amazonaws.com/bonjourgem/favicon.ico" />
+  </head>
+  <body onload="prettyPrint()">
+
+    <!-- Precharger font -->
+    <p class="hidden novecento-normal">Novecento Normal</p>
+    <p class="hidden novecento-demibold">Novecento Demibold</p>
+    <p class="hidden novecento-bold">Novecento Bold</p>
+    
+    <div class="container-fluid">
+      
+      <header class="row-fluid"> 
+          
+        <div class="span8">
+        
+          <div class="left-col"></div><!--/.left-col-->
+          
+          <div class="right-col">
+            <a class="logo" href="/"></a>
+            <h3>Un jour, <span>une gem</span></h3>  
+          </div><!--/.right-col-->
+          
+        </div><!--/.span8-->
+        
+      </header><!--/header.row-fluid-->
+    
+      <div class="row-fluid">      
+        
+        <div class="span8">
+          
+          {{ content }}
+          
+          <div class="clear"></div>
+        
+        </div><!--/.span8-->
+        
+        <div class="span4">
+        
+          <div class="sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Cat&eacute;gories</li>
+              {% for tag in site.tags_list %}
+                <li {% if paginator.current_tag.path == tag.path %}class="active"{% endif %}>
+                  <a class="tag_list_link" href="/tagged/{{ tag.path }}">{{ tag.name }}</a>
+                </li>
+              {% endfor %}
+            </ul> 
+            <div class="separator"></div>          
+            <ul class="nav nav-list">
+              <li class="nav-header follow-heading">Nous suivre</li>
+              <li><a href="https://twitter.com/wearemd" onclick="window.open(this.href);return false;">wearemd sur Twitter</a></li>
+            </ul>            
+          </div><!--/.sidebar-nav -->
+          
+        </div><!--/.span4-->
+        
+      </div><!--/.row-fluid-->
+
+      <footer class="row-fluid"> 
+          
+        <div class="span8">
+        
+          <div class="left-col"></div><!--/.left-col-->
+          
+          <div class="right-col">           
+            <span>
+              <a href="https://www.tumblr.com" onclick="window.open(this.href);return false;">Tumblr</a> Bonjour gem par <a href="http://wearemd.com" onclick="window.open(this.href);return false;">wearemd</a></a>   
+            </span>       
+          </div><!--/.right-col-->
+          
+        </div><!--/.span8-->
+        
+      </footer><!--/footer.row-fluid-->
+
+    </div><!--/.container-fluid-->
+    
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Jquery -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/jquery-1.7.1.min.js"></script>
+    <!-- Prettify -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/prettify.js"></script>
+    <!-- Socialite -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/socialite-1.0.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function()
+        {
+          Socialite.load($('.social-buttons'));
+        }
+      );
+    </script>
+    <script type="text/javascript">
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    </script>
+    <!-- Tools -->
+    <script src="/js/tool.js"></script>
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22833339-4']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();    
+    </script>
+
+  </body>
+</html>

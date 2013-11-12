@@ -1,0 +1,65 @@
+---
+layout: post
+title: Vendredi c'est Compass
+date: '2012-01-06T10:30:00+01:00'
+tags:
+- CSS
+tumblr_url: http://www.bonjourgem.com/post/15392961811/vendredi-cest-compass
+permalink: post/15392961811/vendredi-cest-compass
+---
+<p></p><p class="img-post"><img src="/tumblr_files/tumblr_lxckr31VoJ1r58g99.jpg"></p>
+<h2>gem install compass</h2>
+<p class="p1"><strong>Compass, la suite logique de SASS</strong></p>
+<p class="p1">Compass est un outil qui reprend SASS et qui permet d’appliquer une logique de développement au Webdesign.</p>
+<p class="p1">Par exemple en ajoutant la ligne suivante dans votre fichier .sass, vous importerez un reset css. Tout simplement.</p>
+<pre class="prettyprint linenums"><code>@import "compass/reset"</code></pre>
+<p class="p1">Compass comprend tout un panel d’outils pour styler les éléments fastidieux habituellement, par exemple les tableaux.</p>
+<p class="p1">Tout d’abord, on commence par créer un nouveau projet Compass :</p>
+<h2>compass create test —syntax sass</h2>
+<p class="p4"><strong>Le HTML</strong></p>
+<pre class="prettyprint linenums"><code>&lt;div class='example'&gt;
+  &lt;table cellspacing='0'&gt;
+    &lt;thead&gt;
+      &lt;tr class='odd'&gt;
+        &lt;th&gt;Compass&lt;/th&gt;
+        &lt;th&gt;c'est&lt;/th&gt;
+        &lt;th&gt;super&lt;/th&gt;
+        &lt;th&gt;cool !&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr class='even'&gt;
+        &lt;th&gt;Des fruits&lt;/th&gt;
+        &lt;td class='numeric'&gt;Banane&lt;/td&gt;
+        &lt;td class='numeric'&gt;Pomme&lt;/td&gt;
+        &lt;td class='numeric'&gt;Fraise&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr class='odd'&gt;
+        &lt;th&gt;D'autres fruits&lt;/th&gt;
+        &lt;td class='numeric'&gt;Framboise&lt;/td&gt;
+        &lt;td class='numeric'&gt;Poire&lt;/td&gt;
+        &lt;td class='numeric'&gt;Cerise&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;<br></code></pre>
+<p class="p1"><strong>Le SASS </strong></p>
+<pre class="prettyprint linenums"><code>@import "compass/utilities/tables" 
+ .example
+   table 
+     $table-color: #C8A37C 
+     +table-scaffolding 
+     +inner-table-borders(1px, darken($table-color, 40%)) 
+     +outer-table-borders(2px) 
+     +alternating-rows-and-columns($table-color, adjust-hue($table-color, -20deg),#131313)
+</code></pre>
+<p class="p4">La CSS générée fait plus de 150 lignes, donc je ne la copierai pas ici ;)</p>
+<p class="p4">Facile non ? En quelques lignes j’ai une solution pour styler un tableau, et il existe bien d’autres outils pré-intégrés à Compass.</p>
+<p class="p4">Comme pour SASS, pour que le miracle survienne, il faut se placer dans le répertoire de votre projet Compass ou de votre projet Rails et taper la commande suivante :</p>
+<h2>compass watch</h2>
+<p class="p4"><span class="s2">Compass offre une multitude de possibilités. On peut grâce à Compass exploiter facilement les frameworks <a href="https://github.com/nextmat/compass-960-plugin" title="960 grid" target="_blank">960 grid</a> ou <a href="https://github.com/sporkd/compass-html5-boilerplate" title="HTML5 Boilerplate" target="_blank">HTML5 Boilerplate</a> pour ses projets.<br></span></p>
+<p class="p4"><strong>Quelques liens utiles :</strong></p>
+<ul class="link">
+<li><a href="http://compass-style.org/" title="Compass site officiel" target="_blank">Le site officiel</a></li>
+<li><a href="http://css-tricks.com/video-screencasts/88-intro-to-compass-sass/" title="Tutoriel vidéo" target="_blank">Tutoriel vidéo</a></li>
+</ul>

@@ -1,0 +1,30 @@
+---
+layout: post
+title: Jeudi c'est ActiveValidators
+date: '2012-02-16T10:30:27+01:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/17705456976/jeudi-cest-activevalidators
+permalink: post/17705456976/jeudi-cest-activevalidators
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lzhbcz9C7Z1r58g99.gif"></p>
+<h2>gem install activevalidators</h2>
+<p><strong>Chuck Norris approved</strong></p>
+<p>Quand Chuck fait du Rails, il ne valide pas ses données, ce sont les données qui se valident elles-même. Pour les autres, il y a ActiveValidators, un outil qui permet de le faire proprement.</p>
+<p>Voici un exemple issu de la documentation : </p>
+<pre class="prettyprint linenums"><code>class User
+   validates :email_address, :email =&gt; true
+   validates :link_url,      :url   =&gt; true
+   validates :user_phone,    :phone =&gt; true
+   validates :password,      :password =&gt; { :strength =&gt; :medium }
+   validates :twitter_at,    :twitter =&gt; { :format =&gt; :username_with_at }
+   validates :twitter_url,   :twitter =&gt; { :format =&gt; :url }
+  validates :twitter,       :twitter =&gt; true
+  validates :postal_code,   :postal_code =&gt; { :country =&gt; :us }
+end
+</code></pre>
+<p>Pratique, non ? D’autres validations sont disponibles, et de nouvelles viendront avec l’évolution du projet.</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/cesario/activevalidators" onclick="window.open(this.href);return false;">ActiveValidators sur github</a></li>
+</ul>

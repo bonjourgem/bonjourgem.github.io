@@ -1,0 +1,45 @@
+---
+layout: post
+title: Lundi c'est Rabl
+date: '2012-03-19T10:50:00+01:00'
+tags:
+- Service et interaction
+tumblr_url: http://www.bonjourgem.com/post/19567368775/lundi-cest-rabl
+permalink: post/19567368775/lundi-cest-rabl
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m14ljbosuT1r58g99.jpg"></p>
+<h2>gem install rabl</h2>
+<p><strong>Un autre générateur de JSON</strong></p>
+<p>Dans les épisodes précédents nous vous avons présenté des gems comme <a href="http://www.bonjourgem.com/2012/02/11/samedi-cest-jbuilder.html">JBuilder</a> ou <a href="http://www.bonjourgem.com/2012/01/26/jeudi-cest-acts-as-api.html">acts_as_api</a>. Aujourd’hui une gem tout aussi cool, avec encore plus de fonctionnalités.</p>
+<p>Comme pour JBuilder vous devrez créer des templates pour répondre à vos demandes d’API. Par exemple : </p>
+<p><strong>show.rabl</strong></p>
+<pre class="prettyprint linenums"><code>object @posts
+attributes :id, :title, :subject
+</code></pre>
+<p>Sans oublier le bloc respond_to dans votre controller : </p>
+<pre class="prettyprint linenums"><code>def show
+  @post= Post.find(params[:id])
+  respond_to do |format|
+    format.html
+    format.json { render json: @post}
+  end
+end
+</code></pre>
+<p>Envie de rajouter autre chose qu’un des attributs de votre model ? On peut utiliser la méthode node comme ceci : </p>
+<pre class="prettyprint linenums"><code>object @posts
+attributes :id, :title, :subject
+node(:edit_url) { edit_article_url(@post) }
+</code></pre>
+<p>On aimerai bien avoir la même chose pour l’action index de notre controller, mais comme on a la flemme de tout réécrire, on utilise la méthode extends : </p>
+<p><strong>index.rabl</strong></p>
+<pre class="prettyprint linenums"><code>collection @posts
+
+extends "posts/show"
+</code></pre>
+<p>Et encore plein d’autres belles choses dans la documentation, bonne lecture ! </p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/nesquena/rabl" onclick="window.open(this.href);return false;">Rabl sur github, liste de tutoriels en bas de la page</a></li>
+<li><a href="http://railscasts.com/episodes/322-rabl?view=asciicast" onclick="window.open(this.href);return false;">Railscast</a></li>
+<li><a href="https://github.com/ccocchi/rabl-fast-json" onclick="window.open(this.href);return false;">Souci de performance ? D’extends ?</a></li>
+</ul>

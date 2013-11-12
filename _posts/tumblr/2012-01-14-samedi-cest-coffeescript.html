@@ -1,0 +1,40 @@
+---
+layout: post
+title: Samedi c'est CoffeeScript
+date: '2012-01-14T09:58:00+01:00'
+tags:
+- JavaScript
+tumblr_url: http://www.bonjourgem.com/post/15820258907/samedi-cest-coffeescript
+permalink: post/15820258907/samedi-cest-coffeescript
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lxr3hg2Vxt1r58g99.jpg"></p>
+<h2>gem install coffee-script</h2>
+<p><strong>Pour les </strong><strong>allergiques au point-virgule</strong></p>
+<p>Écrire du JavaScript peut être pour certains long, difficile et douloureux. Mais pas de panique, CoffeScript est là ! Il vous permettra d’écrire de longs script très proprement grâce à une syntaxe facile à appréhender.</p>
+<p>Un petit exemple tiré de la documentation pour mieux comprendre :</p>
+<p><strong>CoffeeScript</strong> </p>
+<pre class="prettyprint linenums"><code>square = (x) -&gt; x * x
+cube   = (x) -&gt; square(x) * x
+</code></pre>
+<p>On lance la commande qui permet de compiler notre .coffee en .js :</p>
+<h2>coffee -c mon-fichier.coffee</h2>
+<p><strong>JavaScript produit</strong></p>
+<pre class="prettyprint linenums"><code>var cube, square;
+
+square = function(x) {
+  return x * x;
+};
+
+cube = function(x) {
+  return square(x) * x;
+};
+</code></pre>
+<p>Pas mal hein ? Pas besoin de déclarer les variables et on oublie les <strong>; </strong>Que demander de plus ? </p>
+<p>Vous pensez peut-être que cela est embêtant pour débuguer ? Et bien non car CoffeeScript dispose d’un <a href="http://coffeescript.org/extras/coffee-script.js" title="Compilateur CoffeeScript" target="_blank">compilateur</a> écrit en javascript qui vous permet de travailler et de voir le résultat plus facilement qu’en compilant votre .coffee à chaque test.</p>
+<p>Bref vous l’aurez compris, CoffeeScript est l’outil qu’il vous faut si vous n’aimez pas écrire du JS.</p>
+<p><strong>Pour finir, les liens utiles :</strong></p>
+<ul class="link">
+<li><a href="http://coffeescript.org/" title="Site officiel" target="_blank">Site officiel</a></li>
+<li><a href="https://github.com/languages/coffeescript" title="Des exemples de code " target="_blank">Beaucoup d’exemples de code</a></li>
+<li><a href="http://sunilarora.org/coffeescript-with-backbonejs-example" title="Backbone.js et CoffeeScript" target="_blank">Pour aller plus loin : Backbone.js et CoffeeScript</a></li>
+</ul>

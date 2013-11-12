@@ -1,0 +1,51 @@
+---
+layout: post
+title: Jeudi c'est Likeable
+date: '2012-08-02T11:31:24+02:00'
+tags:
+- web app
+tumblr_url: http://www.bonjourgem.com/post/28548277676/jeudi-cest-likeable
+permalink: post/28548277676/jeudi-cest-likeable
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m8494pJZwK1r58g99.gif"></p>
+<h2>gem install likeable</h2>
+<p><strong>Pour tout liker</strong></p>
+<p>Aujourd’hui une gem pour permettre à un model d’en liker d’autres. Pour la mise en place de la gem cela se passe comme ceci :</p>
+<p><strong>initializers/likeable.rb</strong></p>
+<pre class="prettyprint linenums"><code>Likeable.setup do |likeable|
+    likeable.redis  = Redis.new
+end
+</code></pre>
+<p>On prépare le model qui peut liker :</p>
+<pre class="prettyprint linenums"><code>class User
+    include Likeable::UserMethods
+end
+</code></pre>
+<p>Et on ajoute des models qui peuvent se faire liker :</p>
+<pre class="prettyprint linenums"><code>class Comment
+    include Likeable
+end
+</code></pre>
+<p>Maintenant vous avez accès à tout ce qu’il faut comme méthodes :</p>
+<pre class="prettyprint linenums"><code>comment = Comment.find(15)
+comment.like_count                  # =&gt; 0
+current_user.like!(comment)         # =&gt; #&lt;Likeable::Like ... &gt;
+comment.like_count                  # =&gt; 1
+comment.likes                       # =&gt; [#&lt;Likeable::Like ... &gt;]
+comment.likes.last.user             # =&gt; #&lt;User ... &gt;
+comment.likes.last.created_at       # =&gt; Wed Jul 27 19:34:32 -0500 2011
+
+comment.liked_by?(current_user)     # =&gt; true
+current_user.all_liked(Comment)     # =&gt; [#&lt;Comment ...&gt;, ...]
+
+liked_comment = Likeable.find_by_resource_id("Comment", 15)
+liked_comment == comment            # =&gt; true
+</code></pre>
+<p>Et pour finir, tout est stocké avec Redis :)</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/schneems/likeable" onclick="window.open(this.href);return false;">Likeable sur github</a></li>
+</ul><p><small>
+Sur une idée de
+<a href="https://twitter.com/#!/msadouni" onclick="window.open(this.href);return false;">@msadouni</a>
+</small></p>

@@ -1,0 +1,35 @@
+---
+layout: post
+title: Mardi c'est Populator
+date: '2012-02-14T11:24:07+01:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/17602312412/mardi-cest-populator
+permalink: post/17602312412/mardi-cest-populator
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lzdoo7Q32L1r58g99.jpg"></p>
+<h2>gem install populator</h2>
+<p><strong>Food for thought</strong></p>
+<p>On le sait tous : quand on doit développer une application, il nous faut des données pour essayer nos petites magouilles.</p>
+<p><a href="https://github.com/ryanb" onclick="window.open(this.href);return false;">Ryan Bates</a> nous offre donc cette petite gem qui permet d’importer une grande quantité de données dans notre Base de Données.</p>
+<p>Cela fonctionne comme ceci :</p>
+<p><strong>Ruby (lib/tasks/populate.rake)</strong></p>
+<pre class="prettyprint linenums"><code>namespace :db do
+  desc "Efface et remplis la Base de Donnees"
+  task :populate =&gt;:environment do
+    require 'populator'
+    
+    Person.delete_all
+    
+    Person.populate(3000) do |person|
+      person.first_name = ["John", "Bob", "Hank"]
+      person.last_name = "Smith"
+    end
+  end
+end
+</code></pre>
+<p>Voilà c’est tout pour aujourd’hui. La suite demain !</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/ryanb/populator" onclick="window.open(this.href);return false;">Populator sur github</a></li>
+</ul>

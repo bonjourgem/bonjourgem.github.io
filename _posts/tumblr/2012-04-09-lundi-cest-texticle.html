@@ -1,0 +1,28 @@
+---
+layout: post
+title: Lundi c'est Texticle
+date: '2012-04-09T11:42:09+02:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/20771237778/lundi-cest-texticle
+permalink: post/20771237778/lundi-cest-texticle
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m27ckjI8Qa1r58g99.gif"></p>
+<h2>gem install texticle</h2>
+<p><strong>Une gem qui en a !</strong></p>
+<p>De la recherche full-text sur Heroku pour $0 ? Voilà la gem qu’il vous faut ! Venons-en au vif du sujet : la mise en place. Après avoir mis à jour votre Gemfile, quelques méthodes à votre disposition : </p>
+<pre class="prettyprint linenums"><code>Game.search('Sonic') # On cherche à travers les attributs texte du model
+Game.search(:title =&gt; 'Mario')
+Game.search_by_title('Street Fighter').search_by_system('PS3')
+Game.search_by_title_and_system('Final Fantasy', 'PS2')
+Game.search_by_title_or_system('Final Fantasy', 'PS3')
+</code></pre>
+<p>Quelques petits points négatifs tout de même : </p>
+<ul>
+<li>Ne fonctionne qu’avec PostgreSQL</li>
+<li>Fonctionne mal pour les grosses architectures (il y a <a href="http://www.bonjourgem.com/2012/03/02/vendredi-cest-thinking-sphinx.html">Thinking Sphinx</a> pour ça !)</li>
+</ul><p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/tenderlove/texticle" onclick="window.open(this.href);return false;">Texticle sur github</a></li>
+<li><a href="http://tenderlove.github.com/texticle/" onclick="window.open(this.href);return false;">Site officiel</a></li>
+</ul>

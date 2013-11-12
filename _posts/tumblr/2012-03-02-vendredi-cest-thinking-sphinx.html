@@ -1,0 +1,43 @@
+---
+layout: post
+title: Vendredi c'est Thinking Sphinx
+date: '2012-03-02T13:09:46+01:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/18603192316/vendredi-cest-thinking-sphinx
+permalink: post/18603192316/vendredi-cest-thinking-sphinx
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m09938K8At1r58g99.jpg"></p>
+<h2>gem install thinking-sphinx</h2>
+<p><strong>Demande et le Sphinx trouvera</strong></p>
+<p>Thinking Sphinx permet de faire de la recherche full-text rapidement et proprement.</p>
+<p>Pour l’essayer, si vous êtes sous OS X, il vous faudra installer Sphinx via <a href="http://mxcl.github.com/homebrew/" onclick="window.open(this.href);return false;">Homebrew</a>. Vous aurez aussi besoin d’un serveur MySQL ou PostgreSQL.</p>
+<p>Une fois le tout installé, il vous faut opérer quelques modifications sur vos models pour dire à Sphinx ce qui doit être indexé : </p>
+<p><strong>Model</strong></p>
+<pre class="prettyprint linenums"><code>class Article &lt; ActiveRecord::Base
+  define_index do
+    indexes content
+  end
+end
+</code></pre>
+<p>Il est aussi possible d’ajouter quelques options pour rendre un attribut triable ou pour lui donner un alias — dans le cas d’une association.</p>
+<p>Une fois votre model prêt à l’action avec Sphinx, il vous faut l’indexer :</p>
+<h2>rake ts:index</h2>
+<p>Ensuite, lancer le serveur Sphinx : </p>
+<h2>rake ts:start</h2>
+<p>Puis pour bien faire une méthode dans notre controller :</p>
+<pre class="prettyprint linenums"><code>def index
+  @articles = Article.search(params[:search])
+end
+</code></pre>
+<p>Avec la vue associée : </p>
+<pre class="prettyprint linenums"><code>&lt;%= form_tag articles_path, method: :get do %&gt;
+    &lt;%= text_field_tag :search, params[:search] %&gt;
+    &lt;%= submit_tag "Search", name: nil %&gt;
+&lt;% end %&gt;
+</code></pre>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/freelancing-god/thinking-sphinx" onclick="window.open(this.href);return false;">Thinking Sphinx sur github</a></li>
+<li><a href="http://railscasts.com/episodes/120-thinking-sphinx-revised?view=asciicast" onclick="window.open(this.href);return false;">Railscast</a></li>
+</ul>

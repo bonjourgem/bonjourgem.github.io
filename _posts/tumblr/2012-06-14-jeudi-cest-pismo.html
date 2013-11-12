@@ -1,0 +1,48 @@
+---
+layout: post
+title: Jeudi c'est Pismo
+date: '2012-06-14T10:42:42+02:00'
+tags:
+- Parseur
+tumblr_url: http://www.bonjourgem.com/post/25082051053/jeudi-cest-pismo
+permalink: post/25082051053/jeudi-cest-pismo
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m5lhb2CiRg1r58g99.jpg"></p>
+<h2>gem install pismo </h2>
+<p><strong>Extraction de méta données </strong></p>
+<p>Besoin d’extraire des données d’un site web ? Voilà une solution bien pratique.</p>
+<p>Par exemple : </p>
+<pre class="prettyprint linenums"><code>require 'pismo'
+
+# On charge la page web
+doc = Pismo::Document.new('http://www.rubyinside.com/cramp-asychronous-event-driven-ruby-web-app-framework-2928.html')
+
+doc.title        # =&gt; "Cramp: Asychronous Event-Driven Ruby Web App Framework"
+doc.author    # =&gt; "Peter Cooper"
+doc.lede      # =&gt; "Cramp (GitHub repo) is a new, asynchronous evented Web app framework by Pratik Naik of 37signals (and the Rails core team). It's built around Ruby's EventMachine library and was designed to use event-driven I/O throughout - making it ideal for situations where you need to handle a large number of open connections (such as Comet systems or streaming APIs.)"
+doc.keywords  # =&gt; [["cramp", 7], ["controllers", 3], ["app", 3], ["basic", 2], ..., ... ]
+</code></pre>
+<p>Pratique, non ? D’autres méthodes sont disponibles : </p>
+<ul>
+<li>title</li>
+<li>titles</li>
+<li>author</li>
+<li>authors</li>
+<li>lede</li>
+<li>keywords</li>
+<li>sentences(qty)</li>
+<li>body</li>
+<li>html_body</li>
+<li>feed</li>
+<li>feeds</li>
+<li>favicon</li>
+<li>description</li>
+<li>datetime</li>
+</ul><p>Voilà, c’est tout pour aujourd’hui ! </p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/peterc/pismo" onclick="window.open(this.href);return false;">Pismo sur github</a></li>
+</ul><p><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/msadouni">@msadouni</a>
+</small></p>

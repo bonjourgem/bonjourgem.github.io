@@ -1,0 +1,26 @@
+---
+layout: post
+title: Mardi c'est Wisepdf
+date: '2012-03-27T14:47:34+02:00'
+tags:
+- HTML
+tumblr_url: http://www.bonjourgem.com/post/20006395013/mardi-cest-wisepdf
+permalink: post/20006395013/mardi-cest-wisepdf
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m1jmuoJl201r58g99.jpg"></p>
+<h2>gem install wisepdf</h2>
+<p><strong>Que celui qui n’a jamais dû générer un pdf me jette la première pierre !</strong></p>
+<p>Il y a deux trucs nuls dans la vie : ne pas réussir un fatality et générer des pdf. Le second peut être angoissant surtout quand il s’agit qu’il soit “joli”. Mais bon il y a plein d’outils pour se faciliter la vie, Wisepdf est l’un d’entre eux.</p>
+<p>Cette gem utilise <a href="http://code.google.com/p/wkhtmltopdf/" onclick="window.open(this.href);return false;">Wkhtmltopdf</a> pour nous convertir du bon HTML des 90’s (rien de mieux qu’un tableau pour faire un joli pdf) en pdf.</p>
+<p>Un petit exemple : </p>
+<pre class="prettyprint linenums"><code># on crée un pdf depuis une chaîne
+pdf = Wisepdf::Writer.new.to_pdf('&lt;h1&gt;Bonjourgem te bat à Mortal Kombat&lt;/h1&gt;')
+
+# on le sauvegarde dans un fichier 
+save_path = Rails.root.join('pdfs','filename.pdf')
+File.open(save_path, 'wb') do |file|
+  file </code></pre>
+<p>Beaucoup, beaucoup d’options sont disponibles pour vous permettre d’utiliser des templates HTML pour vos générations de pdf. Par ici le <strong>lien utile</strong> :</p>
+<ul class="link">
+<li><a href="https://github.com/igor-alexandrov/wisepdf" onclick="window.open(this.href);return false;">Wisepdf sur github</a></li>
+</ul>

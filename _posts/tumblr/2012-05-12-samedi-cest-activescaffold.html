@@ -1,0 +1,30 @@
+---
+layout: post
+title: Samedi c'est ActiveScaffold
+date: '2012-05-12T12:17:41+02:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/22894768238/samedi-cest-activescaffold
+permalink: post/22894768238/samedi-cest-activescaffold
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m3wg6tPI2W1r58g99.gif"></p>
+<h2>gem install active_scaffold</h2>
+<p><strong>Un bel échafaudage ! </strong></p>
+<p>Aujourd’hui une gem drôlement mignonne qui vous permettra de faire des scaffolds et le tout, asynchrone. Oui Monsieur ! </p>
+<p>Pour tester la bestiole, rien de plus simple. Après avoir ajouté la gem à votre Gemfile, quelques modifications s’imposent : </p>
+<p><strong>application.css</strong></p>
+<pre class="prettyprint linenums"><code>*= require active_scaffold
+</code></pre>
+<p><strong>application.js</strong></p>
+<pre class="prettyprint linenums"><code>//= require active_scaffold
+</code></pre>
+<p>Ensuite il ne reste plus qu’à lancer un scaffold : </p>
+<h2>rails g active_scaffold Model attribut:type</h2>
+<p>Et on finit par un petit : </p>
+<h2>rake db:migrate</h2>
+<p>Et c’est tout ! Je vous laisse apprécier le résultat. </p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/activescaffold/active_scaffold" onclick="window.open(this.href);return false;">ActiveScaffold sur github</a></li>
+<li><a href="http://activescaffold.com/" onclick="window.open(this.href);return false;">Site officiel</a></li>
+</ul>

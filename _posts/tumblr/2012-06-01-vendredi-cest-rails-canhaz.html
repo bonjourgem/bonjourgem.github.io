@@ -1,0 +1,48 @@
+---
+layout: post
+title: Vendredi c'est Rails-Canhaz
+date: '2012-06-01T12:58:34+02:00'
+tags:
+- Autorisation
+tumblr_url: http://www.bonjourgem.com/post/24189309044/vendredi-cest-rails-canhaz
+permalink: post/24189309044/vendredi-cest-rails-canhaz
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m4xgr4KwBy1r58g99.jpg"></p>
+<h2>gem install rails-canhaz</h2>
+<p><strong>Un Objet pour les gouverner tous</strong></p>
+<p>Aujourd’hui une gem d’<a href="https://twitter.com/#!/intrepidd" onclick="window.open(this.href);return false;">@Intrepidd</a> qui permet de mettre en place simplement des droits entre des objets.</p>
+<p>Avant toute chose, il faut l’installer :</p>
+<h2>rails g can_haz:install</h2>
+<p>Et une fois qu’on a exécuté la migration et qu’on a édité nos models comme suit : </p>
+<p><strong>Un sujet</strong></p>
+<pre class="prettyprint linenums"><code>class User &lt; ActiveRecord::Base
+  acts_as_canhaz_subject
+end
+</code></pre>
+<p><strong>Un objet</strong></p>
+ <pre class="prettyprint linenums"><code>class Article &lt; ActiveRecord::Base
+  acts_as_canhaz_object
+end
+</code></pre>
+<p>On peut utiliser toutes ces petites méthodes : </p>
+<pre class="prettyprint linenums"><code>user = User.find(666)
+article = Article.find(999)
+
+user.can?(:read, article) # l'utilisateur peut-il lire l'article ? non pas pour le moment
+
+user.can!(:read, article) # ok maintenant il peut le lire
+user.can!(:edit, article) # et il peut aussi l'éditer !
+
+user.can?(:read, article) # retournera true
+
+user.objects_with_permission(Article, :read) # retournera une liste d'articles que l'utilisateur peut lire
+
+artice.subjects_with_permission(User, :read) # retournera la liste des utilisateurs qui peuvent lire ce livre
+
+user.cannot!(:read, article) # on peut également enlever des permissions
+</code></pre>
+<p>Voilà c’est tout pour aujourd’hui ! </p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/Intrepidd/rails-canhaz" onclick="window.open(this.href);return false;">Rails-Canhaz sur github</a></li>
+</ul>

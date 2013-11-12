@@ -1,0 +1,55 @@
+---
+layout: post
+title: Lundi c'est REST in Place
+date: '2012-04-23T13:10:14+02:00'
+tags:
+- javascript
+tumblr_url: http://www.bonjourgem.com/post/21641569388/lundi-cest-rest-in-place
+permalink: post/21641569388/lundi-cest-rest-in-place
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m2xiljY3PO1r58g99.jpg"></p>
+<h2>gem install rest_in_place</h2>
+<p><strong>AJAX Inplace-Editor</strong></p>
+<p>Aujourd’hui une gem cool pour un éditeur AJAX qui fonctionnera parfaitement avec vos controllers REST.</p>
+<p>Pour le mettre en place, rien de plus simple. Après avoir modifié votre Gemfile, vous devez ajouter ceci à votre application.js : </p>
+<pre class="prettyprint linenums"><code>//= require 'rest_in_place'
+</code></pre>
+<p>Ensuite ajoutez cette ligne dans votre balise head : </p>
+<pre class="prettyprint linenums"><code>&lt;%= csrf_meta_tags %&gt;
+</code></pre>
+<p>Et finalement pour rendre du contenu éditable il faudra le wrapper comme ceci : </p>
+<pre class="prettyprint linenums"><code>&lt;span class="rest-in-place" data-url="/users/1" data-object="user" data-attribute="name"&gt;
+  &lt;%= @user.name %&gt;
+&lt;/span&gt;
+</code></pre>
+<p>N’oubliez pas de modifier vos controllers pour qu’il ressemblent à quelque chose dans ce goût-là : </p>
+<pre class="prettyprint linenums"><code>class UsersController &lt; ApplicationController
+  def show
+    @user = User.find params[:id]
+    respond_to do |type|
+      type.html
+      type.json {render :json =&gt; @user}
+    end
+  end
+
+  def update
+    @user = User.find params[:id]
+    if @user.update_attributes!(params[:user])
+      respond_to do |format|
+        format.html { redirect_to( @person )}
+        format.json { render :json =&gt; @user }
+      end
+    else
+      respond_to do |format|
+        format.html { render :action  =&gt; :edit } # edit.html.erb
+        format.json { render :nothing =&gt;  true }
+      end
+    end
+  end
+end
+</code></pre>
+<p>Voilà c’est tout pour aujourd’hui ! </p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/janv/rest_in_place" onclick="window.open(this.href);return false;">REST in Place sur github</a></li>
+</ul>

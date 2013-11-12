@@ -1,0 +1,33 @@
+---
+layout: post
+title: Mardi c'est Ruby GNTP
+date: '2012-05-22T10:42:55+02:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/23535972475/mardi-cest-ruby-gntp
+permalink: post/23535972475/mardi-cest-ruby-gntp
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m4ezf6CGQD1r58g99.jpg"></p>
+<h2>gem install ruby_gntp</h2>
+<p><strong>Des notifications Growl via Ruby</strong></p>
+<p>Vous avez Growl et vous aimeriez avoir des notifications sur des scripts que vous avez faits et qui tournent en fond ? Alors voilà une solution pour vous !</p>
+<p>Pour créer une nouvelle notification, ça marche comme ceci : </p>
+<pre class="prettyprint linenums"><code>require 'ruby_gntp'
+
+growl = GNTP.new("Ruby/GNTP self test")
+growl.register({:notifications =&gt; [{
+  :name     =&gt; "notify",
+  :title    =&gt; "Bonjour gem",
+  :text     =&gt; "C'est l'heure de faire une pause !",
+  :enabled  =&gt; true,
+}]})
+</code></pre>
+<p>Voilà je vous laisse apprécier le résultat qui est indubitablement de toute beauté :)</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/snaka/ruby_gntp" onclick="window.open(this.href);return false;">Ruby GNTP sur github</a></li>
+<li><a href="http://growl.info/" onclick="window.open(this.href);return false;">Site officiel de Growl</a></li>
+</ul><p><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/ghis33">@ghis33</a>
+</small></p>

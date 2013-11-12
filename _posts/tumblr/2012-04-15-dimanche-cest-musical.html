@@ -1,0 +1,49 @@
+---
+layout: post
+title: Dimanche c'est musical
+date: '2012-04-15T13:04:17+02:00'
+tags:
+- WTF
+tumblr_url: http://www.bonjourgem.com/post/21140433491/dimanche-cest-musical
+permalink: post/21140433491/dimanche-cest-musical
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m2ioidLAkT1r58g99.jpg"></p>
+<h2>gem install musical</h2>
+<p><strong>Give me more mp3</strong></p>
+<p>Aujourd’hui c’est dimanche et comme tous les dimanches, voici une gem à l’utilité discutable :) Nous voici donc face à musical, une gem qui permet d’extraire en format mp3 des musiques contenues dans un DVD pour les mettre directement dans iTunes.</p>
+<p>Avant toute chose il faut installer quelques pré-requis : </p>
+<h2>brew install dvdbackup</h2>
+<p>dvdbackup est un outil en ligne de commande pour riper vos DVD.</p>
+<h2>brew install ffmpeg</h2>
+<p>Pour faire de la manipulation audio / vidéo. Il se peut que l’installation avec homebrew ne marche pas. Dans ce cas on l’installe à la main comme ceci :</p>
+<h2>git clone git://source.ffmpeg.org/ffmpeg.git</h2>
+<h2>cd ffmpeg</h2>
+<h2>./configure —enable-shared —disable-mmx</h2>
+<h2>make install</h2>
+<p>Voilà maintenant on y est. Il ne reste plus qu’à jouer avec la gem musical, prenez un DVD et essayez la commande suivante : </p>
+<h2>musical</h2>
+<p>Drôlement compliqué ! Une liste d’options est à votre disposition : </p>
+<pre class="prettyprint linenums"><code># on affiche les données disponibles sur le DVD
+--info, -i
+# on ripe sans convertir 
+--ignore-convert-sound, -g
+# on ajoute pas les musiques à iTunes
+--ignore-use-itunes, -n
+# on règle l'emplacement du DVD
+--dev, -d <s>
+# on règle le titre du DVD
+--title, -t <s>
+# on règle l'artiste
+--artist, -a <s>
+# on indique une nouvelle destination pour les données rippées 
+--output, -o <s>
+# la version de musical
+--version, -v:   
+</s></s></s></s></code></pre>
+<p>Voilà c’est tout pour aujourd’hui ! Bon dimanche :)</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/katsuma/musical" onclick="window.open(this.href);return false;">musical sur github</a></li>
+<li><a href="http://ffmpeg.org/" onclick="window.open(this.href);return false;">Site officiel de ffpmeg</a></li>
+<li><a href="http://dvdbackup.sourceforge.net/" onclick="window.open(this.href);return false;">Site officiel de dvdbackup</a></li>
+</ul>

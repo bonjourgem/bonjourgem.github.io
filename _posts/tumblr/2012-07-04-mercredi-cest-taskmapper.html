@@ -1,0 +1,41 @@
+---
+layout: post
+title: Mercredi c'est Taskmapper
+date: '2012-07-04T11:04:00+02:00'
+tags:
+- Service et interaction
+tumblr_url: http://www.bonjourgem.com/post/26482956043/mercredi-cest-taskmapper
+permalink: post/26482956043/mercredi-cest-taskmapper
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m6mmxjb9zQ1r58g99.jpg"></p>
+<h2>gem install taskmapper</h2>
+<p><strong>API universelle pour les gestionnaires de projet</strong></p>
+<p>Trop d’outils différents pour vos projets ? Vous avez envie de tout regrouper mais vous ne savez pas comment ? Tadammmm voici Taskmapper !</p>
+<p>Par exemple pour <a href="http://www.pivotaltracker.com" onclick="window.open(this.href);return false;">Pivotal Tracker</a> : </p>
+<pre class="prettyprint linenums"><code># on se connecte
+pivotal = taskmapper.new(:pivotal, {:username =&gt; "john", :password =&gt; "seekrit"})
+# on récupère un projet 
+project = pivotal.project.find "testproject"
+# on crée un ticket 
+project.ticket!(:title =&gt; "Test", :description =&gt; "Hello World")
+# etc.
+</code></pre>
+<p>Et le truc cool, c’est que ça marche avec de nombreux outils : </p>
+<ul>
+<li>Lighthouse</li>
+<li>Basecamp</li>
+<li>Github</li>
+<li>Unfuddle</li>
+<li>Kanbanpad</li>
+<li>Redmine</li>
+<li>Trac</li>
+<li>Bugzilla</li>
+</ul><p>Pour en utiliser un, il faut la gem correspondante. Par exemple pour Pivotal c’est <a href="https://github.com/hybridgroup/taskmapper-pivotal" onclick="window.open(this.href);return false;">taskmapper-pivotal</a>.</p>
+<p>Voilà c’est tout pour aujourd’hui :)</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/hybridgroup/taskmapper" onclick="window.open(this.href);return false;">Taskmapper sur github</a></li>
+</ul><p><small>
+Sur une idée de
+<a href="https://twitter.com/#!/msadouni" onclick="window.open(this.href);return false;">@msadouni</a>
+</small></p>

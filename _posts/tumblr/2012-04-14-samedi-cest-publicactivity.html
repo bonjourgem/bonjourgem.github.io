@@ -1,0 +1,40 @@
+---
+layout: post
+title: Samedi c'est PublicActivity
+date: '2012-04-14T13:11:00+02:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/21077401364/samedi-cest-publicactivity
+permalink: post/21077401364/samedi-cest-publicactivity
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m2gv1qm5Wr1r58g99.jpg"></p>
+<h2>gem install public_activity</h2>
+<p><strong>Traquer les models !</strong></p>
+<p>Aujourd’hui une gem qui permet de logger tous les changements effectués sur vos models. Tout commence par l’ajout d’une petite méthode dans les models concernés :</p>
+<pre class="prettyprint linenums"><code>class Article &lt; ActiveRecord::Base
+    tracked
+end
+</code></pre>
+<p>Ensuite une migration pour stocker vos changements en base : </p>
+<h2>rails g public_activity:migration</h2>
+<p>Et on n’oublie pas de migrer ! :p </p>
+<h2>rake db:migrate</h2>
+<p>Maintenant si on veut récupérer l’activité complète, il suffit de faire quelque chose dans ce genre-là :</p>
+<pre class="prettyprint linenums"><code>@activities = PublicActivity::Activity.all
+</code></pre>
+<p>Il ne vous reste plus qu’à créer un fichier YAML avec les traductions adéquates :</p>
+<pre class="prettyprint linenums"><code>activity:
+  article:
+    create: "Un article a été créé"
+    update: "Quelqu'un a mis à jour l'article"
+    destroy: "Un utilisateur a supprimé l'article"
+</code></pre>
+<p>Sans oublier d’ajouter un petit initializer dans ce goût-là : </p>
+<pre class="prettyprint linenums"><code>PublicActivity::Activity.template = YAML.load_file("#{RAILS_ROOT}/config/monyaml.yml")
+</code></pre>
+<p>Voilà, c’est tout pour aujourd’hui ! </p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/pokonski/public_activity" onclick="window.open(this.href);return false;">PublicActivity sur github</a></li>
+<li><a href="http://rubydoc.info/gems/public_activity/" onclick="window.open(this.href);return false;">Documentation</a></li>
+</ul>

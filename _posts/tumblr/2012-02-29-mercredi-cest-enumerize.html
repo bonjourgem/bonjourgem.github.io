@@ -1,0 +1,38 @@
+---
+layout: post
+title: Mercredi c'est Enumerize
+date: '2012-02-29T10:53:00+01:00'
+tags:
+- Plugin Active Record
+tumblr_url: http://www.bonjourgem.com/post/18489204638/mercredi-cest-enumerize
+permalink: post/18489204638/mercredi-cest-enumerize
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m05fapeXIx1r58g99.jpg"></p>
+<h2>gem install enumerize</h2>
+<p><strong>J’énumère, tu énumères, il énumère…</strong></p>
+<p>Aujourd’hui, c’est Enumerize. Une gem qui vous permettra d’énumérer les différentes valeurs possibles d’un attribut.</p>
+<p>Cela marche comme ceci : </p>
+<p><strong>Model</strong></p>
+<pre class="prettyprint linenums"><code>class User &lt; ActiveRecord::Base
+  include Enumerize
+  enumerize :sex, :in =&gt; [:male, :female]
+end
+</code></pre>
+<p><strong>Locale</strong></p>
+<pre class="prettyprint linenums"><code>fr:
+  enumerize:
+    user:
+      sex:
+        male: "Homme"
+        female: "Femme"
+</code></pre>
+<p><strong>View</strong></p>
+<pre class="prettyprint linenums"><code>&lt;%= form_for @user do |f| %&gt;
+  &lt;%= f.select :sex, User.sex.options %&gt;
+&lt;% end %&gt;
+</code></pre>
+<p>Voilà c’est tout ! </p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/twinslash/enumerize" onclick="window.open(this.href);return false;">Enumerize sur github</a></li>
+</ul>

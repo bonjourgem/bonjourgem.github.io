@@ -1,0 +1,35 @@
+---
+layout: post
+title: Mercredi c'est Whenever
+date: '2012-02-08T10:35:00+01:00'
+tags:
+- Utilitaire
+tumblr_url: http://www.bonjourgem.com/post/17258651114/mercredi-cest-whenever
+permalink: post/17258651114/mercredi-cest-whenever
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lz2ih0fB281r58g99.jpg"></p>
+<h2>gem install whenever</h2>
+<p><strong>Cron Legacy en 3D !</strong></p>
+<p>Vous avez besoin de créer des <a href="http://fr.wikipedia.org/wiki/Cron" title="Wikipedia : cron" target="_blank">crons</a> pour votre application ou pour autre chose ? Alors arrêter tout, et écrivez-les en Ruby avec Whenever !</p>
+<p>Pour utiliser la gem seule ou dans un projet, on procède comme ceci, après s’être placé dans le répertoire de l’application :</p>
+<h2>wheneverize .</h2>
+<p>Cette commande aura pour effet de créer le fichier schedule.rb. Nous allons éditer ce dernier.</p>
+<p><strong>schedule.rb</strong></p>
+<pre class="prettyprint linenums"><code>every :day, :at =&gt; '10am' do            
+  command "touch ~/desktop/test/bonjourgem_du_jour.txt"
+end
+</code></pre>
+<p>Pour que le cron s’ajoute au <a href="http://fr.wikipedia.org/wiki/Crontab" title="Wikipedia : crontab" target="_blank">crontab</a> on lance la commande suivante :</p>
+<h2>whenever —write-crontab</h2>
+<p>Et on l’enlève comme ceci :</p>
+<h2>whenever —clear-crontab</h2>
+<p>Whenever nous offre pas mal de possibilités comme :</p>
+<ul>
+<li>Lancer des commandes rakes définies dans le projet via le Rakefile</li>
+<li>Exécuter des méthodes contenues dans les models de l’application Rails</li>
+<li>Définir nos propres types de tâches — par défaut il y a rake, runner et command </li>
+</ul><p><strong>Pour la suite, les liens utiles :</strong></p>
+<ul class="link">
+<li><a href="https://github.com/javan/whenever" title="Whenever sur github" target="_blank">Whenever sur github</a></li>
+<li><a href="http://t37.net/ruby-on-rake-ou-comment-rake-ma-rendu-alcoolique.html" title="Comment devenir alcoolique avec Rake" target="_blank">Comment devenir alcoolique avec Rake</a></li>
+</ul>

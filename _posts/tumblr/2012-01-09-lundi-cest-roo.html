@@ -1,0 +1,43 @@
+---
+layout: post
+title: Lundi c'est roo
+date: '2012-01-09T10:00:00+01:00'
+tags:
+- Parseur
+tumblr_url: http://www.bonjourgem.com/post/15560491803/lundi-cest-roo
+permalink: post/15560491803/lundi-cest-roo
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lxhzthZ92o1r58g99.jpg"></p>
+<h2>gem install roo</h2>
+<p><strong>La gem pour parser des .xls </strong></p>
+<p>roo permet de parser des .xls très simplement. Par exemple, j’ai un fichier assez complexe avec plusieurs vues :</p>
+<p><strong>Ruby</strong></p>
+<pre class="prettyprint linenums"><code>require 'rubygems'
+require 'roo'
+
+doc = Excel.new("mondoc.xls")
+# je veux lire la première feuille
+doc.default_sheet = doc.sheets[0]
+# la première cellule qui se trouvera en 1,A
+p doc.cell(1,A)
+</code></pre>
+<p>Plutôt facile non ? Et si je veux lire du début à la fin ?</p>
+<pre class="prettyprint linenums"><code># la première ligne contient les intitulés des colonnes donc on passe à la deuxième
+2.upto(doc.last_row) do |line|
+  p doc.cell(line, 'A')
+end
+</code></pre>
+<p>Mais roo ne fait pas que parser des .xls, elle permet aussi de parser des Google spreadsheets ou des documents au format .ods.</p>
+<p>Par exemple avec Google :</p>
+<p><strong>Ruby</strong></p>
+<pre class="prettyprint linenums"><code># Le Google doc est public mais cela ne fonctionne pas sans authentification pour le moment :)
+doc = Google.new('0AtruLMjwj3hrdFp1Vm1sbjVuSTRLaFd2RjV3SExnM1E', 'adresse@gmail.com', 'mdpGmail')
+2.upto(doc.last_row) do |line|
+  p doc.cell(line,'A')
+end
+</code></pre>
+<p><strong>Quelques liens utiles :</strong></p>
+<ul class="link">
+<li><a href="http://roo.rubyforge.org/" title="Site officiel" target="_blank">Site officiel de la gem</a></li>
+<li><a href="http://roo.rubyforge.org/rdoc/index.html" title="RDoc de la gem" target="_blank">RDoc</a></li>
+</ul>

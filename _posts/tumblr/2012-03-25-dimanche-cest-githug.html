@@ -1,0 +1,52 @@
+---
+layout: post
+title: Dimanche c'est Githug
+date: '2012-03-25T14:05:10+02:00'
+tags:
+- WTF
+- utilitaire
+tumblr_url: http://www.bonjourgem.com/post/19888644413/dimanche-cest-githug
+permalink: post/19888644413/dimanche-cest-githug
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m1fvwcLn4d1r58g99.gif"></p>
+<h2>gem install githug</h2>
+<p><strong>Git Your Game On</strong></p>
+<p>Vous avez un stagiaire ou un collègue qui ne sait pas encore utiliser git comme un grand ? Pas de souci, la gem du dimanche est là pour ça !</p>
+<p>Celle-ci permet d’apprendre les commandes utiles pour utiliser git par le biais de petits exercices. Ça commence comme ceci. Placez-vous sur le bureau du noob en question et tapez la commande suivante : </p>
+<h2>githug</h2>
+<p>Oui, il aurait pu le taper seul, mais c’est pas grave ! Cette commande créera le répertoire d’exercice <strong>git_hug</strong> dans lequel il faut se placer pour commencer à jouer.</p>
+<p>Si vous retapez <strong>githug</strong> dans votre console en étant dans le répertoire, vous aurez l’énoncé de l’exercice.</p>
+<p>Pour ceux qui bloquent sur le premier niveau il y a un système d’indice à votre disposition : </p>
+<h2>githug hint</h2>
+<p>Et pour ceux qui ont perdu le fil et qui veulent recommencer le niveau en cours :</p>
+<h2>githug reset</h2> 
+<p>Githug donne aussi accès à un DSL pour écrire ses propres niveaux : </p>
+<pre class="prettyprint linenums"><code>difficulty 1
+description "There is a file in your folder called README, you should add it to your staging area"
+
+setup do
+  repo.init
+  FileUtils.touch("README")
+end
+
+solution do
+  return false unless repo.status.files.keys.include?("README")
+  return false if repo.status.files["README"].untracked
+  true
+end
+
+hint do
+  puts "You can type `git` in your shell to get a list of available git commands"
+end
+</code></pre>
+<p>N’oubliez pas de faire un petit : </p>
+<h2>githug test</h2>
+<p>Pour vérifier que votre niveau est fonctionnel.</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/Gazler/githug" onclick="window.open(this.href);return false;">Githug sur github</a></li>
+<li>
+<a href="http://rogerdudler.github.com/git-guide/" onclick="window.open(this.href);return false;">Git the simple guide</a>
+</li>
+<li><a href="http://hoth.entp.com/output/git_for_designers.html" onclick="window.open(this.href);return false;">Version Control for Designers</a></li>
+</ul><p><small>Sur une idée de <a href="https://twitter.com/#!/tfuzeau" onclick="window.open(this.href);return false;">@tfuzeau</a></small></p>

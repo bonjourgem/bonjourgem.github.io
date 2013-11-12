@@ -1,0 +1,31 @@
+---
+layout: post
+title: Vendredi c'est Active Admin
+date: '2012-01-20T10:30:00+01:00'
+tags:
+- Web app
+tumblr_url: http://www.bonjourgem.com/post/16165187941/vendredi-cest-active-admin
+permalink: post/16165187941/vendredi-cest-active-admin
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_ly3by7049n1r58g99.jpg"></p>
+<h2>gem install activeadmin</h2>
+<p><strong>Créer des interfaces d’administration propres</strong></p>
+<p>Marre d’utiliser tout plein de gems pour faire vos interfaces d’administration Ruby on Rails ? Alors Active Admin est fait pour vous. Par défaut vous avez à votre disposition un moteur de recherche pour vous promener dans vos entités et les éditer, avec bien-sûr un système d’authentification.</p>
+<p>Un petit exemple avec quelques commandes et un ajout dans votre Gemfile :</p>
+<p><strong>Gemfile</strong></p>
+<pre class="prettyprint linenums"><code>gem 'activeadmin'
+gem "meta_search",    '&gt;= 1.1.0.pre' # si vous utiliser une version de rails &gt;= 3.1 
+</code></pre>
+<h2>bundle install</h2>
+<h2>rails generate active_admin:install</h2>
+<h2>rails generate model banane name:string</h2>
+<h2>rake db:migrate</h2>
+<h2>rails generate active_admin:resource banane</h2>
+<p>Et là lancez votre apply Rails et vous découvrirez un miracle :)</p>
+<p><strong>Envie d’aller plus loin ou d’en savoir plus ? Alors suivez les liens utiles :</strong></p>
+<ul class="link">
+<li><a href="http://activeadmin.info/" title="Active Admin site officiel" target="_blank">Active Admin site officiel</a></li>
+<li><a href="https://github.com/gregbell/active_admin" title="Active Admin sur github" target="_blank">Active Admin sur github</a></li>
+<li><a href="http://railscasts.com/episodes/284-active-admin" title="Railscast" target="_blank">Railscast</a></li>
+<li><a href="https://gist.github.com/1264060" title="Des utilisateurs et des droits" target="_blank">Des utilisateurs et des droits</a></li>
+</ul>

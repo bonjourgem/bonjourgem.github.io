@@ -1,0 +1,30 @@
+---
+layout: post
+title: Lundi c'est devise-async
+date: '2012-07-02T14:58:48+02:00'
+tags:
+- authentification
+tumblr_url: http://www.bonjourgem.com/post/26343126245/lundi-cest-devise-async
+permalink: post/26343126245/lundi-cest-devise-async
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m6iww6uyZG1r58g99.gif"></p>
+<h2>gem install devise-async</h2>
+<p><strong>Trop de mails ? Pas de problème !</strong></p>
+<p>Aujourd’hui un petit plugin pour <a href="http://www.bonjourgem.com/2012/01/18/cest-devise.html">Devise</a> qui permet de mettre en queue les mails envoyés par ce dernier !</p>
+<p>Pour le mettre en place, on change tout d’abord : </p>
+<p><strong>config/initializers/devise.rb</strong></p>
+<pre class="prettyprint linenums"><code># On configure la classe qui s'occupe de l'envoi de mail
+config.mailer = "Devise::Async::Proxy"
+</code></pre>
+<p><strong>config/initializers/devise_async.rb</strong></p>
+<pre class="prettyprint linenums"><code># Options supportées : :resque, :sidekiq, :delayed_job
+Devise::Async.backend = :resque
+</code></pre>
+<p>Et voilà, tadaaam ! </p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/mhfs/devise-async/" onclick="window.open(this.href);return false;">devise-async sur github</a></li>
+</ul><p><small>
+Sur une idée de
+<a href="https://twitter.com/#!/msadouni" onclick="window.open(this.href);return false;">@msadouni</a>
+</small></p>

@@ -1,0 +1,33 @@
+---
+layout: post
+title: Mercredi c'est Draper
+date: '2012-05-09T11:02:10+02:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/22708235586/mercredi-cest-draper
+permalink: post/22708235586/mercredi-cest-draper
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m3qqxcNJm01r58g99.jpg"></p>
+<h2>gem install draper</h2>
+<p><strong>Un peu de décoration !</strong></p>
+<p>Aujourd’hui on se la joue Valérie Damidot et on va décorer nos applications ! En fait pour de vrai, on va utiliser une jolie gem pour ajouter des comportements à nos objets :)</p>
+<p>Après avoir ajouté la gem à notre Gemfile, une petite ligne de commande :</p>
+<h2>rails g draper:install</h2>
+<p>Et hop un dossier <strong>decorators/</strong> et un <strong>ApplicationDecorator</strong> prêt à contenir les decorators, que l’on génère comme ceci : </p>
+<h2>rails g draper:decorator VotreModel</h2>
+<p>Quelques petits outils à votre disposition : </p>
+<pre class="prettyprint linenums"><code># pour accéder à vos helpers
+h.current_user
+# [votre_model] pour accéder à vos objets
+article.created_at
+# les décorations communes dans app/decorators/application.rb
+# ensuite on utilise les décorateurs comme ceci :
+ArticleDecorator.find(1)
+</code></pre>
+<p>Maintenant un peu de lecture ! </p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/jcasimir/draper" onclick="window.open(this.href);return false;">Draper sur github</a></li>
+<li><a href="http://tutorials.jumpstartlab.com/topics/decorators.html" onclick="window.open(this.href);return false;">Un petit tuto</a></li>
+<li><a href="http://railscasts.com/episodes/286-draper?view=asciicast" onclick="window.open(this.href);return false;">Un petit Railscast</a></li>
+</ul>

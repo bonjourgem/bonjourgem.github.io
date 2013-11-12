@@ -1,0 +1,34 @@
+---
+layout: post
+title: Samedi c'est FriendlyId
+date: '2012-03-24T20:52:08+01:00'
+tags:
+- web app
+tumblr_url: http://www.bonjourgem.com/post/19849593134/samedi-cest-friendlyld
+permalink: post/19849593134/samedi-cest-friendlyld
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m1emrpIqcv1r58g99.jpg"></p>
+<h2>gem install friendly_id</h2>
+<p><strong>Des urls drôlement sexy</strong></p>
+<p>Une application avec l’ID dans l’url c’est moche. Que diriez-vous de voir vos url passer de : </p>
+<p><strong><a href="http://example.com/states/4323454">http://example.com/states/4323454</a></strong></p>
+<p>à :</p>
+<p><strong><a href="http://example.com/states/washington">http://example.com/states/washington</a></strong></p>
+<p>?</p>
+<p>Et le tout avec une petite gem, avec des options qui donnent quelque chose dans le genre dans votre model : </p>
+<pre class="prettyprint linenums"><code>extend FriendlyId
+friendly_id :lattribut_en_question
+</code></pre>
+<p>Cela nous vous suffit pas ? Il y a encore l’attribut slug, aussi propre, mais quand il y a des caractères spéciaux.</p>
+<p><strong>Une migration pour le model concerné</strong></p>
+<pre class="prettyprint linenums"><code>add_column :model_en_question, :slug, :string
+add_index :model_en_question, :slug
+</code></pre>
+<p><strong>La modification du model devient :</strong></p>
+<pre class="prettyprint linenums"><code>friendly_id :lattribut_en_question, use: :slugged
+</code></pre>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/norman/friendly_id" onclick="window.open(this.href);return false;">FriendlyId sur github</a></li>
+<li><a href="http://railscasts.com/episodes/314-pretty-urls-with-friendlyid?view=asciicast" onclick="window.open(this.href);return false;">Railscast</a></li>
+</ul>

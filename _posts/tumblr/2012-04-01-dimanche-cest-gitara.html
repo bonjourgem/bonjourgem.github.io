@@ -1,0 +1,46 @@
+---
+layout: post
+title: Dimanche c'est Gitara
+date: '2012-04-01T15:35:47+02:00'
+tags:
+- WTF
+tumblr_url: http://www.bonjourgem.com/post/20284262260/dimanche-cest-gitara
+permalink: post/20284262260/dimanche-cest-gitara
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m1syffD58O1r58g99.gif"></p>
+<h2>gem install gitara</h2>
+<p><strong>Ruby DSL for generating LilyPond guitar tablatures</strong></p>
+<p>Aujourd’hui c’est dimanche et comme tous les dimanches, une gem just for fun ! </p>
+<p>Voici donc Gitara, une petite gem pour générer des partitions au format <a href="http://lilypond.org/introduction.fr.html" onclick="window.open(this.href);return false;">LilyPond</a>. Comme je suis un musicien du dimanche qui commence à apprendre la guitare grâce à <a href="http://www.youtube.com/watch?v=GaQaTQf99GI" onclick="window.open(this.href);return false;">Rocksmith</a>, je ne comprends pas bien tout l’intérêt du truc :)</p>
+<p>Excepté le fait que Gitara vous donne accès à un DSL pour générer de jolies partoches ! Pour les curieux cela ressemble à ça :</p>
+<pre class="prettyprint linenums"><code>Gitara.define do
+  title "Wise Up"
+  composer "Aimee Mann"
+  arranger "Arranged by George Mendoza"
+  instrument "Guitar (capo on second fret)"
+  midi_instrument "acoustic guitar (nylon)"
+  tempo "4 = 75"
+  transposition "d"
+
+  chords :Am,   'r4-"Am" r r r'
+  chords :AmC,  'r4-"Am" r r-"C" r'
+  chords :BbF,  'r4-"Bb" r r-"F" r'
+  chords :CCGE, 'r4-"C" r r-"G" r-"E"'
+  chords :D,    'r4-"D" r r r'
+  chords :FC,   'r4-"F" r r-"C" r'
+  chords :FD,   'r4-"F" r r-"D" r'
+
+  bar :Intro do
+    notes "&lt;g'/1&gt;8 &lt;a/3&gt;8 &lt;g'/1&gt;8 &lt;a/3&gt;16 &lt;g'/1&gt;8 &lt;g/3&gt;16 &lt;e'/1&gt;4 &lt;g/3&gt;8"
+    notes "&lt;f/4&gt;4 &lt;f/4&gt;4 &lt;c/5&gt;4  &lt;e/4&gt;4"
+    chords :FC
+  end
+end
+</code></pre>
+<p>Ensuite un petit coup de : </p>
+<h2>gitara export monfichier.rb</h2>
+<p>Pour générer votre .ly avant de le passer à LilyPond pour en faire un PDF.</p><p>Voilà c’est tout pour aujourd’hui ! Bon dimanche :)</p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a href="https://github.com/gsmendoza/gitara" onclick="window.open(this.href);return false;">Gitara sur github</a></li>
+</ul><p><small>Sur une idée de <a href="https://twitter.com/#!/lcoullet" onclick="window.open(this.href);return false;">@lcoullet</a></small></p>

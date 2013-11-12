@@ -1,0 +1,43 @@
+---
+layout: post
+title: Mercredi c'est Sinew
+date: '2012-06-20T14:28:29+02:00'
+tags:
+- Parseur
+tumblr_url: http://www.bonjourgem.com/post/25500851477/mercredi-cest-sinew
+permalink: post/25500851477/mercredi-cest-sinew
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m5x1aplVXg1r58g99.jpg"></p>
+<h2>gem install sinew</h2>
+<p><strong>Framework pour du Web scraping</strong></p>
+<p>Aujourd’hui une gem qui donne toute une batterie d’outils :</p>
+<ul>
+<li>Un DSL Ruby pour le crawling</li>
+<li>Un système de cache</li>
+<li>Avec de vrais morceaux de Nokogiri dedans</li>
+<li>
+</li>
+</ul><p>Un petit exemple d’utilisation issu de la doc : </p>
+<p><strong>mon_fichier.sinew</strong></p>
+<pre class="prettyprint linenums"><code># la page à traiter
+get "http://www.amazon.com/gp/bestsellers/books/ref=sv_b_3"
+
+# on trouve les différentes entrées avec Nokogiri
+noko.css(".zg_itemRow").each do |item|
+  row = { }
+  row[:url] = item.css(".zg_title a").first[:href]
+  row[:title] = item.css(".zg_title")
+  row[:img] = item.css(".zg_itemImage_normal img").first[:src]
+
+  # on ajoute la ligne à un csv
+  csv_emit(row)
+end
+</code></pre>
+<p>Ensuite on lance : </p>
+<h2>sinew mon_fichier.sinew</h2>
+<p>Et hop, un fichier <strong>mon_fichier.csv</strong> est généré avec les données récupérées.</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/gurgeous/sinew" onclick="window.open(this.href);return false;">Sinew sur github</a></li>
+<li><a href="https://github.com/gurgeous/sinew/wiki" onclick="window.open(this.href);return false;">Documentation</a></li>
+</ul>

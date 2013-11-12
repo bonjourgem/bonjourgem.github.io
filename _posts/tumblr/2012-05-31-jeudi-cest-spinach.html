@@ -1,0 +1,43 @@
+---
+layout: post
+title: Jeudi c'est Spinach
+date: '2012-05-31T10:15:23+02:00'
+tags:
+- Outil de développement
+tumblr_url: http://www.bonjourgem.com/post/24119931749/jeudi-cest-spinach
+permalink: post/24119931749/jeudi-cest-spinach
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_m4vhofsizZ1r58g99.jpg"></p>
+<h2>gem install spinach</h2>
+<p><strong>Pour être aussi fort que Popeye</strong></p>
+<p>Tout le monde n’aime pas <a href="http://www.bonjourgem.com/2012/01/28/samedi-cest-cucumber.html">les concombres</a> et ça tombe bien, parce que les épinards ont un goût différent :</p>
+<ul>
+<li>Pas (ou presque plus) d’expressions régulières</li>
+<li>Meilleur maintenabilité</li>
+<li>Code réutilisable</li>
+</ul><p>Bref, Spinach c’est une solution (parmis d’autres) utile pour définir toutes les spécificités d’une application et les tester.</p>
+<p>Le truc sympa c’est que les spécifications sont écrites en langage humain : </p>
+<pre class="prettyprint linenums"><code>Feature: Test how spinach works
+  In order to know what the heck is spinach
+  As a developer
+  I want it to behave in an expected way
+
+  Scenario: Formal greeting
+    Given I have an empty array
+    And I append my first name and my last name to it
+    When I pass it to my super-duper method
+    Then the output should contain a formal greeting
+
+  Scenario: Informal greeting
+    Given I have an empty array
+    And I append only my first name to it
+    When I pass it to my super-duper method
+    Then the output should contain a casual greeting
+</code></pre>
+<p>Oui mais <a href="https://github.com/codegram/spinach/issues/91" onclick="window.open(this.href);return false;">pour le moment</a> seulement en anglais :p</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/codegram/spinach" onclick="window.open(this.href);return false;">Spinach sur github</a></li>
+<li><a href="https://github.com/codegram/spinach-rails" onclick="window.open(this.href);return false;">Spinach-rails sur github</a></li>
+<li><a href="http://codegram.github.com/spinach/" onclick="window.open(this.href);return false;">Site officiel</a></li>
+</ul>

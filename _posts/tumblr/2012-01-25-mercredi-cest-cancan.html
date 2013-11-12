@@ -1,0 +1,39 @@
+---
+layout: post
+title: Mercredi c'est Cancan
+date: '2012-01-25T10:00:00+01:00'
+tags:
+- Autorisation
+tumblr_url: http://www.bonjourgem.com/post/16458133493/mercredi-cest-cancan
+permalink: post/16458133493/mercredi-cest-cancan
+---
+<p class="img-post"><img src="/tumblr_files/tumblr_lybg4uU9zk1r58g99.gif"></p>
+<h2>gem install cancan</h2>
+<p><strong>Plusieurs niveaux d’utilisateurs dans une application</strong></p>
+<p>Dans une application on a parfois besoin de plusieurs niveaux d’utilisateurs. Dans ce cas, Cancan est là et vous permettra de gérer simplement (et proprement !) cela.</p>
+<p>Un petit exemple :</p>
+<p><strong>Model Ability, où je définis les possibilités de mes utilisateurs<br></strong></p>
+<pre class="prettyprint linenums"><code>class Ability
+  include CanCan::Ability
+
+  def initialize(user)
+    user ||= User.new # utilisateur invité
+    if user.admin?
+      can :manage, :all
+    else
+      can :read, :all
+    end
+  end
+end
+</code></pre>
+<p>Donc si mon utilisateur est admin, il peut tout faire (<a href="http://fr.wikipedia.org/wiki/CRUD" title="Wikipedia : CRUD" target="_blank">CRUD</a>) sur toutes mes entités. S’il ne l’est pas, il peut juste les afficher.</p>
+<p><strong>View</strong></p>
+<pre class="prettyprint linenums"><code>&lt;% if can? :update, @monmodel %&gt;
+  &lt;%= link_to "Edit", edit_monmodel_path(@monmodel) %&gt;
+&lt;% end %&gt;
+</code></pre>
+<p>Voilà c’est tout ! Envie d’aller plus loin, ou de mettre un message d’erreur qui insultera l’utilisateur un peu fourbe qui voudra accéder à la fonctionnalité par l’url ? <strong>Voici les liens utiles :</strong></p>
+<ul class="link">
+<li><a href="https://github.com/ryanb/cancan" title="Cancan sur github" target="_blank">Cancan sur github</a></li>
+<li><a href="http://railscasts.com/episodes/192-authorization-with-cancan" title="Railscast sur Cancan" target="_blank">Railscast</a></li>
+</ul>
