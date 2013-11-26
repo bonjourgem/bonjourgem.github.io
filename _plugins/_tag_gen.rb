@@ -1,10 +1,12 @@
+require 'i18n'
+
 module Jekyll
   class Tag
     attr_reader :name, :path
 
     def initialize(name)
       @name = name
-      @path = @name.downcase.gsub(' ', '_')
+      @path = sanitize_path
     end
 
     def to_liquid
@@ -12,6 +14,12 @@ module Jekyll
         'name' => @name,
         'path' => @path
       }
+    end
+
+    private 
+
+    def sanitize_path
+      I18n.transliterate(@name).downcase.gsub(' ', '_')
     end
   end
 
