@@ -1,10 +1,12 @@
+require 'i18n'
+
 module Jekyll
   class Tag
     attr_reader :name, :path
 
     def initialize(name)
       @name = name
-      @path = @name.downcase.gsub(' ', '_')
+      @path = sanitize_path
     end
 
     def to_liquid
@@ -13,10 +15,16 @@ module Jekyll
         'path' => @path
       }
     end
+
+    private 
+
+    def sanitize_path
+      I18n.transliterate(@name).downcase.gsub(' ', '_')
+    end
   end
 
   class TagPage < Page
-    def initialize(site, base, dir)
+    def initialize(site, base, dir, pager)
       @site = site
       @base = base
       @dir  = dir
@@ -24,6 +32,8 @@ module Jekyll
 
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'tag_index.html')
+
+      self.data['title'] = pager.posts.first.title
     end
   end
 
@@ -52,7 +62,7 @@ module Jekyll
       (1..num_pages).each do |page|
         pager = TagPager.new(site, page, tag_posts, tag, num_pages)
         dir   = TagPager.dir_path(tag.path, page)
-        page  = TagPage.new(site, site.source, dir)
+        page  = TagPage.new(site, site.source, dir, pager)
         page.pager = pager
         site.pages << page
       end
