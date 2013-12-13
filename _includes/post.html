@@ -4,7 +4,7 @@
 {% endunless %}
 
 <div class="left-col">
-    <p class="date">{{ page.date | date_to_string }}</p>
+    <p class="date">{{ page.date | format_date }}</p> 
     {% include pager.html %}   
 </div><!--/.left-col-->
     
