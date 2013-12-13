@@ -638,12 +638,8 @@ ul.link li a:hover {
 }
 
 /* Smartphones */
-/* Copie de la version Landscape tablets */
-@media 
-handheld, 
-only screen 
-and
-(max-width: 480px) {
+/* Copie de la version Portrait and landscape tablets */
+@media (max-width: 568px) {
   /* Textes, corps plus importants */
   body,
   p,
@@ -815,188 +811,8 @@ and
   }
 }
 
-/* Portrait tablets */
-/* Copie de la version Landscape tablets */
-@media 
-(min-width: 480px) 
-and 
-(max-width: 768px) {
-  /* Textes, corps plus importants */
-  body,
-  p,
-  li {
-    font-size: 24px;
-    line-height: 38px;
-  }
-  div.row-fluid .span8 .date,
-  small {
-    font-size: 22px;
-    line-height: 38px;
-  }
-  .pager li a, 
-  .pager li span {
-    font-size: 22px;
-    height: 40px;
-    line-height: 40px;
-    width: 90px;
-  }
-  ul.link li a {
-    font-size: 22px;
-    height: 40px;
-    line-height: 40px;
-  }
-  h1 {
-    font-size: 36px;
-    line-height: 50px;
-  } 
-  div.row-fluid .span8 .right-col h2 {
-    font-size: 24px;
-    line-height: 30px;
-  }
-  .prettyprint.linenums {
-    box-shadow: none;
-  }
-  pre, code {
-    font-size: 24px;
-  }
-  ol.linenums {
-    margin: 0 0 0 70px;
-  }
-  ol.linenums li {
-    line-height: 30px;
-  }
-  .nav-list .nav-header {
-    font-size: 30px;
-    line-height: 38px;
-  }
-  .nav-list > li > a {
-    font-size: 24px;
-    line-height: 48px;
-  }
-  /* General */
-  .container-fluid {
-    margin: 0;
-  }
-  .row-fluid {
-    width: 100%;
-  }
-  .row-fluid > [class*="span"] {
-    float: none;
-    display: block;
-    width: auto;
-    margin: 0;
-  }
-  .row-fluid:before, .row-fluid:after {
-    display: table;
-    content: "";
-  }
-  .row-fluid:after {
-    clear: both;
-  } 
-  .row-fluid .span4 {
-    width: 100%;
-  }
-  .row-fluid .span8 {
-    width: 100%;
-  }
-  /* Espace en bas du post */
-  div.row-fluid .span8 {
-    padding: 80px 0;
-  }
-  /* Espace en haut des div principales */
-  div.row-fluid .span4 {
-    padding: 80px 0 0 0;
-  }
-  footer.row-fluid .span8 {
-    padding: 40px 0 0 0;
-  }
-  .left-col,
-  .right-col {
-    width: 100%;
-    float: none;
-  }
-  /* Colonne gauche dans header et footer disparait */
-  header .left-col,
-  footer .left-col {
-    display: none;
-  }
-  /* Dans le header, logo et baseline changent de place */
-  header.row-fluid .span8 {
-    padding: 100px 0 0 0;
-  }
-  header a.logo {
-    float: none;
-    margin: 0 auto;
-  }
-  header h3 {
-    float: none;
-    line-height: normal;
-    height: auto;
-    text-align: center;
-    padding: 40px 0 0 0;
-    font-size: 55px !important;
-  } 
-  /* Elements alignes et de meme largeur */
-  header h3,
-  div.row-fluid .span8 .left-col,
-  div.row-fluid .span8 .right-col h1, 
-  div.row-fluid .span8 .right-col h2, 
-  div.row-fluid .span8 .right-col p, 
-  div.row-fluid .span8 .right-col ul, 
-  div.row-fluid .span8 .right-col pre,
-  .nav-list,
-  .separator,
-  footer.row-fluid .span8 .right-col span {
-    margin: 0 auto 40px auto;
-    width: 95%;
-  }
-  /* Padding sur les cotes donc largeur differente */
-  div.row-fluid .span8 .right-col h2,
-  div.row-fluid .span8 .right-col pre {
-    width: 93%;
-  }
-  div.row-fluid .span8 .left-col {
-    min-height: 30px;
-  }
-  .nav-list {
-    padding: 0;
-  }
-  footer.row-fluid .span8 .right-col span {
-    margin: 0 auto 80px auto;
-  }
-  div.row-fluid .span8 .date {
-    float: right;
-    padding: 0;
-  }
-  .pager {
-    padding: 0;
-    float: left;
-  }
-  .pager li a, 
-  .pager li span {
-    margin: 0 7px 40px 0;
-  }
-  ul.link {
-    padding: 0 0 30px 0;
-  }
-  .social-buttons {
-    clear: both;
-  }
-  .social-buttons > li { 
-    padding: 0 20px 40px 0; 
-    float: left;
-  }
-  /* Btn facebook decale vers le haut */
-  .social-buttons .facebook { 
-    margin: -7px 0 0 0; 
-  }
-}
-
-/* Landscape tablets */
-@media 
-(min-width: 768px) 
-and 
-(max-width: 980px) {
+/* Portrait and landscape tablets */
+@media (min-device-width: 768px) and (max-device-width: 1024px), (min-width: 569px) and (max-width: 1024px) {
   /* Textes, corps plus importants */
   body,
   p,
@@ -1169,10 +985,7 @@ and
 }
 
 /* Default */
-@media 
-(min-width: 980px) 
-and 
-(max-width: 1200px) {
+@media (min-width: 1025px) and (max-width: 1200px) {
   .container-fluid {
     margin: 0;
   } 
@@ -1182,10 +995,7 @@ and
 }
 
 /* Large display */
-@media 
-(min-width: 1200px) 
-and 
-(max-width: 1400px) {
+@media (min-width: 1200px) and (max-width: 1400px) {
   .container-fluid {
     margin: 0;
   }
