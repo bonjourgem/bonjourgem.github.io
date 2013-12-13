@@ -1,0 +1,1235 @@
+/*!
+  * Precharger font
+  */
+.novecento-normal {
+  font-family: 'NovecentowideNormal';
+}
+.novecento-demibold {
+  font-family: 'NovecentowideDemiBold';
+}
+.novecento-bold {
+  font-family: 'NovecentowideBold';
+}
+
+/*! 
+  * Prettify
+  */
+pre,
+code {
+  padding: 0;
+  margin: 0;
+  font-family: 'Droid Sans Mono', monospace;
+  font-size: 14px;
+  color: #444;
+}
+pre {
+  display: block;
+  margin: 0 0 40px 0;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+pre code {
+  background-color: transparent;
+}
+.prettyprint {
+    background-color: #F7F7F7;
+    padding: 10px;
+}
+.prettyprint.linenums {
+    box-shadow: 50px 0 0 #fbfbfb inset;
+}
+ol.linenums {
+    margin: 0 0 0 40px;
+}
+ol.linenums li {
+    color: #BEBEBE;
+    line-height: 20px;
+    padding-left: 10px;
+}
+.com {
+    color: #93A1A1;
+}
+.lit {
+    color: #195F91;
+}
+.pun, .opn, .clo {
+    color: #93A1A1;
+}
+.fun {
+    color: #DC322F;
+}
+.str, .atv {
+    color: #DD1144;
+}
+.kwd, .linenums .tag {
+    color: #1E347B;
+}
+.typ, .atn, .dec, .var {
+    color: teal;
+}
+.pln {
+    color: #444;
+}
+
+.red {
+  color: red;
+}
+.yellow {
+  color: yellow;
+}
+.aqua {
+  color: aqua;
+}
+.grey {
+  color: #ccc;
+}
+.green {
+  color: lime;
+}
+
+/*!
+ * Socialite 
+ */
+.socialite-button { display: none; opacity: 0; }
+.socialite-loaded .socialite-button { display: block; opacity: 1; }
+.socialite-button iframe { max-width: 100%; max-height: 100%; }
+.social-buttons { display: block; list-style: none; padding: 0; margin: 0; }
+.social-buttons > li { display: block; margin: 0; padding: 0 0 40px 20px; float: right; }
+.social-buttons a:hover { background-color: transparent !important; }
+.social-buttons .socialite, .social-buttons .socialised { display: block; position: relative; }
+/* visually hidden from HTML5 Boilerplate */
+.social-buttons .socialite span { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.social-buttons .socialite-loaded { background: none !important; }
+/* Btn facebook decale vers le haut */
+.social-buttons .facebook { margin: -5px 0 0 0; }
+
+/*!
+ * Bootstrap v2.0.0
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+/*! 
+  * Reset
+  */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]) {
+  display: none;
+}
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+a:hover, a:active {
+  outline: 0;
+}
+sub, sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+/*! 
+  * General
+  */
+body {
+  margin: 0;
+  font-family: 'Noticia Text', serif;
+  font-size: 14px;
+  line-height: 28px;
+  color: #444444;
+  background-color: #c10808;
+}
+a {
+  color: #db0a0a;
+  text-decoration: none;
+}
+a:hover {
+  color: #9b0707;
+  text-decoration: underline;
+}
+a:focus {
+  outline: none;
+}
+::-moz-selection { background: #db0a0a; color: #fff; text-shadow: none; }
+::selection { background: #db0a0a; color: #fff; text-shadow: none; }
+.clear {
+  clear: both;
+}
+
+[class*="span"] {
+  float: left;
+  margin-left: 70px;
+}
+div.row-fluid .span4 {
+  padding: 88px 0 0 0;
+}
+header.row-fluid .span8 {
+  padding: 100px 0;
+}
+div.row-fluid .span8 {
+  padding: 80px 0 0 0;
+  background: #fff;
+}
+div.row-fluid .span8 .date {
+  padding: 9px 0 0 0;
+  margin-bottom: 42px;
+  text-align: center;
+  color: #666;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+/* Pour eloigner du bord les textes du post */
+div.row-fluid .span8 .right-col h1,
+div.row-fluid .span8 .right-col h2,
+div.row-fluid .span8 .right-col p,
+div.row-fluid .span8 .right-col ul,
+div.row-fluid .span8 .right-col pre {
+  width: 90%;
+}
+div.row-fluid .span8 .right-col a:hover {
+  background-color: #fde7e7;
+  text-decoration: none;
+}
+div.row-fluid .span8 .right-col p.img-post,
+div.row-fluid .span8 .right-col p.img-post img {
+  width: 100%;
+}
+footer.row-fluid .span8 {
+  padding: 70px 0;
+}
+footer.row-fluid .span8 .right-col span {
+  color: #f8b6b6;
+  display: block;
+  width: 90%;
+}
+footer.row-fluid .span8 .right-col span a {
+  color: #fff;
+  border-bottom: 1px solid #db0a0a;
+}
+footer.row-fluid .span8 .right-col span a:hover {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+}
+.row-fluid {
+  width: 100%;
+  *zoom: 1;
+}
+.row-fluid:before, .row-fluid:after {
+  display: table;
+  content: "";
+}
+.row-fluid:after {
+  clear: both;
+}
+.row-fluid > [class*="span"] {
+  float: left;
+  margin-left: 2.127659574%;
+}
+.row-fluid > [class*="span"]:first-child {
+  margin-left: 0;
+}
+.row-fluid .span4 {
+  width: 31.914893614%;
+}
+.row-fluid .span8 {
+  width: 65.95744680199999%;
+}
+.container-fluid {
+  margin-left: 70px;
+  margin-right: 70px;
+  *zoom: 1;
+  background: #db0a0a;
+}
+.container-fluid:before, .container-fluid:after {
+  display: table;
+  content: "";
+}
+.container-fluid:after {
+  clear: both;
+}
+header a.logo {
+  display: block;
+  margin: 0 10% 0 0;
+  padding: 0;
+  width: 147px;
+  height: 80px;
+  float: left;
+}
+header a.logo-lundi {
+  background: transparent url(https://s3-eu-west-1.amazonaws.com/bonjourgem/img/template/sprite-logo.gif) no-repeat 0 -80px;
+}
+header a.logo-mardi {
+  background: transparent url(https://s3-eu-west-1.amazonaws.com/bonjourgem/img/template/sprite-logo.gif) no-repeat 0 -160px;
+}
+header a.logo-mercredi {
+  background: transparent url(https://s3-eu-west-1.amazonaws.com/bonjourgem/img/template/sprite-logo.gif) no-repeat 0 -240px;
+}
+header a.logo-jeudi {
+  background: transparent url(https://s3-eu-west-1.amazonaws.com/bonjourgem/img/template/sprite-logo.gif) no-repeat 0 -320px;
+}
+header a.logo-vendredi {
+  background: transparent url(https://s3-eu-west-1.amazonaws.com/bonjourgem/img/template/sprite-logo.gif) no-repeat 0 -400px;
+}
+header a.logo-samedi {
+  background: transparent url(https://s3-eu-west-1.amazonaws.com/bonjourgem/img/template/sprite-logo.gif) no-repeat 0 -480px;
+}
+header a.logo-dimanche {
+  background: transparent url(https://s3-eu-west-1.amazonaws.com/bonjourgem/img/template/sprite-logo.gif) no-repeat 0 -560px;
+}
+header h3 {
+  float: left;
+  line-height: 80px;
+  height: 80px;
+  font-family: 'NovecentowideNormal';
+  color: #ed8585;
+  font-size: 45px;
+}
+header h3 span {
+  font-family: 'NovecentowideDemiBold';
+  color: #fff;
+}
+.left-col {
+  width: 20%;
+  float: left;
+  min-height: 10px;
+}
+.right-col {
+  width: 80%;
+  float: left;
+}
+p {
+  margin: 0 0 40px 0;
+  font-family: 'Noticia Text', serif;
+  font-size: 14px;
+  line-height: 28px;
+  color: #666;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  color: #444444;
+  text-rendering: optimizelegibility;
+  line-height: 28px;
+}
+h1 {
+  font-family: 'NovecentowideBold';
+  letter-spacing: 1px;
+  line-height: 40px;
+  font-size: 26px;
+  margin: 0 0 40px 0;
+  clear: both;
+}
+h1 a {
+  color: #9b0707;
+}
+h2 {
+  font-family: 'Droid Sans Mono', monospace;
+  font-size: 14px;
+  color: #fbfbfb;
+  background: #444;
+  padding: 10px;
+  margin: 0 0 40px 0;
+  line-height: 20px;
+}
+h3 {
+  font-size: 14px;
+}
+h4 {
+  font-size: 14px;
+}
+h5 {
+  font-size: 14px;
+}
+h6 {
+  font-size: 14px;
+}
+ul, ol {
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+ul {
+  list-style: none;
+}
+ol {
+  list-style: decimal;
+}
+li {
+  line-height: 28px;
+  margin: 0;
+  padding: 0;
+  color: #bbb;
+}
+ul.unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+dl {
+  margin-bottom: 28px;
+}
+dt, dd {
+  line-height: 28px;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 14px;
+}
+hr {
+  margin: 28px 0;
+  border: 0;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #ffffff;
+}
+strong,
+b {
+  font-weight: bold;
+  color: #444;
+}
+em {
+  font-style: italic;
+}
+.muted {
+  color: #999999;
+}
+abbr {
+  font-size: 90%;
+  text-transform: uppercase;
+  border-bottom: 1px dotted #ddd;
+  cursor: help;
+}
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 28px;
+  border-left: 5px solid #eeeeee;
+}
+blockquote p {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 35px;
+}
+blockquote small {
+  display: block;
+  line-height: 28px;
+  color: #999999;
+}
+blockquote small:before {
+  content: '\2014 \00A0';
+}
+blockquote.pull-right {
+  float: right;
+  padding-left: 0;
+  padding-right: 15px;
+  border-left: 0;
+  border-right: 5px solid #eeeeee;
+}
+blockquote.pull-right p, blockquote.pull-right small {
+  text-align: right;
+}
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+address {
+  display: block;
+  margin-bottom: 28px;
+  line-height: 28px;
+  font-style: normal;
+}
+small {
+  font-size: 13px;
+}
+cite {
+  font-style: normal;
+}
+
+.nav {
+  margin: 0 0 40px 0;
+  list-style: none;
+}
+.nav > li > a {
+  display: block;
+}
+.nav > li > a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+.nav-list {
+  padding: 0 21% 0 13%;
+}
+.nav-list > li > a, .nav-list .nav-header {
+  display: block;
+  line-height: 38px;
+  color: #f8b6b6;
+  /* Noticia Text Bold */
+  font-weight: 700;
+}
+.nav-list .nav-header {
+  font-size: 20px;
+  line-height: 28px;
+  color: #9b0707;
+  font-family: 'NovecentowideBold';
+  margin: 0 0 30px 0;
+  letter-spacing: 1px;
+  font-weight: normal;
+}
+.nav-list .follow-heading {
+  color: #fff;
+}
+.nav-list .active > a, .nav-list .active > a:hover {
+  color: #ffffff;
+}
+.separator {
+  margin: 0 21% 40px 13%;
+  padding: 0;
+  height: 2px;
+  background: #c10808;
+}
+.pager {
+  margin: 0;
+  padding: 0 7px;
+  list-style: none;
+  text-align: center;
+  *zoom: 1;
+}
+.pager:before, .pager:after {
+  display: table;
+  content: "";
+}
+.pager:after {
+  clear: both;
+}
+.pager li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+.pager li a,
+.pager li span {
+  display: inline-block;
+  background-color: #ddd;
+  color: #999;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-family: 'NovecentowideBold';
+  letter-spacing: 1px;
+  text-align: center;
+  width: 55px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  margin: 0 3px 40px 3px;
+}
+.pager li a:hover {
+  text-decoration: none;
+  background-color: #999;
+  color: #444;
+}
+.pager li span.btn-disabled {
+  background-color: #fbfbfb;
+  color: #ddd;
+}
+.pager .next a {
+  float: right;
+}
+.pager .previous a {
+  float: left;
+}
+ul.link {
+  margin: 0;
+  padding: 30px 0 60px 0;
+  list-style: none;
+}
+ul.link li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+ul.link li a {
+  display: inline-block;
+  background-color: #db0a0a;
+  color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-family: 'NovecentowideBold';
+  letter-spacing: 1px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  margin: 0 7px 10px 0;
+  padding: 0 10px;
+}
+ul.link li a:hover {
+  background-color: #9b0707 !important;
+  color: #fff !important;
+}
+
+/*!
+ * Bootstrap Responsive v2.0.0
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+/* Smartphones */
+/* Copie de la version Landscape tablets */
+@media 
+handheld, 
+only screen 
+and
+(max-width: 480px) {
+  /* Textes, corps plus importants */
+  body,
+  p,
+  li {
+    font-size: 24px;
+    line-height: 38px;
+  }
+  div.row-fluid .span8 .date,
+  small {
+    font-size: 22px;
+    line-height: 38px;
+  }
+  .pager li a, 
+  .pager li span {
+    font-size: 22px;
+    height: 40px;
+    line-height: 40px;
+    width: 90px;
+  }
+  ul.link li a {
+    font-size: 22px;
+    height: 40px;
+    line-height: 40px;
+  }
+  h1 {
+    font-size: 36px;
+    line-height: 50px;
+  } 
+  div.row-fluid .span8 .right-col h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .prettyprint.linenums {
+    box-shadow: none;
+  }
+  pre, code {
+    font-size: 24px;
+  }
+  ol.linenums {
+    margin: 0 0 0 70px;
+  }
+  ol.linenums li {
+    line-height: 30px;
+  }
+  .nav-list .nav-header {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  .nav-list > li > a {
+    font-size: 24px;
+    line-height: 48px;
+  }
+  /* General */
+  .container-fluid {
+    margin: 0;
+  }
+  .row-fluid {
+    width: 100%;
+  }
+  .row-fluid > [class*="span"] {
+    float: none;
+    display: block;
+    width: auto;
+    margin: 0;
+  }
+  .row-fluid:before, .row-fluid:after {
+    display: table;
+    content: "";
+  }
+  .row-fluid:after {
+    clear: both;
+  } 
+  .row-fluid .span4 {
+    width: 100%;
+  }
+  .row-fluid .span8 {
+    width: 100%;
+  }
+  /* Espace en bas du post */
+  div.row-fluid .span8 {
+    padding: 80px 0;
+  }
+  /* Espace en haut des div principales */
+  div.row-fluid .span4 {
+    padding: 80px 0 0 0;
+  }
+  footer.row-fluid .span8 {
+    padding: 40px 0 0 0;
+  }
+  .left-col,
+  .right-col {
+    width: 100%;
+    float: none;
+  }
+  /* Colonne gauche dans header et footer disparait */
+  header .left-col,
+  footer .left-col {
+    display: none;
+  }
+  /* Dans le header, logo et baseline changent de place */
+  header.row-fluid .span8 {
+    padding: 100px 0 0 0;
+  }
+  header a.logo {
+    float: none;
+    margin: 0 auto;
+  }
+  header h3 {
+    float: none;
+    line-height: normal;
+    height: auto;
+    text-align: center;
+    padding: 40px 0 0 0;
+    font-size: 55px !important;
+  } 
+  /* Elements alignes et de meme largeur */
+  header h3,
+  div.row-fluid .span8 .left-col,
+  div.row-fluid .span8 .right-col h1, 
+  div.row-fluid .span8 .right-col h2, 
+  div.row-fluid .span8 .right-col p, 
+  div.row-fluid .span8 .right-col ul, 
+  div.row-fluid .span8 .right-col pre,
+  .nav-list,
+  .separator,
+  footer.row-fluid .span8 .right-col span {
+    margin: 0 auto 40px auto;
+    width: 95%;
+  }
+  /* Padding sur les cotes donc largeur differente */
+  div.row-fluid .span8 .right-col h2,
+  div.row-fluid .span8 .right-col pre {
+    width: 93%;
+  }
+  div.row-fluid .span8 .left-col {
+    min-height: 30px;
+  }
+  .nav-list {
+    padding: 0;
+  }
+  footer.row-fluid .span8 .right-col span {
+    margin: 0 auto 80px auto;
+  }
+  div.row-fluid .span8 .date {
+    float: right;
+    padding: 0;
+  }
+  .pager {
+    padding: 0;
+    float: left;
+  }
+  .pager li a, 
+  .pager li span {
+    margin: 0 7px 40px 0;
+  }
+  ul.link {
+    padding: 0 0 30px 0;
+  }
+  .social-buttons {
+    clear: both;
+  }
+  .social-buttons > li { 
+    padding: 0 20px 40px 0; 
+    float: left;
+  }
+  /* Btn facebook decale vers le haut */
+  .social-buttons .facebook { 
+    margin: -7px 0 0 0; 
+  }
+}
+
+/* Portrait tablets */
+/* Copie de la version Landscape tablets */
+@media 
+(min-width: 480px) 
+and 
+(max-width: 768px) {
+  /* Textes, corps plus importants */
+  body,
+  p,
+  li {
+    font-size: 24px;
+    line-height: 38px;
+  }
+  div.row-fluid .span8 .date,
+  small {
+    font-size: 22px;
+    line-height: 38px;
+  }
+  .pager li a, 
+  .pager li span {
+    font-size: 22px;
+    height: 40px;
+    line-height: 40px;
+    width: 90px;
+  }
+  ul.link li a {
+    font-size: 22px;
+    height: 40px;
+    line-height: 40px;
+  }
+  h1 {
+    font-size: 36px;
+    line-height: 50px;
+  } 
+  div.row-fluid .span8 .right-col h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .prettyprint.linenums {
+    box-shadow: none;
+  }
+  pre, code {
+    font-size: 24px;
+  }
+  ol.linenums {
+    margin: 0 0 0 70px;
+  }
+  ol.linenums li {
+    line-height: 30px;
+  }
+  .nav-list .nav-header {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  .nav-list > li > a {
+    font-size: 24px;
+    line-height: 48px;
+  }
+  /* General */
+  .container-fluid {
+    margin: 0;
+  }
+  .row-fluid {
+    width: 100%;
+  }
+  .row-fluid > [class*="span"] {
+    float: none;
+    display: block;
+    width: auto;
+    margin: 0;
+  }
+  .row-fluid:before, .row-fluid:after {
+    display: table;
+    content: "";
+  }
+  .row-fluid:after {
+    clear: both;
+  } 
+  .row-fluid .span4 {
+    width: 100%;
+  }
+  .row-fluid .span8 {
+    width: 100%;
+  }
+  /* Espace en bas du post */
+  div.row-fluid .span8 {
+    padding: 80px 0;
+  }
+  /* Espace en haut des div principales */
+  div.row-fluid .span4 {
+    padding: 80px 0 0 0;
+  }
+  footer.row-fluid .span8 {
+    padding: 40px 0 0 0;
+  }
+  .left-col,
+  .right-col {
+    width: 100%;
+    float: none;
+  }
+  /* Colonne gauche dans header et footer disparait */
+  header .left-col,
+  footer .left-col {
+    display: none;
+  }
+  /* Dans le header, logo et baseline changent de place */
+  header.row-fluid .span8 {
+    padding: 100px 0 0 0;
+  }
+  header a.logo {
+    float: none;
+    margin: 0 auto;
+  }
+  header h3 {
+    float: none;
+    line-height: normal;
+    height: auto;
+    text-align: center;
+    padding: 40px 0 0 0;
+    font-size: 55px !important;
+  } 
+  /* Elements alignes et de meme largeur */
+  header h3,
+  div.row-fluid .span8 .left-col,
+  div.row-fluid .span8 .right-col h1, 
+  div.row-fluid .span8 .right-col h2, 
+  div.row-fluid .span8 .right-col p, 
+  div.row-fluid .span8 .right-col ul, 
+  div.row-fluid .span8 .right-col pre,
+  .nav-list,
+  .separator,
+  footer.row-fluid .span8 .right-col span {
+    margin: 0 auto 40px auto;
+    width: 95%;
+  }
+  /* Padding sur les cotes donc largeur differente */
+  div.row-fluid .span8 .right-col h2,
+  div.row-fluid .span8 .right-col pre {
+    width: 93%;
+  }
+  div.row-fluid .span8 .left-col {
+    min-height: 30px;
+  }
+  .nav-list {
+    padding: 0;
+  }
+  footer.row-fluid .span8 .right-col span {
+    margin: 0 auto 80px auto;
+  }
+  div.row-fluid .span8 .date {
+    float: right;
+    padding: 0;
+  }
+  .pager {
+    padding: 0;
+    float: left;
+  }
+  .pager li a, 
+  .pager li span {
+    margin: 0 7px 40px 0;
+  }
+  ul.link {
+    padding: 0 0 30px 0;
+  }
+  .social-buttons {
+    clear: both;
+  }
+  .social-buttons > li { 
+    padding: 0 20px 40px 0; 
+    float: left;
+  }
+  /* Btn facebook decale vers le haut */
+  .social-buttons .facebook { 
+    margin: -7px 0 0 0; 
+  }
+}
+
+/* Landscape tablets */
+@media 
+(min-width: 768px) 
+and 
+(max-width: 980px) {
+  /* Textes, corps plus importants */
+  body,
+  p,
+  li {
+    font-size: 24px;
+    line-height: 38px;
+  }
+  div.row-fluid .span8 .date,
+  small {
+    font-size: 22px;
+    line-height: 38px;
+  }
+  .pager li a, 
+  .pager li span {
+    font-size: 22px;
+    height: 40px;
+    line-height: 40px;
+    width: 90px;
+  }
+  ul.link li a {
+    font-size: 22px;
+    height: 40px;
+    line-height: 40px;
+  }
+  h1 {
+    font-size: 36px;
+    line-height: 50px;
+  } 
+  div.row-fluid .span8 .right-col h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .prettyprint.linenums {
+    box-shadow: none;
+  }
+  pre, code {
+    font-size: 24px;
+  }
+  ol.linenums {
+    margin: 0 0 0 70px;
+  }
+  ol.linenums li {
+    line-height: 30px;
+  }
+  .nav-list .nav-header {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  .nav-list > li > a {
+    font-size: 24px;
+    line-height: 48px;
+  }
+  /* General */
+  .container-fluid {
+    margin: 0;
+  }
+  .row-fluid {
+    width: 100%;
+  }
+  .row-fluid > [class*="span"] {
+    float: none;
+    display: block;
+    width: auto;
+    margin: 0;
+  }
+  .row-fluid:before, .row-fluid:after {
+    display: table;
+    content: "";
+  }
+  .row-fluid:after {
+    clear: both;
+  } 
+  .row-fluid .span4 {
+    width: 100%;
+  }
+  .row-fluid .span8 {
+    width: 100%;
+  }
+  /* Espace en bas du post */
+  div.row-fluid .span8 {
+    padding: 80px 0;
+  }
+  /* Espace en haut des div principales */
+  div.row-fluid .span4 {
+    padding: 80px 0 0 0;
+  }
+  footer.row-fluid .span8 {
+    padding: 40px 0 0 0;
+  }
+  .left-col,
+  .right-col {
+    width: 100%;
+    float: none;
+  }
+  /* Colonne gauche dans header et footer disparait */
+  header .left-col,
+  footer .left-col {
+    display: none;
+  }
+  /* Dans le header, logo et baseline changent de place */
+  header.row-fluid .span8 {
+    padding: 100px 0 0 0;
+  }
+  header a.logo {
+    float: none;
+    margin: 0 auto;
+  }
+  header h3 {
+    float: none;
+    line-height: normal;
+    height: auto;
+    text-align: center;
+    padding: 40px 0 0 0;
+    font-size: 55px !important;
+  } 
+  /* Elements alignes et de meme largeur */
+  header h3,
+  div.row-fluid .span8 .left-col,
+  div.row-fluid .span8 .right-col h1, 
+  div.row-fluid .span8 .right-col h2, 
+  div.row-fluid .span8 .right-col p, 
+  div.row-fluid .span8 .right-col ul, 
+  div.row-fluid .span8 .right-col pre,
+  .nav-list,
+  .separator,
+  footer.row-fluid .span8 .right-col span {
+    margin: 0 auto 40px auto;
+    width: 95%;
+  }
+  /* Padding sur les cotes donc largeur differente */
+  div.row-fluid .span8 .right-col h2,
+  div.row-fluid .span8 .right-col pre {
+    width: 93%;
+  }
+  div.row-fluid .span8 .left-col {
+    min-height: 30px;
+  }
+  .nav-list {
+    padding: 0;
+  }
+  footer.row-fluid .span8 .right-col span {
+    margin: 0 auto 80px auto;
+  }
+  div.row-fluid .span8 .date {
+    float: right;
+    padding: 0;
+  }
+  .pager {
+    padding: 0;
+    float: left;
+  }
+  .pager li a, 
+  .pager li span {
+    margin: 0 7px 40px 0;
+  }
+  ul.link {
+    padding: 0 0 30px 0;
+  }
+  .social-buttons {
+    clear: both;
+  }
+  .social-buttons > li { 
+    padding: 0 20px 40px 0; 
+    float: left;
+  }
+  /* Btn facebook decale vers le haut */
+  .social-buttons .facebook { 
+    margin: -7px 0 0 0; 
+  }
+}
+
+/* Default */
+@media 
+(min-width: 980px) 
+and 
+(max-width: 1200px) {
+  .container-fluid {
+    margin: 0;
+  } 
+  header h3 {
+    font-size: 32px;
+  }
+}
+
+/* Large display */
+@media 
+(min-width: 1200px) 
+and 
+(max-width: 1400px) {
+  .container-fluid {
+    margin: 0;
+  }
+  [class*="span"] {
+    float: left;
+    margin-left: 30px;
+  }
+  .row-fluid {
+    width: 100%;
+    *zoom: 1;
+  }
+  .row-fluid:before, .row-fluid:after {
+    display: table;
+    content: "";
+  }
+  .row-fluid:after {
+    clear: both;
+  }
+  .row-fluid > [class*="span"] {
+    float: left;
+    margin-left: 2.564102564%;
+  }
+  .row-fluid > [class*="span"]:first-child {
+    margin-left: 0;
+  }  
+  .row-fluid .span4 {
+    width: 31.623931624%;
+  }
+  .row-fluid .span8 {
+    width: 65.81196581200001%;
+  }  
+  header h3 {
+    font-size: 42px;
+  }  
+  /* Twitter bird apparait seulement quand il y a la place */
+  .nav-list .follow-heading {
+    background: transparent url(https://s3-eu-west-1.amazonaws.com/bonjourgem/img/template/follow-heading.png) no-repeat 165px center;
+  }
+}
+
+/* More large display */
+@media (min-width: 1400px) {
+  /* Twitter bird apparait seulement quand il y a la place */
+  .nav-list .follow-heading {
+    background: transparent url(https://s3-eu-west-1.amazonaws.com/bonjourgem/img/template/follow-heading.png) no-repeat 165px center;
+  }
+}
