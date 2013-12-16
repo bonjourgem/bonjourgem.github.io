@@ -638,59 +638,85 @@ ul.link li a:hover {
 }
 
 /* Smartphones */
-/* Copie de la version Portrait and landscape tablets */
 @media (max-width: 568px) {
-  /* Textes, corps plus importants */
+  /*Logo 2x plus petit*/
+  header a.logo {
+    width: 73.5px;
+    height: 40px;
+    background-size: 73.5px 320px !important;
+  }
+  header a.logo-lundi {
+    background: transparent url(https://s3-eu-west-1.amazonaws.com/bonjourgem/img/template/sprite-logo.gif) no-repeat 0 -40px;
+  }
+  header a.logo-mardi {
+    background: transparent url(https://s3-eu-west-1.amazonaws.com/bonjourgem/img/template/sprite-logo.gif) no-repeat 0 -80px;
+  }
+  header a.logo-mercredi {
+    background: transparent url(https://s3-eu-west-1.amazonaws.com/bonjourgem/img/template/sprite-logo.gif) no-repeat 0 -120px;
+  }
+  header a.logo-jeudi {
+    background: transparent url(https://s3-eu-west-1.amazonaws.com/bonjourgem/img/template/sprite-logo.gif) no-repeat 0 -160px;
+  }
+  header a.logo-vendredi {
+    background: transparent url(https://s3-eu-west-1.amazonaws.com/bonjourgem/img/template/sprite-logo.gif) no-repeat 0 -200px;
+  }
+  header a.logo-samedi {
+    background: transparent url(https://s3-eu-west-1.amazonaws.com/bonjourgem/img/template/sprite-logo.gif) no-repeat 0 -240px;
+  }
+  header a.logo-dimanche {
+    background: transparent url(https://s3-eu-west-1.amazonaws.com/bonjourgem/img/template/sprite-logo.gif) no-repeat 0 -280px;
+  }
+  /* Textes, corps moins importants */
   body,
   p,
   li {
-    font-size: 24px;
-    line-height: 38px;
+    font-size: 12px;
+    line-height: 20px;
   }
   div.row-fluid .span8 .date,
   small {
-    font-size: 22px;
-    line-height: 38px;
+    font-size: 11px;
+    line-height: 20px;
   }
   .pager li a, 
   .pager li span {
-    font-size: 22px;
-    height: 40px;
-    line-height: 40px;
-    width: 90px;
+    font-size: 11px;
+    height: 20px;
+    line-height: 20px;
+    width: 45px;
   }
   ul.link li a {
-    font-size: 22px;
-    height: 40px;
-    line-height: 40px;
+    font-size: 11px;
+    height: 20px;
+    line-height: 20px;
   }
   h1 {
-    font-size: 36px;
-    line-height: 50px;
+    font-size: 18px;
+    line-height: 25px;
   } 
   div.row-fluid .span8 .right-col h2 {
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 12px;
+    line-height: 15px;
   }
   .prettyprint.linenums {
     box-shadow: none;
   }
   pre, code {
-    font-size: 24px;
+    font-size: 12px;
   }
   ol.linenums {
-    margin: 0 0 0 70px;
+    margin: 0 0 0 35px;
   }
   ol.linenums li {
-    line-height: 30px;
+    line-height: 15px;
   }
   .nav-list .nav-header {
-    font-size: 30px;
-    line-height: 38px;
+    font-size: 15px;
+    line-height: 20px;
   }
   .nav-list > li > a {
-    font-size: 24px;
-    line-height: 48px;
+    font-size: 12px;
+    line-height: 24px;
   }
   /* General */
   .container-fluid {
@@ -720,11 +746,11 @@ ul.link li a:hover {
   }
   /* Espace en bas du post */
   div.row-fluid .span8 {
-    padding: 80px 0;
+    padding: 60px 0 40px 0;
   }
   /* Espace en haut des div principales */
   div.row-fluid .span4 {
-    padding: 80px 0 0 0;
+    padding: 40px 0 0 0;
   }
   footer.row-fluid .span8 {
     padding: 40px 0 0 0;
@@ -741,7 +767,7 @@ ul.link li a:hover {
   }
   /* Dans le header, logo et baseline changent de place */
   header.row-fluid .span8 {
-    padding: 100px 0 0 0;
+    padding: 40px 0 0 0;
   }
   header a.logo {
     float: none;
@@ -752,8 +778,8 @@ ul.link li a:hover {
     line-height: normal;
     height: auto;
     text-align: center;
-    padding: 40px 0 0 0;
-    font-size: 55px !important;
+    padding: 20px 0 0 0;
+    font-size: 18px !important;
   } 
   /* Elements alignes et de meme largeur */
   header h3,
@@ -766,8 +792,12 @@ ul.link li a:hover {
   .nav-list,
   .separator,
   footer.row-fluid .span8 .right-col span {
-    margin: 0 auto 40px auto;
+    margin: 0 auto 20px auto;
     width: 95%;
+  }
+  .separator {
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
   /* Padding sur les cotes donc largeur differente */
   div.row-fluid .span8 .right-col h2,
@@ -775,17 +805,18 @@ ul.link li a:hover {
     width: 93%;
   }
   div.row-fluid .span8 .left-col {
-    min-height: 30px;
+    min-height: 15px;
   }
   .nav-list {
     padding: 0;
   }
   footer.row-fluid .span8 .right-col span {
-    margin: 0 auto 80px auto;
+    margin: 0 auto 40px auto;
   }
   div.row-fluid .span8 .date {
     float: right;
     padding: 0;
+    margin-bottom: 20px;
   }
   .pager {
     padding: 0;
@@ -793,25 +824,14 @@ ul.link li a:hover {
   }
   .pager li a, 
   .pager li span {
-    margin: 0 7px 40px 0;
+    margin: 0 4px 20px 0;
   }
   ul.link {
-    padding: 0 0 30px 0;
-  }
-  .social-buttons {
-    clear: both;
-  }
-  .social-buttons > li { 
-    padding: 0 20px 40px 0; 
-    float: left;
-  }
-  /* Btn facebook decale vers le haut */
-  .social-buttons .facebook { 
-    margin: -7px 0 0 0; 
+    padding: 0 0 15px 0;
   }
 }
 
-/* Portrait and landscape tablets */
+/* Tablets */
 @media (min-device-width: 768px) and (max-device-width: 1024px), (min-width: 569px) and (max-width: 1024px) {
   /* Textes, corps plus importants */
   body,
@@ -893,7 +913,7 @@ ul.link li a:hover {
   }
   /* Espace en bas du post */
   div.row-fluid .span8 {
-    padding: 80px 0;
+    padding: 120px 0 100px 0;
   }
   /* Espace en haut des div principales */
   div.row-fluid .span4 {
@@ -926,7 +946,7 @@ ul.link li a:hover {
     height: auto;
     text-align: center;
     padding: 40px 0 0 0;
-    font-size: 55px !important;
+    font-size: 36px !important;
   } 
   /* Elements alignes et de meme largeur */
   header h3,
@@ -941,6 +961,10 @@ ul.link li a:hover {
   footer.row-fluid .span8 .right-col span {
     margin: 0 auto 40px auto;
     width: 95%;
+  }
+  .separator {
+    margin-top: 80px;
+    margin-bottom: 80px;
   }
   /* Padding sur les cotes donc largeur differente */
   div.row-fluid .span8 .right-col h2,
@@ -971,21 +995,10 @@ ul.link li a:hover {
   ul.link {
     padding: 0 0 30px 0;
   }
-  .social-buttons {
-    clear: both;
-  }
-  .social-buttons > li { 
-    padding: 0 20px 40px 0; 
-    float: left;
-  }
-  /* Btn facebook decale vers le haut */
-  .social-buttons .facebook { 
-    margin: -7px 0 0 0; 
-  }
 }
 
 /* Default */
-@media (min-width: 1025px) and (max-width: 1200px) {
+@media (min-width: 980px) and (max-width: 1200px) {
   .container-fluid {
     margin: 0;
   } 
@@ -996,9 +1009,6 @@ ul.link li a:hover {
 
 /* Large display */
 @media (min-width: 1200px) and (max-width: 1400px) {
-  .container-fluid {
-    margin: 0;
-  }
   [class*="span"] {
     float: left;
     margin-left: 30px;
@@ -1028,7 +1038,7 @@ ul.link li a:hover {
     width: 65.81196581200001%;
   }  
   header h3 {
-    font-size: 42px;
+    font-size: 32px;
   }  
   /* Twitter bird apparait seulement quand il y a la place */
   .nav-list .follow-heading {
