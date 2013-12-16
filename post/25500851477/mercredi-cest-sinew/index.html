@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=(device-width), initial-scale=1.0" name="viewport" />
+    <title>Mercredi c'est Sinew</title>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+    
+    <!-- Google Webfonts -->
+    <link href='http://fonts.googleapis.com/css?family=Noticia+Text:400,400italic,700,700italic' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css' />   
+    <!-- Feuille de style font -->
+    <link href="https://s3-eu-west-1.amazonaws.com/bonjourgem/css/font.css" rel="stylesheet" />
+    <!-- Le styles -->
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- Le fav icon -->
+    <link rel="shortcut icon" href="https://s3-eu-west-1.amazonaws.com/bonjourgem/favicon.ico" />
+  </head>
+  <body onload="prettyPrint()">
+
+    <!-- Precharger font -->
+    <p class="hidden novecento-normal">Novecento Normal</p>
+    <p class="hidden novecento-demibold">Novecento Demibold</p>
+    <p class="hidden novecento-bold">Novecento Bold</p>
+    
+    <div class="container-fluid">
+      
+      <header class="row-fluid"> 
+          
+        <div class="span8">
+        
+          <div class="left-col"></div><!--/.left-col-->
+          
+          <div class="right-col">
+            <a class="logo" href="/"></a>
+            <h3>Un jour, <span>une gem</span></h3>  
+          </div><!--/.right-col-->
+          
+        </div><!--/.span8-->
+        
+      </header><!--/header.row-fluid-->
+    
+      <div class="row-fluid">      
+        
+        <div class="span8">
+          
+            
+  
+  
+
+
+<div class="left-col">
+    <p class="date">20/06/2012</p> 
+    <ul class="pager">   
+  <li>
+    
+      <a href="/post/25426499965/mardi-cest-yaml-record" id="prev">Pr&eacute;c</a>
+    
+  </li>
+  <li>
+    
+      <a href="/post/25571599153/jeudi-cest-jeweler" id="next">Suiv</a>
+    
+  </li>                  
+</ul>   
+</div><!--/.left-col-->
+    
+<div class="right-col">
+  <h1><a href="/post/25500851477/mercredi-cest-sinew">Mercredi c'est Sinew</a></h1>
+  <p class="img-post"><img src="/tumblr_files/tumblr_m5x1aplVXg1r58g99.jpg"></p>
+<h2>gem install sinew</h2>
+<p><strong>Framework pour du Web scraping</strong></p>
+<p>Aujourd’hui une gem qui donne toute une batterie d’outils :</p>
+<ul>
+<li>Un DSL Ruby pour le crawling</li>
+<li>Un système de cache</li>
+<li>Avec de vrais morceaux de Nokogiri dedans</li>
+<li>
+</li>
+</ul><p>Un petit exemple d’utilisation issu de la doc : </p>
+<p><strong>mon_fichier.sinew</strong></p>
+<pre class="prettyprint linenums"><code># la page à traiter
+get "http://www.amazon.com/gp/bestsellers/books/ref=sv_b_3"
+
+# on trouve les différentes entrées avec Nokogiri
+noko.css(".zg_itemRow").each do |item|
+  row = { }
+  row[:url] = item.css(".zg_title a").first[:href]
+  row[:title] = item.css(".zg_title")
+  row[:img] = item.css(".zg_itemImage_normal img").first[:src]
+
+  # on ajoute la ligne à un csv
+  csv_emit(row)
+end
+</code></pre>
+<p>Ensuite on lance : </p>
+<h2>sinew mon_fichier.sinew</h2>
+<p>Et hop, un fichier <strong>mon_fichier.csv</strong> est généré avec les données récupérées.</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/gurgeous/sinew" onclick="window.open(this.href);return false;">Sinew sur github</a></li>
+<li><a href="https://github.com/gurgeous/sinew/wiki" onclick="window.open(this.href);return false;">Documentation</a></li>
+</ul>
+         
+</div><!--/.right-col-->          
+
+<div class="clear"></div>
+
+<div class="left-col">            
+  <ul class="pager">   
+  <li>
+    
+      <a href="/post/25426499965/mardi-cest-yaml-record" id="prev">Pr&eacute;c</a>
+    
+  </li>
+  <li>
+    
+      <a href="/post/25571599153/jeudi-cest-jeweler" id="next">Suiv</a>
+    
+  </li>                  
+</ul>   
+</div><!--/.left-col-->
+
+          
+          <div class="clear"></div>
+        
+        </div><!--/.span8-->
+        
+        <div class="span4">
+        
+          <div class="sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Cat&eacute;gories</li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/authentification">Authentification</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/autorisation">Autorisation</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/base_de_donnees">Base de Données</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/css">CSS</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/communication">Communication</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/deploiement_et_hebergement">Déploiement et hébergement</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/gestion_de_contenu">Gestion de contenu</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/html">HTML</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/javascript">JavaScript</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/maintenance_et_monitoring">Maintenance et monitoring</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/outil_de_developpement">Outil de développement</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/outil_pour_la_documentation">Outil pour la documentation</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/parseur">Parseur</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/plugin_active_record">Plugin Active Record</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/plugin_rails">Plugin Rails</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/service_et_interaction">Service et interaction</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/temps_et_espace">Temps et espace</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/test">Test</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/upload_de_fichier">Upload de fichier</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/utilitaire">Utilitaire</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/wtf">WTF</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/web_app">Web app</a>
+                </li>
+              
+            </ul> 
+            <div class="separator"></div>          
+            <ul class="nav nav-list">
+              <li class="nav-header follow-heading">Nous suivre</li>
+              <li><a href="https://twitter.com/wearemd" onclick="window.open(this.href);return false;">wearemd sur Twitter</a></li>
+            </ul>            
+          </div><!--/.sidebar-nav -->
+          
+        </div><!--/.span4-->
+        
+      </div><!--/.row-fluid-->
+
+      <footer class="row-fluid"> 
+          
+        <div class="span8">
+        
+          <div class="left-col"></div><!--/.left-col-->
+          
+          <div class="right-col">           
+            <span>
+              Bonjour gem par <a href="http://wearemd.com" onclick="window.open(this.href);return false;">wearemd</a>
+            </span>       
+          </div><!--/.right-col-->
+          
+        </div><!--/.span8-->
+        
+      </footer><!--/footer.row-fluid-->
+
+    </div><!--/.container-fluid-->
+    
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Jquery -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/jquery-1.7.1.min.js"></script>
+    <!-- Prettify -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/prettify.js"></script>
+    <!-- Socialite -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/socialite-1.0.js"></script>
+    <!-- Tools -->
+    <script src="/js/tool.js"></script>
+  </body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=(device-width), initial-scale=1.0" name="viewport" />
+    <title>Lundi c'est Squeel</title>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+    
+    <!-- Google Webfonts -->
+    <link href='http://fonts.googleapis.com/css?family=Noticia+Text:400,400italic,700,700italic' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css' />   
+    <!-- Feuille de style font -->
+    <link href="https://s3-eu-west-1.amazonaws.com/bonjourgem/css/font.css" rel="stylesheet" />
+    <!-- Le styles -->
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- Le fav icon -->
+    <link rel="shortcut icon" href="https://s3-eu-west-1.amazonaws.com/bonjourgem/favicon.ico" />
+  </head>
+  <body onload="prettyPrint()">
+
+    <!-- Precharger font -->
+    <p class="hidden novecento-normal">Novecento Normal</p>
+    <p class="hidden novecento-demibold">Novecento Demibold</p>
+    <p class="hidden novecento-bold">Novecento Bold</p>
+    
+    <div class="container-fluid">
+      
+      <header class="row-fluid"> 
+          
+        <div class="span8">
+        
+          <div class="left-col"></div><!--/.left-col-->
+          
+          <div class="right-col">
+            <a class="logo" href="/"></a>
+            <h3>Un jour, <span>une gem</span></h3>  
+          </div><!--/.right-col-->
+          
+        </div><!--/.span8-->
+        
+      </header><!--/header.row-fluid-->
+    
+      <div class="row-fluid">      
+        
+        <div class="span8">
+          
+            
+  
+  
+
+
+<div class="left-col">
+    <p class="date">28/05/2012</p> 
+    <ul class="pager">   
+  <li>
+    
+      <a href="/post/23854703005/dimanche-cest-i-told-you-it-was-private" id="prev">Pr&eacute;c</a>
+    
+  </li>
+  <li>
+    
+      <a href="/post/23993729428/mardi-c-est-partial-date" id="next">Suiv</a>
+    
+  </li>                  
+</ul>   
+</div><!--/.left-col-->
+    
+<div class="right-col">
+  <h1><a href="/post/23920978287/lundi-cest-squeel">Lundi c'est Squeel</a></h1>
+  <p class="img-post"> <img src="/tumblr_files/tumblr_m4pzjyqq6R1r58g99.jpg"></p>
+<h2>gem install squeel</h2>
+<p><strong>Des requêtes plus sympa</strong></p>
+<p>Aujourd’hui c’est Squeel ou comment écrire des requêtes ActiveRecord moins longues et plus “Ruby”.</p>
+<p>Quelques petits exemples :</p>
+<pre class="prettyprint linenums"><code># Avec AR
+Article.where ['created_at &gt;= ?', 2.weeks.ago]
+# Avec Squeel
+Article.where{created_at &gt;= 2.weeks.ago}
+# Avec AR
+Person.joins(:articles =&gt; {:comments =&gt; :person})
+# Avec Squeel 
+Person.joins{articles.comments.person}
+</code></pre>
+<p>Et encore plein de petits raccourcis que je vous laisse découvrir ;) </p>
+<p><strong>Le lien utile</strong></p>
+<ul class="link">
+<li><a onclick="window.open(this.href);return false;" href="https://github.com/ernie/squeel">Squeel sur github</a></li>
+</ul><p><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/RomainTribes">@RomainTribes</a>
+</small></p>
+         
+</div><!--/.right-col-->          
+
+<div class="clear"></div>
+
+<div class="left-col">            
+  <ul class="pager">   
+  <li>
+    
+      <a href="/post/23854703005/dimanche-cest-i-told-you-it-was-private" id="prev">Pr&eacute;c</a>
+    
+  </li>
+  <li>
+    
+      <a href="/post/23993729428/mardi-c-est-partial-date" id="next">Suiv</a>
+    
+  </li>                  
+</ul>   
+</div><!--/.left-col-->
+
+          
+          <div class="clear"></div>
+        
+        </div><!--/.span8-->
+        
+        <div class="span4">
+        
+          <div class="sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Cat&eacute;gories</li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/authentification">Authentification</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/autorisation">Autorisation</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/base_de_donnees">Base de Données</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/css">CSS</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/communication">Communication</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/deploiement_et_hebergement">Déploiement et hébergement</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/gestion_de_contenu">Gestion de contenu</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/html">HTML</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/javascript">JavaScript</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/maintenance_et_monitoring">Maintenance et monitoring</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/outil_de_developpement">Outil de développement</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/outil_pour_la_documentation">Outil pour la documentation</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/parseur">Parseur</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/plugin_active_record">Plugin Active Record</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/plugin_rails">Plugin Rails</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/service_et_interaction">Service et interaction</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/temps_et_espace">Temps et espace</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/test">Test</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/upload_de_fichier">Upload de fichier</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/utilitaire">Utilitaire</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/wtf">WTF</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/web_app">Web app</a>
+                </li>
+              
+            </ul> 
+            <div class="separator"></div>          
+            <ul class="nav nav-list">
+              <li class="nav-header follow-heading">Nous suivre</li>
+              <li><a href="https://twitter.com/wearemd" onclick="window.open(this.href);return false;">wearemd sur Twitter</a></li>
+            </ul>            
+          </div><!--/.sidebar-nav -->
+          
+        </div><!--/.span4-->
+        
+      </div><!--/.row-fluid-->
+
+      <footer class="row-fluid"> 
+          
+        <div class="span8">
+        
+          <div class="left-col"></div><!--/.left-col-->
+          
+          <div class="right-col">           
+            <span>
+              Bonjour gem par <a href="http://wearemd.com" onclick="window.open(this.href);return false;">wearemd</a>
+            </span>       
+          </div><!--/.right-col-->
+          
+        </div><!--/.span8-->
+        
+      </footer><!--/footer.row-fluid-->
+
+    </div><!--/.container-fluid-->
+    
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Jquery -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/jquery-1.7.1.min.js"></script>
+    <!-- Prettify -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/prettify.js"></script>
+    <!-- Socialite -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/socialite-1.0.js"></script>
+    <!-- Tools -->
+    <script src="/js/tool.js"></script>
+  </body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=(device-width), initial-scale=1.0" name="viewport" />
+    <title>Vendredi c'est Compass</title>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+    
+    <!-- Google Webfonts -->
+    <link href='http://fonts.googleapis.com/css?family=Noticia+Text:400,400italic,700,700italic' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css' />   
+    <!-- Feuille de style font -->
+    <link href="https://s3-eu-west-1.amazonaws.com/bonjourgem/css/font.css" rel="stylesheet" />
+    <!-- Le styles -->
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- Le fav icon -->
+    <link rel="shortcut icon" href="https://s3-eu-west-1.amazonaws.com/bonjourgem/favicon.ico" />
+  </head>
+  <body onload="prettyPrint()">
+
+    <!-- Precharger font -->
+    <p class="hidden novecento-normal">Novecento Normal</p>
+    <p class="hidden novecento-demibold">Novecento Demibold</p>
+    <p class="hidden novecento-bold">Novecento Bold</p>
+    
+    <div class="container-fluid">
+      
+      <header class="row-fluid"> 
+          
+        <div class="span8">
+        
+          <div class="left-col"></div><!--/.left-col-->
+          
+          <div class="right-col">
+            <a class="logo" href="/"></a>
+            <h3>Un jour, <span>une gem</span></h3>  
+          </div><!--/.right-col-->
+          
+        </div><!--/.span8-->
+        
+      </header><!--/header.row-fluid-->
+    
+      <div class="row-fluid">      
+        
+        <div class="span8">
+          
+          
+
+
+
+
+
+
+
+<div class="left-col">
+    <p class="date">06/01/2012</p> 
+    <ul class="pager">   
+  <li>
+    
+      <a href="/tagged/css/page/8" id="prev">Pr&eacute;c</a>
+    
+  </li>
+  <li>
+    
+      <a href="/tagged/css/page/6" id="next">Suiv</a>
+    
+  </li>                  
+</ul>   
+</div><!--/.left-col-->
+    
+<div class="right-col">
+  <h1><a href="/post/15392961811/vendredi-cest-compass">Vendredi c'est Compass</a></h1>
+  <p></p><p class="img-post"><img src="/tumblr_files/tumblr_lxckr31VoJ1r58g99.jpg"></p>
+<h2>gem install compass</h2>
+<p class="p1"><strong>Compass, la suite logique de SASS</strong></p>
+<p class="p1">Compass est un outil qui reprend SASS et qui permet d’appliquer une logique de développement au Webdesign.</p>
+<p class="p1">Par exemple en ajoutant la ligne suivante dans votre fichier .sass, vous importerez un reset css. Tout simplement.</p>
+<pre class="prettyprint linenums"><code>@import "compass/reset"</code></pre>
+<p class="p1">Compass comprend tout un panel d’outils pour styler les éléments fastidieux habituellement, par exemple les tableaux.</p>
+<p class="p1">Tout d’abord, on commence par créer un nouveau projet Compass :</p>
+<h2>compass create test —syntax sass</h2>
+<p class="p4"><strong>Le HTML</strong></p>
+<pre class="prettyprint linenums"><code>&lt;div class='example'&gt;
+  &lt;table cellspacing='0'&gt;
+    &lt;thead&gt;
+      &lt;tr class='odd'&gt;
+        &lt;th&gt;Compass&lt;/th&gt;
+        &lt;th&gt;c'est&lt;/th&gt;
+        &lt;th&gt;super&lt;/th&gt;
+        &lt;th&gt;cool !&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr class='even'&gt;
+        &lt;th&gt;Des fruits&lt;/th&gt;
+        &lt;td class='numeric'&gt;Banane&lt;/td&gt;
+        &lt;td class='numeric'&gt;Pomme&lt;/td&gt;
+        &lt;td class='numeric'&gt;Fraise&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr class='odd'&gt;
+        &lt;th&gt;D'autres fruits&lt;/th&gt;
+        &lt;td class='numeric'&gt;Framboise&lt;/td&gt;
+        &lt;td class='numeric'&gt;Poire&lt;/td&gt;
+        &lt;td class='numeric'&gt;Cerise&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;<br></code></pre>
+<p class="p1"><strong>Le SASS </strong></p>
+<pre class="prettyprint linenums"><code>@import "compass/utilities/tables" 
+ .example
+   table 
+     $table-color: #C8A37C 
+     +table-scaffolding 
+     +inner-table-borders(1px, darken($table-color, 40%)) 
+     +outer-table-borders(2px) 
+     +alternating-rows-and-columns($table-color, adjust-hue($table-color, -20deg),#131313)
+</code></pre>
+<p class="p4">La CSS générée fait plus de 150 lignes, donc je ne la copierai pas ici ;)</p>
+<p class="p4">Facile non ? En quelques lignes j’ai une solution pour styler un tableau, et il existe bien d’autres outils pré-intégrés à Compass.</p>
+<p class="p4">Comme pour SASS, pour que le miracle survienne, il faut se placer dans le répertoire de votre projet Compass ou de votre projet Rails et taper la commande suivante :</p>
+<h2>compass watch</h2>
+<p class="p4"><span class="s2">Compass offre une multitude de possibilités. On peut grâce à Compass exploiter facilement les frameworks <a href="https://github.com/nextmat/compass-960-plugin" title="960 grid" target="_blank">960 grid</a> ou <a href="https://github.com/sporkd/compass-html5-boilerplate" title="HTML5 Boilerplate" target="_blank">HTML5 Boilerplate</a> pour ses projets.<br></span></p>
+<p class="p4"><strong>Quelques liens utiles :</strong></p>
+<ul class="link">
+<li><a href="http://compass-style.org/" title="Compass site officiel" target="_blank">Le site officiel</a></li>
+<li><a href="http://css-tricks.com/video-screencasts/88-intro-to-compass-sass/" title="Tutoriel vidéo" target="_blank">Tutoriel vidéo</a></li>
+</ul>
+         
+</div><!--/.right-col-->          
+
+<div class="clear"></div>
+
+<div class="left-col">            
+  <ul class="pager">   
+  <li>
+    
+      <a href="/tagged/css/page/8" id="prev">Pr&eacute;c</a>
+    
+  </li>
+  <li>
+    
+      <a href="/tagged/css/page/6" id="next">Suiv</a>
+    
+  </li>                  
+</ul>   
+</div><!--/.left-col-->
+
+          
+          <div class="clear"></div>
+        
+        </div><!--/.span8-->
+        
+        <div class="span4">
+        
+          <div class="sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Cat&eacute;gories</li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/authentification">Authentification</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/autorisation">Autorisation</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/base_de_donnees">Base de Données</a>
+                </li>
+              
+                <li class="active">
+                  <a class="tag_list_link" href="/tagged/css">CSS</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/communication">Communication</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/deploiement_et_hebergement">Déploiement et hébergement</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/gestion_de_contenu">Gestion de contenu</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/html">HTML</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/javascript">JavaScript</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/maintenance_et_monitoring">Maintenance et monitoring</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/outil_de_developpement">Outil de développement</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/outil_pour_la_documentation">Outil pour la documentation</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/parseur">Parseur</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/plugin_active_record">Plugin Active Record</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/plugin_rails">Plugin Rails</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/service_et_interaction">Service et interaction</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/temps_et_espace">Temps et espace</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/test">Test</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/upload_de_fichier">Upload de fichier</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/utilitaire">Utilitaire</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/wtf">WTF</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/web_app">Web app</a>
+                </li>
+              
+            </ul> 
+            <div class="separator"></div>          
+            <ul class="nav nav-list">
+              <li class="nav-header follow-heading">Nous suivre</li>
+              <li><a href="https://twitter.com/wearemd" onclick="window.open(this.href);return false;">wearemd sur Twitter</a></li>
+            </ul>            
+          </div><!--/.sidebar-nav -->
+          
+        </div><!--/.span4-->
+        
+      </div><!--/.row-fluid-->
+
+      <footer class="row-fluid"> 
+          
+        <div class="span8">
+        
+          <div class="left-col"></div><!--/.left-col-->
+          
+          <div class="right-col">           
+            <span>
+              Bonjour gem par <a href="http://wearemd.com" onclick="window.open(this.href);return false;">wearemd</a>
+            </span>       
+          </div><!--/.right-col-->
+          
+        </div><!--/.span8-->
+        
+      </footer><!--/footer.row-fluid-->
+
+    </div><!--/.container-fluid-->
+    
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Jquery -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/jquery-1.7.1.min.js"></script>
+    <!-- Prettify -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/prettify.js"></script>
+    <!-- Socialite -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/socialite-1.0.js"></script>
+    <!-- Tools -->
+    <script src="/js/tool.js"></script>
+  </body>
+</html>

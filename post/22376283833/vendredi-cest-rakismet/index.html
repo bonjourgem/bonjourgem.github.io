@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=(device-width), initial-scale=1.0" name="viewport" />
+    <title>Vendredi c'est Rakismet</title>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+    
+    <!-- Google Webfonts -->
+    <link href='http://fonts.googleapis.com/css?family=Noticia+Text:400,400italic,700,700italic' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css' />   
+    <!-- Feuille de style font -->
+    <link href="https://s3-eu-west-1.amazonaws.com/bonjourgem/css/font.css" rel="stylesheet" />
+    <!-- Le styles -->
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- Le fav icon -->
+    <link rel="shortcut icon" href="https://s3-eu-west-1.amazonaws.com/bonjourgem/favicon.ico" />
+  </head>
+  <body onload="prettyPrint()">
+
+    <!-- Precharger font -->
+    <p class="hidden novecento-normal">Novecento Normal</p>
+    <p class="hidden novecento-demibold">Novecento Demibold</p>
+    <p class="hidden novecento-bold">Novecento Bold</p>
+    
+    <div class="container-fluid">
+      
+      <header class="row-fluid"> 
+          
+        <div class="span8">
+        
+          <div class="left-col"></div><!--/.left-col-->
+          
+          <div class="right-col">
+            <a class="logo" href="/"></a>
+            <h3>Un jour, <span>une gem</span></h3>  
+          </div><!--/.right-col-->
+          
+        </div><!--/.span8-->
+        
+      </header><!--/header.row-fluid-->
+    
+      <div class="row-fluid">      
+        
+        <div class="span8">
+          
+            
+  
+  
+
+
+<div class="left-col">
+    <p class="date">04/05/2012</p> 
+    <ul class="pager">   
+  <li>
+    
+      <a href="/post/22317359625/jeudi-cest-fist-face" id="prev">Pr&eacute;c</a>
+    
+  </li>
+  <li>
+    
+      <a href="/post/22440725141/samedi-cest-oj" id="next">Suiv</a>
+    
+  </li>                  
+</ul>   
+</div><!--/.left-col-->
+    
+<div class="right-col">
+  <h1><a href="/post/22376283833/vendredi-cest-rakismet">Vendredi c'est Rakismet</a></h1>
+  <p class="img-post"><img src="/tumblr_files/tumblr_m3hsrpVRyP1r58g99.gif"></p>
+<h2>gem install rakismet</h2>
+<p><strong>Les spams say mal !</strong></p>
+<p>Aujourd’hui une gem bien pratique qui utilise Akismet. Pour ceux qui ne connaissent pas, Akismet est un service de filtre collaboratif.</p>
+<p>Après les commandes habituelles pour installer une gem, il faut créer un initializer avec les lignes suivantes :</p>
+<pre class="prettyprint linenums"><code>config.rakismet.key = 'la clef Akismet'
+config.rakismet.url = 'http://votredomaine.fr'
+</code></pre>
+<p>Ensuite pour accéder aux méthodes de la gem dans le model concerné, on ajoute cette ligne : </p>
+<pre class="prettyprint linenums"><code>include Rakismet::Model
+</code></pre>
+<p>Ce qui vous donne accès aux méthodes suivantes : </p>
+<p><strong>spam?</strong></p>
+<p>On soumet le commentaire à Akismet qui retournera vrai ou faux.</p>
+<p><strong>ham!</strong></p>
+<p>On re-soumet un commentaire valide qui a été marqué comme spam par erreur par Akismet.</p>
+<p><strong>spam!</strong></p>
+<p>On re-soumet un commentaire qui se trouve être un spam et qu’Akismet a manqué.</p>
+<p>Par défaut Rakismet utilisera les attributs suivants dans votre model : </p> 
+<pre class="prettyprint linenums"><code>author        : "le nom envoyé avec le commentaire"
+author_url    : "le site de l'auteur du commentaire"
+author_email  : "son email"
+comment_type  : "le type de commentaire, par défaut 'comment'"
+content       : "le contenu"
+permalink     : "l'url de la page commentée"
+user_ip       : "l'adresse IP de l'auteur du commentaire"
+user_agent    : "user agent"
+referrer      : "l'url referer (note the spelling)"
+</code></pre>
+<p>Il est possible de changer les attributs qui seront utilisés comme ceci : </p>
+<pre class="prettyprint linenums"><code>rakismet_attrs :author =&gt; :commenter_name, :author_email =&gt; :commenter_email
+</code></pre>
+<p>Voilà c’est tout pour aujourd’hui :)</p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/joshfrench/rakismet" onclick="window.open(this.href);return false;">Rakismet sur github</a></li>
+<li><a href="http://akismet.com/" onclick="window.open(this.href);return false;">Site officiel d’Akismet</a></li>
+</ul>
+         
+</div><!--/.right-col-->          
+
+<div class="clear"></div>
+
+<div class="left-col">            
+  <ul class="pager">   
+  <li>
+    
+      <a href="/post/22317359625/jeudi-cest-fist-face" id="prev">Pr&eacute;c</a>
+    
+  </li>
+  <li>
+    
+      <a href="/post/22440725141/samedi-cest-oj" id="next">Suiv</a>
+    
+  </li>                  
+</ul>   
+</div><!--/.left-col-->
+
+          
+          <div class="clear"></div>
+        
+        </div><!--/.span8-->
+        
+        <div class="span4">
+        
+          <div class="sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Cat&eacute;gories</li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/authentification">Authentification</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/autorisation">Autorisation</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/base_de_donnees">Base de Données</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/css">CSS</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/communication">Communication</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/deploiement_et_hebergement">Déploiement et hébergement</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/gestion_de_contenu">Gestion de contenu</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/html">HTML</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/javascript">JavaScript</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/maintenance_et_monitoring">Maintenance et monitoring</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/outil_de_developpement">Outil de développement</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/outil_pour_la_documentation">Outil pour la documentation</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/parseur">Parseur</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/plugin_active_record">Plugin Active Record</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/plugin_rails">Plugin Rails</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/service_et_interaction">Service et interaction</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/temps_et_espace">Temps et espace</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/test">Test</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/upload_de_fichier">Upload de fichier</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/utilitaire">Utilitaire</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/wtf">WTF</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/web_app">Web app</a>
+                </li>
+              
+            </ul> 
+            <div class="separator"></div>          
+            <ul class="nav nav-list">
+              <li class="nav-header follow-heading">Nous suivre</li>
+              <li><a href="https://twitter.com/wearemd" onclick="window.open(this.href);return false;">wearemd sur Twitter</a></li>
+            </ul>            
+          </div><!--/.sidebar-nav -->
+          
+        </div><!--/.span4-->
+        
+      </div><!--/.row-fluid-->
+
+      <footer class="row-fluid"> 
+          
+        <div class="span8">
+        
+          <div class="left-col"></div><!--/.left-col-->
+          
+          <div class="right-col">           
+            <span>
+              Bonjour gem par <a href="http://wearemd.com" onclick="window.open(this.href);return false;">wearemd</a>
+            </span>       
+          </div><!--/.right-col-->
+          
+        </div><!--/.span8-->
+        
+      </footer><!--/footer.row-fluid-->
+
+    </div><!--/.container-fluid-->
+    
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Jquery -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/jquery-1.7.1.min.js"></script>
+    <!-- Prettify -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/prettify.js"></script>
+    <!-- Socialite -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/socialite-1.0.js"></script>
+    <!-- Tools -->
+    <script src="/js/tool.js"></script>
+  </body>
+</html>

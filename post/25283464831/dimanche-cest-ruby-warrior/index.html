@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=(device-width), initial-scale=1.0" name="viewport" />
+    <title>Dimanche c'est Ruby Warrior</title>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+    
+    <!-- Google Webfonts -->
+    <link href='http://fonts.googleapis.com/css?family=Noticia+Text:400,400italic,700,700italic' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css' />   
+    <!-- Feuille de style font -->
+    <link href="https://s3-eu-west-1.amazonaws.com/bonjourgem/css/font.css" rel="stylesheet" />
+    <!-- Le styles -->
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- Le fav icon -->
+    <link rel="shortcut icon" href="https://s3-eu-west-1.amazonaws.com/bonjourgem/favicon.ico" />
+  </head>
+  <body onload="prettyPrint()">
+
+    <!-- Precharger font -->
+    <p class="hidden novecento-normal">Novecento Normal</p>
+    <p class="hidden novecento-demibold">Novecento Demibold</p>
+    <p class="hidden novecento-bold">Novecento Bold</p>
+    
+    <div class="container-fluid">
+      
+      <header class="row-fluid"> 
+          
+        <div class="span8">
+        
+          <div class="left-col"></div><!--/.left-col-->
+          
+          <div class="right-col">
+            <a class="logo" href="/"></a>
+            <h3>Un jour, <span>une gem</span></h3>  
+          </div><!--/.right-col-->
+          
+        </div><!--/.span8-->
+        
+      </header><!--/header.row-fluid-->
+    
+      <div class="row-fluid">      
+        
+        <div class="span8">
+          
+            
+  
+  
+
+
+<div class="left-col">
+    <p class="date">17/06/2012</p> 
+    <ul class="pager">   
+  <li>
+    
+      <a href="/post/25216679445/samedi-cest-railsmailpreview" id="prev">Pr&eacute;c</a>
+    
+  </li>
+  <li>
+    
+      <a href="/post/25353264974/lundi-cest-apartment" id="next">Suiv</a>
+    
+  </li>                  
+</ul>   
+</div><!--/.left-col-->
+    
+<div class="right-col">
+  <h1><a href="/post/25283464831/dimanche-cest-ruby-warrior">Dimanche c'est Ruby Warrior</a></h1>
+  <p class="img-post"><img src="/tumblr_files/tumblr_m5nt21HZnt1r58g99.jpg"></p>
+<h2>gem install rubywarrior</h2>
+<p><strong>Et si on jouait en codant ?</strong></p>
+<p>Aujourd’hui c’est dimanche. Laissez-moi vous présenter une gem qui permet d’apprendre à faire du Ruby ainsi qu’une IA (assez basique) tout en s’amusant dans un décor en ASCII.</p>
+<p>Pour commencer on tape :</p>
+<h2>rubywarrior</h2>
+<p>On choisit un niveau de difficulté et on donne un nom à notre personnage. Ensuite on ouvre le fichier <strong>"rubywarrior/#{nom_du_personnage}-#{difficulté}/README"</strong> pour voir à quoi ressemble le premier niveau, que voici :</p>
+<pre class="prettyprint linenums"><code> --------
+|@      &gt;|
+ --------
+</code></pre>
+<p>Vous êtes donc le <strong>@</strong> courageux qui doit atteindre la sortie <strong>&gt;|</strong>, et pour y arriver, ouvrez donc le fichier <strong>player.rb</strong>, dans lequel vous pourrez utiliser les méthodes données dans le README.</p>
+<p><strong>!! Attention ceci est la solution du premier niveau !!</strong></p>
+<p><strong>player.rb</strong></p>
+<pre class="prettyprint linenums"><code>class Player
+  def play_turn(warrior)
+    warrior.walk!
+  end
+end
+</code></pre>
+<p>Une fois votre player prêt relancez la commande : </p>
+<h2>rubywarrior</h2>
+<p>Et vous verrez si votre petit <strong>@</strong> passe au niveau supérieur ou non, et ainsi de suite :) </p>
+<p><strong>Les liens utiles</strong></p>
+<ul class="link">
+<li><a href="https://github.com/ryanb/ruby-warrior" onclick="window.open(this.href);return false;">Ruby Warrior sur github</a></li>
+<li><a href="http://www.jeuxvideo.com/chroniques-video/00000345/3615-usul-les-joueuses-00000202.htm" onclick="window.open(this.href);return false;">3615 Uzul</a></li>
+<li><a href="http://www.joueurdugrenier.fr/dragons-lair/" onclick="window.open(this.href);return false;">Pourquoi cette image ?</a></li>
+</ul><p><small>
+Sur une idée de
+<a onclick="window.open(this.href);return false;" href="https://twitter.com/#!/lcoullet">@lcoullet</a>
+</small></p>
+         
+</div><!--/.right-col-->          
+
+<div class="clear"></div>
+
+<div class="left-col">            
+  <ul class="pager">   
+  <li>
+    
+      <a href="/post/25216679445/samedi-cest-railsmailpreview" id="prev">Pr&eacute;c</a>
+    
+  </li>
+  <li>
+    
+      <a href="/post/25353264974/lundi-cest-apartment" id="next">Suiv</a>
+    
+  </li>                  
+</ul>   
+</div><!--/.left-col-->
+
+          
+          <div class="clear"></div>
+        
+        </div><!--/.span8-->
+        
+        <div class="span4">
+        
+          <div class="sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Cat&eacute;gories</li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/authentification">Authentification</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/autorisation">Autorisation</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/base_de_donnees">Base de Données</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/css">CSS</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/communication">Communication</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/deploiement_et_hebergement">Déploiement et hébergement</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/gestion_de_contenu">Gestion de contenu</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/html">HTML</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/javascript">JavaScript</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/maintenance_et_monitoring">Maintenance et monitoring</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/outil_de_developpement">Outil de développement</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/outil_pour_la_documentation">Outil pour la documentation</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/parseur">Parseur</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/plugin_active_record">Plugin Active Record</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/plugin_rails">Plugin Rails</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/service_et_interaction">Service et interaction</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/temps_et_espace">Temps et espace</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/test">Test</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/upload_de_fichier">Upload de fichier</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/utilitaire">Utilitaire</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/wtf">WTF</a>
+                </li>
+              
+                <li >
+                  <a class="tag_list_link" href="/tagged/web_app">Web app</a>
+                </li>
+              
+            </ul> 
+            <div class="separator"></div>          
+            <ul class="nav nav-list">
+              <li class="nav-header follow-heading">Nous suivre</li>
+              <li><a href="https://twitter.com/wearemd" onclick="window.open(this.href);return false;">wearemd sur Twitter</a></li>
+            </ul>            
+          </div><!--/.sidebar-nav -->
+          
+        </div><!--/.span4-->
+        
+      </div><!--/.row-fluid-->
+
+      <footer class="row-fluid"> 
+          
+        <div class="span8">
+        
+          <div class="left-col"></div><!--/.left-col-->
+          
+          <div class="right-col">           
+            <span>
+              Bonjour gem par <a href="http://wearemd.com" onclick="window.open(this.href);return false;">wearemd</a>
+            </span>       
+          </div><!--/.right-col-->
+          
+        </div><!--/.span8-->
+        
+      </footer><!--/footer.row-fluid-->
+
+    </div><!--/.container-fluid-->
+    
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Jquery -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/jquery-1.7.1.min.js"></script>
+    <!-- Prettify -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/prettify.js"></script>
+    <!-- Socialite -->
+    <script src="https://s3-eu-west-1.amazonaws.com/bonjourgem/js/socialite-1.0.js"></script>
+    <!-- Tools -->
+    <script src="/js/tool.js"></script>
+  </body>
+</html>
